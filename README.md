@@ -1,0 +1,2 @@
+# inferiorartist.github.io
+ 
