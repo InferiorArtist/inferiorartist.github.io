@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/Images/icon 7.png" type="images/x-icon">
+    <title>linkable</title>
+    <style>
+        * {
+            text-decoration: none;
+            margin:0;
+            padding:0;
+        }
+        /* scrollbar */
+        /* width */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #222; 
+        }
+        
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #555; 
+            border-radius: 2px;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+         background: #888; 
+        }
+        body {
+            height:auto;
+            background-color: #111;   
+
+        }
+        .linkContainer {
+            height:auto;
+            width:auto;
+            text-align: center;
+            background-color: #111;
+            color:white;
+            font-size: 3vmin; 
+            padding:5vh 0 5vh 0; 
+        }
+        .linkContainer .img1 {
+            width:25vmin;
+            margin:auto;
+            display:block;
+            filter: invert(1);
+            pointer-events: none;    
+        }
+        .linkContainer .img2 {
+            width:35vmin;
+            margin:auto auto auto auto;
+            display:block;
+            filter: invert(1);
+            pointer-events: none;
+            border-radius: 10px;
+            border: 1px solid #222;;   
+        }
+        .linkContainerBlock {
+            width:60vmin;
+            max-height:100vmax;
+            margin:auto;
+        }
+        .linkContainerBlock li {
+            list-style: none;
+            border:1px solid white;
+            color:white;
+            border-radius: 50px;
+            width:auto;
+            height:5vmin;
+            margin: 10px auto 5px auto;
+            background-color: #111;
+        }
+        .linkContainerBlock li a {
+            color:white;
+            margin-bottom: 4px;
+            font-size: 2.5vmin;
+        }
+        .linkContainerBlock li:hover {
+            color:white;
+            background-color: #333;
+            transform: scale(1.01);
+            transition: .3s;
+        }
+    </style>
+</head>
+<body> 
+    <div class="linkContainer">
+        <img class="img1" src="/Images/afs words logo.png">
+
+        <a>Here you can find all my links related to A Fantasy Story!</a>
+
+        <div class="linkContainerBlock">  
+            <li><a href="/home.html">Home</a></li>
+            <li><a href="https://twitter.com/heyfantasystory">Twitter</a></li>
+            <li><a href="discord.gg/5jHkKp3fut">Discord</a></li>
+            <li><a href="https://www.youtube.com/@heyfantasystory">Youtube</a></li>
+            <li><a href="/home.html">About</a></li>
+            <li><a href="/home.html">Home</a></li>
+            <li><a href="/home.html">Home</a></li><li><a href="/home.html">Home</a></li>
+            <li><a href="/home.html">Twitter</a></li>
+            <li><a href="/home.html">Discord</a></li>
+            <li><a href="/home.html">Youtube</a></li>
+            <li><a href="/home.html">Home</a></li>
+            <li><a href="/home.html">Home</a></li>
+            <li><a href="/home.html">Home</a></li>
+        </div>
+
+        <img class="img2" src="/Images/qrcode_inferiorartist.github.io.png">
+        
+        <!-- <a>Takes you home!</a> -->
+    </div>    
+</body>
+</html>

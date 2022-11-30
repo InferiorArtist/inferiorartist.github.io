@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>progress bar</title>
+    <style>
+        img {
+            height: 1000px;
+            width: 5000px;
+        }
+            .progress {
+            height: 30px;
+            width: 0%;
+            background-color: rgb(85, 0, 255);
+            position: fixed;
+            top: 0;
+            left: 0;
+            animation: progress 1s linear;
+            /* Pause the animation */
+            animation-play-state: paused;
+            /* Bind the animation to scroll */
+            animation-delay: calc(var(--scroll) * -1s);
+            /* These last 2 properites clean up overshoot weirdness */
+            animation-iteration-count: 1;
+            animation-fill-mode: both;
+        }
+            @keyframes progress {
+            to {
+            background-color: red;
+            width: 100%;
+            }
+    }
+    </style>
+</head>
+<body>
+    <div class="progress"></div>
+    <img src="/Images/100x100 placeholder.png">
+                <img src="/Images/100x100 placeholder.png">
+                <img src="/Images/100x100 placeholder.png">
+                <img src="/Images/100x100 placeholder.png">
+                <img src="/Images/100x100 placeholder.png">
+                <img src="/Images/100x100 placeholder.png">
+                <img src="/Images/100x100 placeholder.png">
+                <img src="/Images/100x100 placeholder.png">
+                <img src="/Images/100x100 placeholder.png">
+                <img src="/Images/100x100 placeholder.png">
+</body>
+<script>
+    window.addEventListener('scroll', (e) => {
+  document.body.style.setProperty('--scroll',window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
+}, false);
+</script>
+</html>

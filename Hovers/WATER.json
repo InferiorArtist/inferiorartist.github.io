@@ -1,0 +1,12 @@
+{
+  "name": "A Fantasy Story - Water",
+  "description": "Guides water with magnificent prowess to form itself with magic.",
+  "image": "https://gateway.pinata.cloud/ipfs/QmXUeYnCMH1Kskv6m8HTmFy5UEGGh3jLpB8F4CyqkW5xXJ/ELEMENTS_WATER.png",
+  "animation_url": "https://gateway.pinata.cloud/ipfs/QmXUeYnCMH1Kskv6m8HTmFy5UEGGh3jLpB8F4CyqkW5xXJ/Water.html",
+  "royalty_percentage": 10,
+  "properties":{
+    "Artist": "A Fantasy Story",
+    "Element": "Water",
+    "Type":"For personal, non-commercial use only"
+    }
+  }

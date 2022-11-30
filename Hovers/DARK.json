@@ -1,0 +1,12 @@
+{
+"name": "A Fantasy Story - Dark",
+"description": "Darkness will conjure itself onto victims. Only a few can control it.",
+"image": "https://gateway.pinata.cloud/ipfs/QmQMokKNRgHeAUzh5nRodrzJKeBqUgPktWkkawK1CSNMRs/ELEMENTS_DARK.png",
+"animation_url": "https://gateway.pinata.cloud/ipfs/QmQMokKNRgHeAUzh5nRodrzJKeBqUgPktWkkawK1CSNMRs/Dark.html",
+"royalty_percentage": 10,
+"properties":{
+  "Artist": "A Fantasy Story",
+  "Element": "Dark",
+  "Type":"For personal, non-commercial use only"
+  }
+}

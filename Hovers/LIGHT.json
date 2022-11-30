@@ -1,0 +1,12 @@
+{
+  "name": "A Fantasy Story - Light",
+    "description": "From the heavens to the earth, the wisdom of light shall descend upon the earth.",
+    "image": "https://gateway.pinata.cloud/ipfs/QmcRHKs1Y5P124jUdQ8pnmmPh91YBXdWeBfzPiLXqzRUbz/ELEMENTS_LIGHT.png",
+    "animation_url": "https://gateway.pinata.cloud/ipfs/QmcRHKs1Y5P124jUdQ8pnmmPh91YBXdWeBfzPiLXqzRUbz/Light.html",
+    "royalty_percentage": 10,
+    "properties":{
+      "Artist": "A Fantasy Story",
+      "Element": "Light",
+      "Type":"For personal, non-commercial use only"
+      }
+  }

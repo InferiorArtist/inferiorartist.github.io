@@ -1,0 +1,12 @@
+{
+  "name": "A Fantasy Story - Nature",
+  "description": "Harnesses the earth around the user inorder to do its bidding.",
+  "image": "https://gateway.pinata.cloud/ipfs/QmUboAh2dm7Lk83y4Y2ch8Nd3F3KygS5Dtg6bFQDfEV7Lg/ELEMENTS_NATURE.png",
+  "animation_url": "https://gateway.pinata.cloud/ipfs/QmUboAh2dm7Lk83y4Y2ch8Nd3F3KygS5Dtg6bFQDfEV7Lg/Nature.html",
+  "royalty_percentage": 10,
+  "properties":{
+    "Artist": "A Fantasy Story",
+    "Element": "Nature",
+    "Type":"For personal, non-commercial use only"
+    }
+  }

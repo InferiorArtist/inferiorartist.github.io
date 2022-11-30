@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+
+        }
+        body {
+            background-color: white;
+        }
+      /* image slider */
+      .container {
+            overflow: hidden;
+            background-color: antiquewhite;
+            height: 90vh;
+            width: 90vw;
+            border:1px solid cornflowerblue;
+            margin:auto;
+        }
+        .workarea {
+            margin:3vh auto;
+            width: 80vw;
+            height: 80vh;
+            padding:10px;
+            text-align:center;
+            overflow: hidden;
+            border:1px solid cornflowerblue;
+        }
+        .center {
+            text-align: center;
+            border: 1px solid green;
+            margin-left: auto;
+            margin-right: auto;
+            width:39vw;
+            background-color: white;
+        }
+        input {
+            height:100%;
+            width: 50%;
+            text-align: center;
+            margin:auto;
+            top:0;
+            left:35px;
+            opacity: 0.1;
+            color: black;
+            height: 90vh;
+            width: 50.25vw;
+            top:0;
+            overflow: hidden;
+        }
+        input:active {
+            background-color: rgb(200, 200, 200);
+            color: white;
+            background-color:aqua;
+        }
+        .buttonimg {
+            position:absolute;
+            margin:auto;
+        }
+        .images{
+            width: 95%;
+            max-height: 95%;
+            align-content: center;
+            padding:0;
+            object-fit: scale-down;
+            display:none;
+        }
+        .center a {
+            background-color: white;
+        }
+      @media screen and (max-height: 450px) {
+        .sidenav {
+          padding-top: 15px;
+        }
+        .sidenav a {
+          font-size: 18px;
+        }
+      }
+      @media only screen and (max-height:1080px) {
+      }
+      @media only screen and (max-height:720px) {
+        .topnav ul{
+        right:-30px;
+      }
+      input {
+          height:100%;
+          width: 50%;
+          text-align: center;
+          margin:auto;
+          top:0;
+          left:35px;
+          opacity: 0.1;
+          color: black;
+          height: 90vh;
+          width: 40vw;
+          top:900px;
+          overflow: hidden;
+      }
+      .container {
+          overflow: hidden;
+          background-color: antiquewhite;
+          height: 90vh;
+          width: 90vw;
+          border:1px solid cornflowerblue;
+          margin:auto;
+      }
+    }
+
+      @media only screen and (orientation: portrait) {
+        .topnav ul{
+        right:-30px;
+      }
+
+    } 
+    </style>
+</head>
+
+<div class="container">
+    <div class="workarea">
+        <!-- left -->
+        <input id="buttonLeft" onclick="MoveImgLeft()" style="position:absolute; left:0;" class=".buttonimg" type="button" id="Left" value="Left" href="#wowLeft" src="/Images/100x100 placeholder.png">
+        <!-- images -->
+        <img class="images" id="0" src="/Images/100x100 placeholder.png">
+        <img class="images" id="1" src="/Images/ALL.png">
+        <img class="images" id="2" src="/Images/100x100 placeholder.png">
+        <img class="images" id="3" src="/Images/ALL.png">
+        <img class="images" id="4" src="/Images/100x100 placeholder.png">
+        <!-- right -->
+        <input id="buttonRight"  style="position:absolute;right:-50vw;" class=".buttonimg" type="button" id="Right" value="Right" href="#wowRight" src="/Images/100x100 placeholder.png">
+    </div>
+</div>       
+<br>
+<div class="center" >
+    <a id="botText">hey</a>
+</div>
+
+<script>
+    var img0 = document.getElementById("0");
+    var img1 = document.getElementById("1");  
+    var img2 = document.getElementById("2"); 
+    var img3 = document.getElementById("3"); 
+    var img4 = document.getElementById("4"); 
+
+    var buttonLeft = document.getElementById("buttonLeft");
+    var buttonRight = document.getElementById("buttonRight");
+
+    var botText = document.getElementById("botText")
+
+    let imgNumber = 0;
+
+    function MoveImgRight(){     
+        console.log(imgNumber);
+}
+    function MoveImgLeft(){   
+        console.log(imgNumber);
+
+    }
+buttonLeft.onclick = function(){
+    imgNumber = Math.max(1, imgNumber - 1);
+    //imgNumber -= 1;
+    console.log(imgNumber);
+    switch (imgNumber){
+        case 0: 
+            img0.style.display = "inline";
+            img1.style.display = "none";
+            img2.style.display = "none";
+            img3.style.display = "none";
+            img4.style.display = "none";
+            break
+        case 1: 
+            img0.style.display = "none";
+            img1.style.display = "inline";
+            img2.style.display = "none";
+            img3.style.display = "none";
+            img4.style.display = "none";
+            break
+        case 2: 
+            img0.style.display = "none";
+            img1.style.display = "none";
+            img2.style.display = "inline";
+            img3.style.display = "none";
+            img4.style.display = "none";
+            break
+        case 3: 
+            img0.style.display = "none";
+            img1.style.display = "none";
+            img2.style.display = "none";
+            img3.style.display = "inline";
+            img4.style.display = "none";
+            break
+        case 4: 
+            img0.style.display = "none";
+            img1.style.display = "none";
+            img2.style.display = "none";
+            img3.style.display = "none";
+            img4.style.display = "inline";
+            break
+        default:
+            img0.style.display = "none";
+            img1.style.display = "none";
+            img2.style.display = "none";
+            img3.style.display = "none";
+            img4.style.display = "none";
+}
+}
+    buttonRight.onclick = function(){
+        imgNumber = Math.min(4, imgNumber + 1)
+        //imgNumber += 1;
+        console.log(imgNumber);
+        switch (imgNumber){
+            case 0: 
+                img0.style.display = "inline";
+                img1.style.display = "none";
+                img2.style.display = "none";
+                img3.style.display = "none";
+                img4.style.display = "none";
+                break
+            case 1: 
+                img0.style.display = "none";
+                img1.style.display = "inline";
+                img2.style.display = "none";
+                img3.style.display = "none";
+                img4.style.display = "none";
+                break
+            case 2: 
+                img0.style.display = "none";
+                img1.style.display = "none";
+                img2.style.display = "inline";
+                img3.style.display = "none";
+                img4.style.display = "none";
+                break
+            case 3: 
+                img0.style.display = "none";
+                img1.style.display = "none";
+                img2.style.display = "none";
+                img3.style.display = "inline";
+                img4.style.display = "none";
+                break
+            case 4: 
+            img0.style.display = "none";
+                img1.style.display = "none";
+                img2.style.display = "none";
+                img3.style.display = "none";
+                img4.style.display = "inline";
+                break
+            default:
+                botText.innerHTML = 'Looking forward to the Weekend';
+}
+}
+</script>
+</body>
+
+</html>

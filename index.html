@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- tab icon -->
+    <link rel="icon" href="/Images/icon 7.png" type="images/x-icon">
+    <!-- link images/words -->
+    <meta property="og:image" content="/Images/afs words logo2.png" />
+    <meta property="og:description" content="A place where all fantasy stories converge." />
+    <meta property="og:url"content="https://inferiorartist.github.io/" />
+    <meta property="og:title" content="A Fantasy Story" />
+    <title>A Fantasy Story</title>
+    <style>
+        * {
+            text-decoration: none;
+            margin:0;
+            padding:0;
+        }
+        /* scrollbar */
+        /* width */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #222; 
+        }
+        
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #555; 
+            border-radius: 2px;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #888; 
+        }
+        body {
+            height:auto;
+            background-color: #111;   
+            font-family: helvetica;
+        }
+        .blur{
+          filter: blur(8px);
+        }
+        .linkContainer {
+            height:100vh;
+            width:85vmin;
+            text-align: center;
+            background-color: #111;
+            color:white;
+            font-size: 3vmin; 
+            padding:4vh 4vw 4vh 4vw; 
+            position:relative;
+            margin-left: auto;
+            margin-right: auto;
+            z-index: 4 !important;
+        }
+        
+        .linkContainer .img1 {
+            width:60vmin;
+            margin:auto;
+            display:block;
+            filter: invert(1);
+            pointer-events: none;  
+        }
+        .linkContainer .img2 {
+            width:65vmin;
+            display:block;
+            filter: invert(1);
+            pointer-events: none;
+            border-radius: 10px;
+            border: 1px solid #222;
+            overflow: hidden; 
+            transform: scale(.9);  
+            z-index: 5;
+            background-color: #111;
+
+        }
+        .linkContainerBlock {
+            width:70vmin;
+            max-height:100vmax;
+            margin:auto;
+        }
+        .linkContainerBlock li {
+            list-style: none;
+            border:1px solid white;
+            color:white;
+            border-radius: 50px;
+            width:auto;
+            height:5vmin;
+            margin: 10px auto 5px auto;
+            background-color: #111;
+        }
+        .linkContainerBlock li .linktext {
+            color:white;
+            margin-bottom: 4px;
+            font-size: 3vmin;
+            width:100%;
+        }
+        .linkContainerBlock li:hover {
+            color:white;
+            background-color: #333;
+            transform: scale(1.01);
+            transition: .3s;
+        }
+         .container {
+            line-height: 1;
+            text-align: center;
+            cursor: pointer;
+            position: relative;
+            font-family: helvetica;
+            list-style: none;
+            border:1px solid white;
+            color:white;
+            border-radius: 50px;
+            height:5vmin;
+            background-color: #111;
+        }
+        .link {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            padding-top: 1vmin;
+        }
+        .cardcontainer {
+          height:auto;
+          width: 65vmin;
+          margin:auto auto auto auto;
+          border-radius: 10px;
+          padding: 0 0 4vh 0;
+        }
+        
+        .card:not(:hover) img {
+          transition: translate 0.2s;
+          border: 1px solid black;
+          border-radius: 10px;
+        }
+
+          .card:hover img {
+            translate:
+              calc((var(--ratio-x) - 0.5) * 20%)
+              calc((var(--ratio-y) - 0.5) * 20%);
+              scale: .9;
+              position: absolute;
+              outline-offset: -10px;
+              border-radius: 10px;
+          }
+
+          .card {
+            overflow: hidden;
+            aspect-ratio: 4 / 4;
+            width: 65vmin;
+            border-radius: 8px;
+            transform-style: preserve-3d;
+            touch-action: none;
+            transition:0.1s;
+            border-radius: 10px;
+          }
+
+          .card:hover {
+            transform:
+              rotateX(calc((var(--ratio-y) - 0.5) * 50deg))
+              rotateY(calc((var(--ratio-x) - 0.5) * -40deg));
+              /* big outline hover eff */
+              outline: 2px solid white;
+              outline-offset: -15px;
+              border-radius: 10px;
+          }
+
+          .card:not(:hover) {
+            transform: rotateX(0deg) rotateY(0deg);
+            transition: transform 0.2s;
+            border-radius: 10px;
+          }
+
+          .card:after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+              radial-gradient(circle at calc(var(--ratio-x) * 100%) calc(var(--ratio-y) * 100%), rgb(255, 255, 255), transparent 50%);
+            background-repeat: no-repeat;
+            background-blend-mode: soft-light, overlay;
+            z-index: -1;
+            border: 1px solid white;
+            border-radius: 10px;
+          }
+
+          .card:before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            opacity: 0.2;
+            transition: opacity 0.2s;
+          }
+
+          .card:hover:before {
+            background-position:
+              calc(var(--ratio-x) * 10%) calc(var(--ratio-y) * 10%),
+              calc(80% + (var(--ratio-x) * -50%)) calc(80% + (var(--ratio-y) * -50%));
+            opacity: 1;
+            border: 2px solid white;
+
+          }
+          /* .background .img1 {
+            position: fixed;
+            background-image: url(/Images/bg\ 1.png);
+            display:block;
+            pointer-events: none; 
+            translate: 0 -0;
+            bottom: 0;
+            right:0;
+            filter: blur(8px);
+            -webkit-filter: blur(8px);
+            height: 100vmax;
+            width: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size:cover;
+            z-index: -5;
+          } */
+    </style>
+</head>
+<body> 
+
+  <!-- <div class="background">
+    <div class="img1"></div>
+  </div> -->
+  
+    
+  <div class="linkContainer" >
+        <img class="img1" src="/Images/afs words logo.png">
+
+        <a>Here you can find all my links related to A Fantasy Story!</a>
+
+        <div class="linkContainerBlock">  
+      
+          <li class="container">
+            <a class="link linktext">Home - Coming Soon</a>
+          </li>
+
+          <div href="https://twitter.com/heyfantasystory">
+            <li class="container">
+              <a href="https://twitter.com/heyfantasystory">
+                <span class="link linktext">
+                  Twitter (HeyFantasyStory)
+                </span>
+              </a>
+            </li>  
+          </div>
+
+          <div href="https://twitter.com/inferior_artist">
+            <li class="container">
+              <a href="https://twitter.com/inferior_artist">
+                <span class="link linktext">
+                  Twitter (Inferior_Artist)
+                </span>
+              </a>
+            </li>  
+          </div>
+
+          <div href="https://www.discord.gg/5jHkKp3fut">
+            <li class="container">
+              <a href="https://www.discord.gg/5jHkKp3fut">
+                <span class="link linktext">
+                  Discord
+                </span>
+              </a>
+            </li>  
+          </div>
+
+          <div href="https://www.youtube.com/@heyfantasystory">
+            <li class="container">
+              <a href="https://www.youtube.com/@heyfantasystory">
+                <span class="link linktext">
+                  YouTube
+                </span>
+              </a>
+            </li>  
+          </div>
+
+          <div href="https://paypal.me/AnthonyMarruffo">
+            <li class="container">
+              <a href="https://paypal.me/AnthonyMarruffo">
+                <span class="link linktext">
+                  Send love (:
+                </span>
+              </a>
+            </li>  
+          </div>
+
+        </div>
+
+        <br>
+
+        <div class="cardcontainer">
+          <div class="card">
+            <img class="img2" src="/Images/qrcode_inferiorartist.github.io (1).png">
+          </div>
+        </div>
+        <script src="/JS/hover.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,725 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Character Calculator</title>
+    <style>
+      #table1,
+      #table2,
+      #table3,
+      #table4 {
+        display: none;
+        color: white;
+        background-color: rgb(55, 55, 55);
+        text-align: center;
+        padding: 5px;
+        width:100%;
+        max-height: auto;
+        min-width: 150px;
+        min-height: 50%;
+      }
+
+      tr {
+        color: white;
+        background-color: rgb(55, 55, 55);
+        text-align: center;
+        padding: 5px;
+      }
+
+      input {
+        font-weight: bold;
+        background-color: rgb(55, 55, 55);
+        color: white;
+        margin: auto;
+        border: none;
+        text-align: center;
+        padding: 10px 10px;
+        border-radius: 5px 5px 0px 0px;
+      }
+
+      input:hover {
+        background-color: rgb(200, 200, 200);
+        color: black;
+      }
+
+      #skillsText {
+        font-size: 12px;
+        font-weight: bold;
+      }
+
+      img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
+  </head>
+  <html>
+    <!-- buttons -->
+    <input type="button" id="showTable1" value="Base Stats">
+    <input type="button" id="showTable2" value="Bale">
+    <input type="button" id="showTable3" value="Nessa">
+    <input type="button" id="showTable4" value="Othelia">
+    <input type="button" id="showTable5" value="Adeph">
+    <input type="button" id="showTable6" value="Alenale">
+    <input type="button" id="showTable7" value="Tommy">
+    <!-- empty stats table -->
+    <table id="table0" style="height:440px; width:100%; border:1px solid black; background-color: rgb(55,55,55);">
+      <tr>
+        <td>
+          <a>Choose a character.</a>
+        </td>
+      </tr>
+    </table>
+    <!-- base stats table -->
+    <table id="table1" style="height:440px;width:100%;border:1px solid black;border-collapse:collapse;text-align:center;padding:5px;" rules="all">
+      <tr>
+        <td style="height:40px;">CHARACTER BASE STATS</td>
+      </tr>
+      <tr>
+        <td style="height: 100px;">CHARACTER IMAGE</td>
+      </tr>
+      <tr style="height:40px;">
+        <td>
+          <a>CHARACTER NAME</a>
+          <p style="text-align: center;"></p>
+          <table style="border: 1px solid black; border-collapse: collapse; text-align: center; width:100%; padding: 5px;" rules="all">
+            <tbody>
+              <tr style="height: 100px;">
+                <td class="s2" style="height: 100px;">CLASS</td>
+                <td class="s2" style="height: 100px;">ELEMENT</td>
+                <td class="s2" style="height: 100px;">LEADER SKILL</td>
+                <td class="s2" style="height: 100px;">SKILL A</td>
+                <td class="s2" style="height: 100px;">SKILL IMAGE</td>
+                <td class="s2" style="height: 100px;">SKILL B</td>
+              </tr>
+              <tr style="height:40px;">
+                <td class="s2">LVL 1</td>
+                <td class="s2">BASE HP</td>
+                <td class="s2">BASE ATK</td>
+                <td class="s2">BASE DEF</td>
+                <td class="s2">BASE MAG ATK</td>
+                <td class="s2">BASE MAG DEF</td>
+              </tr>
+              <tr style="height: 40px">
+                <td>1</td>
+                <td>150</td>
+                <td>25</td>
+                <td>25</td>
+                <td>25</td>
+                <td>25</td>
+              </tr>
+              <tr style="height:40px;">
+                <td class="s4">BASE EXP REQ</td>
+                <td class="s4">BASE SPD</td>
+                <td class="s4">BASE STR</td>
+                <td class="s4">BASE CON</td>
+                <td class="s4">BASE INT</td>
+                <td class="s4">BASE ADD. STATS</td>
+              </tr>
+              <tr style="height: 40px">
+                <td>100.00</td>
+                <td>7</td>
+                <td>5</td>
+                <td>5</td>
+                <td>5</td>
+                <td>5</td>
+              </tr>
+            </tbody>
+          </table>
+    </table>
+    <!-- bale stats table -->
+    <table id="table2" style="border: 1px solid black; border-collapse: collapse; text-align: center; padding: 5px; height: 100px; width: 100%" rules="all">
+      <tr>
+        <td style="height: 40px;">CHARACTER CALCULATOR</td>
+      </tr>
+      <tr>
+        <td style="height: 100px; width: 100px;">
+          <img src="https://cdn.discordapp.com/attachments/975920514436571236/975920703377375263/ABC.png" style="height: 100px; width: 100px;">
+        </td>
+      </tr>
+      <tr>
+        <td style="height:40px; width:100px; background-color: rgb(55,55,55); color:white">
+          <a style="height:40px;">Bale</a>
+          <p style="text-align: center;"></p>
+          <table style="border: 1px solid black; border-collapse: collapse; text-align: center; padding: 5px; width: 100px; width: 100%" rules="all">
+            <tbody>
+              <tr style="width:100px;height:100px;">
+                <td id="skillsText" class="s2" style=" width:100px;height:100px;">CLASS: FIGHTER
+                <td class="s3" style="width:100px;height:100px;">
+                  <div style="width:100px;height:101px;">
+                    <img src="https://cdn.discordapp.com/attachments/975920514436571236/975920631365382184/ELEMENTS_FIRE_CLEAR2.png" style="width:100px;height:100px;object-fit:scale-down;object-position:center center;">
+                  </div>
+                </td>
+                <td id="skillsText" class="s2" style="width:100px;height:100px;">LEADER SKILL: PARTY'S ATK &amp; MAG ATK +10% </td>
+                <td id="skillsText" class="s2" style="width:100px; height:100px;">SKILL A: FORCE SLASH DEAL: DAMAGE IN AN AREA TO ALL ENEMIES </td>
+                <td class="s3" style="width:100px;height:100px;">
+                  <div>
+                    <img src="https://cdn.discordapp.com/attachments/975920514436571236/977781141484482620/100x100_placeholder.png" style="width:100px;height:100px;object-fit:scale-down;object-position:center;">
+                  </div>
+                </td>
+                <td id="skillsText" class="s2" style="width:100px;height:100px; ">SKILL B: LATENT RAGE GAIN 20% ATK FOR 3 TURNS (UNIQUE) </td>
+              </tr>
+              <tr style="height: 40px; background-color: rgb(55,55,55); color:white">
+                <td class="s2">LVL</td>
+                <td class="s2">HP</td>
+                <td class="s2">ATK</td>
+                <td class="s2">DEF</td>
+                <td class="s2">MAG ATK</td>
+                <td class="s2">MAG DEF</td>
+              </tr>
+              <tr style="height: 40px">
+                <td class="s4">
+                  <form name="demoForm">
+                    <select name="level" onchange="baleData()">
+                      <option value="0">Base</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                      <option value="13">13</option>
+                      <option value="14">14</option>
+                      <option value="15">15</option>
+                      <option value="16">16</option>
+                      <option value="17">17</option>
+                      <option value="18">18</option>
+                      <option value="19">19</option>
+                      <option value="20">20</option>
+                      <option value="21">21</option>
+                      <option value="22">22</option>
+                      <option value="23">23</option>
+                      <option value="24">24</option>
+                      <option value="25">25</option>
+                      <option value="26">26</option>
+                      <option value="27">27</option>
+                      <option value="28">28</option>
+                      <option value="29">29</option>
+                      <option value="30">30</option>
+                      <option value="31">31</option>
+                      <option value="32">32</option>
+                      <option value="33">33</option>
+                      <option value="34">34</option>
+                      <option value="35">35</option>
+                      <option value="36">36</option>
+                      <option value="37">37</option>
+                      <option value="38">38</option>
+                      <option value="39">39</option>
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                      <option value="46">46</option>
+                      <option value="47">47</option>
+                      <option value="48">48</option>
+                      <option value="49">49</option>
+                      <option value="50">50</option>
+                      <option value="51">51</option>
+                      <option value="52">52</option>
+                      <option value="53">53</option>
+                      <option value="54">54</option>
+                      <option value="55">55</option>
+                      <option value="56">56</option>
+                      <option value="57">57</option>
+                      <option value="58">58</option>
+                      <option value="59">59</option>
+                      <option value="60">60</option>
+                    </select>
+                  </form>
+                </td>
+                <td id="baseHP">150</td>
+                <td id="baseATK">25</td>
+                <td id="baseDEF">25</td>
+                <td id="baseMAGATK">25</td>
+                <td id="baseMAGDEF">25</td>
+              </tr>
+              <tr style="height: 40px; background-color: rgb(55,55,55); color:white;">
+                <td class="s4">EXP TO NEXT </td>
+                <td class="s4">SPD</td>
+                <td class="s4">STR</td>
+                <td class="s4">CON</td>
+                <td class="s4">INT</td>
+                <td class="s4">ADD. STATS</td>
+              </tr>
+              <tr style="height: 40px;">
+                <td id="baseEXPREQ">100</td>
+                <td id="baseSPD">7</td>
+                <td id="baseSTR">5</td>
+                <td id="baseCON">5</td>
+                <td id="baseINT">5</td>
+                <td id="baseADDSTATS">5</td>
+              </tr>
+            </tbody>
+          </table>
+    </table>
+    <!-- nessa stats table -->
+    <table id="table3" style="border: 1px solid black; border-collapse: collapse; text-align: center; padding: 5px; height: 100px; width: 100%;" rules="all">
+      <tr>
+        <td style="height: 40px;">CHARACTER CALCULATOR</td>
+      </tr>
+      <tr>
+        <td style="height: 100px; width: 100px;">
+          <img src="https://cdn.discordapp.com/attachments/975920514436571236/975920704233037895/ABCDEF.png" style="height: 100px; width: 100px;">
+        </td>
+      </tr>
+      <tr>
+        <td style="height:40px; width:100px; background-color: rgb(55,55,55); color:white">
+          <a style="height:40px;">Nessa</a>
+          <p style="text-align: center;"></p>
+          <table style="border: 1px solid black; border-collapse: collapse; text-align: center; padding: 5px; width: 100px; width: 100%;" rules="all">
+            <tbody>
+              <tr style="width:100px;height:100px;">
+                <td id="skillsText" class="s2" style=" width:100px;height:100px;">CLASS: FIGHTER
+                <td class="s3" style="width:100px;height:100px;">
+                  <div style="width:100px;height:101px;">
+                    <img src="https://cdn.discordapp.com/attachments/975920514436571236/975920631906455622/ELEMENTS_NATURE_CLEAR.png" style="width:100px;height:100px;object-fit:scale-down;object-position:center center;">
+                  </div>
+                </td>
+                <td id="skillsText" class="s2" style="width:100px;height:100px;">LEADER SKILL: PARTY'S ATK &amp; MAG ATK +10% </td>
+                <td id="skillsText" class="s2" style="width:100px; height:100px;">SKILL A: FORCE SLASH DEAL: DAMAGE IN AN AREA TO ALL ENEMIES </td>
+                <td class="s3" style="width:100px;height:100px;">
+                  <div>
+                    <img src="https://cdn.discordapp.com/attachments/975920514436571236/977781141484482620/100x100_placeholder.png" style="width:100px;height:100px;object-fit:scale-down;object-position:center;">
+                  </div>
+                </td>
+                <td id="skillsText" class="s2" style="width:100px;height:100px; ">SKILL B: LATENT RAGE GAIN 20% ATK FOR 3 TURNS (UNIQUE) </td>
+              </tr>
+              <tr style="height: 40px; background-color: rgb(55,55,55); color:white">
+                <td class="s2">LVL</td>
+                <td class="s2">HP</td>
+                <td class="s2">ATK</td>
+                <td class="s2">DEF</td>
+                <td class="s2">MAG ATK</td>
+                <td class="s2">MAG DEF</td>
+              </tr>
+              <tr style="height: 40px">
+                <td class="s4">
+                  <form name="nessaForm">
+                    <select name="level" onchange="nessaData()">
+                      <option value="0">Base</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                      <option value="13">13</option>
+                      <option value="14">14</option>
+                      <option value="15">15</option>
+                      <option value="16">16</option>
+                      <option value="17">17</option>
+                      <option value="18">18</option>
+                      <option value="19">19</option>
+                      <option value="20">20</option>
+                      <option value="21">21</option>
+                      <option value="22">22</option>
+                      <option value="23">23</option>
+                      <option value="24">24</option>
+                      <option value="25">25</option>
+                      <option value="26">26</option>
+                      <option value="27">27</option>
+                      <option value="28">28</option>
+                      <option value="29">29</option>
+                      <option value="30">30</option>
+                      <option value="31">31</option>
+                      <option value="32">32</option>
+                      <option value="33">33</option>
+                      <option value="34">34</option>
+                      <option value="35">35</option>
+                      <option value="36">36</option>
+                      <option value="37">37</option>
+                      <option value="38">38</option>
+                      <option value="39">39</option>
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                      <option value="46">46</option>
+                      <option value="47">47</option>
+                      <option value="48">48</option>
+                      <option value="49">49</option>
+                      <option value="50">50</option>
+                      <option value="51">51</option>
+                      <option value="52">52</option>
+                      <option value="53">53</option>
+                      <option value="54">54</option>
+                      <option value="55">55</option>
+                      <option value="56">56</option>
+                      <option value="57">57</option>
+                      <option value="58">58</option>
+                      <option value="59">59</option>
+                      <option value="60">60</option>
+                    </select>
+                  </form>
+                </td>
+                <td id="nessaHP">150</td>
+                <td id="nessaATK">25</td>
+                <td id="nessaDEF">25</td>
+                <td id="nessaMAGATK">25</td>
+                <td id="nessaMAGDEF">25</td>
+              </tr>
+              <tr style="height: 40px; background-color: rgb(55,55,55); color:white;">
+                <td class="s4">EXP TO NEXT </td>
+                <td class="s4">SPD</td>
+                <td class="s4">STR</td>
+                <td class="s4">CON</td>
+                <td class="s4">INT</td>
+                <td class="s4">ADD. STATS</td>
+              </tr>
+              <tr style="height: 40px;">
+                <td id="nessaEXPREQ">100</td>
+                <td id="nessaSPD">6</td>
+                <td id="nessaSTR">5</td>
+                <td id="nessaCON">5</td>
+                <td id="nessaINT">5</td>
+                <td id="nessaADDSTATS">5</td>
+              </tr>
+            </tbody>
+          </table>
+    </table>
+    <!-- othelia stats table -->
+    <table id="table4" style="border: 1px solid black; border-collapse: collapse; text-align: center; padding: 5px; height: 100px; width: 100%;" rules="all">
+      <tr>
+        <td style="height: 40px;">CHARACTER CALCULATOR</td>
+      </tr>
+      <tr>
+        <td style="height: 100px; width: 100px;">
+          <img src="https://cdn.discordapp.com/attachments/975920514436571236/975920703922642974/ABCDE.png" style="height: 100px; width: 100px;">
+        </td>
+      </tr>
+      <tr>
+        <td style="height:40px; width:100px; background-color: rgb(55,55,55); color:white">
+          <a style="height:40px;">Othelia</a>
+          <p style="text-align: center;"></p>
+          <table style="border: 1px solid black; border-collapse: collapse; text-align: center; padding: 5px; width: 100px; width: 100%" rules="all">
+            <tbody>
+              <tr style="width:100px;height:100px;">
+                <td id="skillsText" class="s2" style=" width:100px;height:100px;">CLASS: FIGHTER
+                <td class="s3" style="width:100px;height:100px;">
+                  <div style="width:100px;height:101px;">
+                    <img src="https://cdn.discordapp.com/attachments/975920514436571236/975920632128737300/ELEMENTS_WATER_CLEAR.png" style="width:100px;height:100px;object-fit:scale-down;object-position:center center;">
+                  </div>
+                </td>
+                <td id="skillsText" class="s2" style="width:100px;height:100px;">LEADER SKILL: PARTY'S ATK &amp; MAG ATK +10% </td>
+                <td id="skillsText" class="s2" style="width:100px; height:100px;">SKILL A: FORCE SLASH DEAL: DAMAGE IN AN AREA TO ALL ENEMIES </td>
+                <td class="s3" style="width:100px;height:100px;">
+                  <div>
+                    <img src="https://cdn.discordapp.com/attachments/975920514436571236/977781141484482620/100x100_placeholder.png" style="width:100px;height:100px;object-fit:scale-down;object-position:center;">
+                  </div>
+                </td>
+                <td id="skillsText" class="s2" style="width:100px;height:100px; ">SKILL B: LATENT RAGE GAIN 20% ATK FOR 3 TURNS (UNIQUE) </td>
+              </tr>
+              <tr style="height: 40px; background-color: rgb(55,55,55); color:white">
+                <td class="s2">LVL</td>
+                <td class="s2">HP</td>
+                <td class="s2">ATK</td>
+                <td class="s2">DEF</td>
+                <td class="s2">MAG ATK</td>
+                <td class="s2">MAG DEF</td>
+              </tr>
+              <tr style="height: 40px">
+                <td class="s4">
+                  <form name="otheliaForm">
+                    <select name="level" onchange="otheliaData()">
+                      <option value="0">Base</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                      <option value="13">13</option>
+                      <option value="14">14</option>
+                      <option value="15">15</option>
+                      <option value="16">16</option>
+                      <option value="17">17</option>
+                      <option value="18">18</option>
+                      <option value="19">19</option>
+                      <option value="20">20</option>
+                      <option value="21">21</option>
+                      <option value="22">22</option>
+                      <option value="23">23</option>
+                      <option value="24">24</option>
+                      <option value="25">25</option>
+                      <option value="26">26</option>
+                      <option value="27">27</option>
+                      <option value="28">28</option>
+                      <option value="29">29</option>
+                      <option value="30">30</option>
+                      <option value="31">31</option>
+                      <option value="32">32</option>
+                      <option value="33">33</option>
+                      <option value="34">34</option>
+                      <option value="35">35</option>
+                      <option value="36">36</option>
+                      <option value="37">37</option>
+                      <option value="38">38</option>
+                      <option value="39">39</option>
+                      <option value="40">40</option>
+                      <option value="41">41</option>
+                      <option value="42">42</option>
+                      <option value="43">43</option>
+                      <option value="44">44</option>
+                      <option value="45">45</option>
+                      <option value="46">46</option>
+                      <option value="47">47</option>
+                      <option value="48">48</option>
+                      <option value="49">49</option>
+                      <option value="50">50</option>
+                      <option value="51">51</option>
+                      <option value="52">52</option>
+                      <option value="53">53</option>
+                      <option value="54">54</option>
+                      <option value="55">55</option>
+                      <option value="56">56</option>
+                      <option value="57">57</option>
+                      <option value="58">58</option>
+                      <option value="59">59</option>
+                      <option value="60">60</option>
+                    </select>
+                  </form>
+                </td>
+                <td id="otheliaHP">150</td>
+                <td id="otheliaATK">25</td>
+                <td id="otheliaDEF">25</td>
+                <td id="otheliaMAGATK">25</td>
+                <td id="otheliaMAGDEF">25</td>
+              </tr>
+              <tr style="height: 40px; background-color: rgb(55,55,55); color:white;">
+                <td class="s4">EXP TO NEXT </td>
+                <td class="s4">SPD</td>
+                <td class="s4">STR</td>
+                <td class="s4">CON</td>
+                <td class="s4">INT</td>
+                <td class="s4">ADD. STATS</td>
+              </tr>
+              <tr style="height: 40px;">
+                <td id="otheliaEXPREQ">100</td>
+                <td id="otheliaSPD">6</td>
+                <td id="otheliaSTR">5</td>
+                <td id="otheliaCON">5</td>
+                <td id="otheliaINT">5</td>
+                <td id="otheliaADDSTATS">5</td>
+              </tr>
+            </tbody>
+          </table>
+    </table>
+    <script>
+      var btnTab1 = document.getElementById("showTable1");
+      var btnTab2 = document.getElementById("showTable2");
+      var btnTab3 = document.getElementById("showTable3");
+      var btnTab4 = document.getElementById("showTable4");
+      var btnTab5 = document.getElementById("showTable5");
+      var btnTab6 = document.getElementById("showTable6");
+      var table1 = document.getElementById("table1");
+      var table2 = document.getElementById("table2");
+      var table3 = document.getElementById("table3");
+      var table4 = document.getElementById("table4");
+      let tSTR = 5;
+      let tINT = 5;
+      let tCON = 5;
+      let tHP = 150;
+      let tATK = 25;
+      let tDEF = 25;
+      let tMAGATK = 25;
+      let tMAGDEF = 25;
+      let tADDSTATS = 5;
+//functions---------------------------------------
+      function baleData() {
+        var theSelect = demoForm.level;
+        var baseHP = document.getElementById('baseHP');
+        var baseATK = document.getElementById('baseATK');
+        var baseDEF = document.getElementById('baseDEF');
+        var baseMAGATK = document.getElementById('baseMAGATK');
+        var baseMAGDEF = document.getElementById('baseMAGDEF');
+        var baseSTR = document.getElementById('baseSTR');
+        var baseCON = document.getElementById('baseCON');
+        var baseINT = document.getElementById('baseINT');
+        var baseADDSTATS = document.getElementById('baseADDSTATS');
+        var baseEXPREQ = document.getElementById('baseEXPREQ');
+        var tLVL = (theSelect[theSelect.selectedIndex].value);
+        var tEXPREQ = baseEXPREQ.innerHTML = 100 + (100 * (1.15 ** tLVL - 1));
+        if (tLVL >= 1) {
+          baseHP.innerHTML = 150 + 1.25 * ((5 + tLVL * 1.25 - 1) * 20) + 100;
+          baseATK.innerHTML = 25 + (((tSTR + tLVL * 1.75) - 1) * 2);
+          baseDEF.innerHTML = 25 + (((tCON + tLVL * 1.25) - 1) * 1.5);
+          baseMAGATK.innerHTML = 25 + (((tINT + tLVL * 0.5) - 1) * 1.25);
+          baseMAGDEF.innerHTML = 25 + (((tINT + tLVL * 0.5) - 1) * 1.5);
+          baseCON.innerHTML = ((tCON + tLVL * 1.25) - 1);
+          baseSTR.innerHTML = ((tSTR + tLVL * 1.75) - 1);
+          baseINT.innerHTML = ((tINT + tLVL * 0.5) - 1);
+          baseADDSTATS.innerHTML = (tADDSTATS + parseInt(tLVL));
+          baseEXPREQ.innerHTML = parseInt((100 + (100 * (1.15 ** tLVL - 1))) - 14);
+        } else {
+          baseHP.innerHTML = tHP;
+          baseATK.innerHTML = tATK;
+          baseDEF.innerHTML = tDEF;
+          baseMAGATK.innerHTML = tMAGATK;
+          baseMAGDEF.innerHTML = tMAGDEF;
+          baseCON.innerHTML = tCON;
+          baseSTR.innerHTML = tSTR;
+          baseINT.innerHTML = tINT;
+          baseADDSTATS.innerHTML = tADDSTATS;
+          baseEXPREQ.innerHTML = 100;
+        }
+      }
+      function nessaData() {
+        var theSelect = nessaForm.level;
+        var baseHP = document.getElementById('nessaHP');
+        var baseATK = document.getElementById('nessaATK');
+        var baseDEF = document.getElementById('nessaDEF');
+        var baseMAGATK = document.getElementById('nessaMAGATK');
+        var baseMAGDEF = document.getElementById('nessaMAGDEF');
+        var baseSTR = document.getElementById('nessaSTR');
+        var baseCON = document.getElementById('nessaCON');
+        var baseINT = document.getElementById('nessaINT');
+        var baseADDSTATS = document.getElementById('nessaADDSTATS');
+        var baseEXPREQ = document.getElementById('nessaEXPREQ');
+        var tLVL = (theSelect[theSelect.selectedIndex].value);
+        var tEXPREQ = nessaEXPREQ.innerHTML = 100 + (100 * (1.15 ** tLVL - 1));
+        if (tLVL >= 1) {
+          baseHP.innerHTML = 150 + (1.25 * (((tCON + tLVL * 1.25) - 1) * 20) + 100);
+          baseATK.innerHTML = 25 + (((tSTR + tLVL * 0.5) - 1) * 1.5);
+          baseDEF.innerHTML = 25 + (((tCON + tLVL * 1.25) - 1) * 1.25);
+          baseMAGATK.innerHTML = 25 + (((tINT + tLVL * 1.75) - 1) * 2);
+          baseMAGDEF.innerHTML = 25 + (((tINT + tLVL * 1.75) - 1) * 1.25);
+          baseCON.innerHTML = ((tCON + (tLVL * 1.75)) - 1);
+          baseSTR.innerHTML = ((tSTR + tLVL * 0.5) - 1);
+          baseINT.innerHTML = ((tINT + tLVL * 1.75) - 1);
+          baseADDSTATS.innerHTML = (tADDSTATS + parseInt(tLVL));
+          baseEXPREQ.innerHTML = parseInt((100 + (100 * (1.15 ** tLVL - 1))) - 14);
+        } else {
+          baseHP.innerHTML = tHP;
+          baseATK.innerHTML = tATK;
+          baseDEF.innerHTML = tDEF;
+          baseMAGATK.innerHTML = tMAGATK;
+          baseMAGDEF.innerHTML = tMAGDEF;
+          baseCON.innerHTML = tCON;
+          baseSTR.innerHTML = tSTR;
+          baseINT.innerHTML = tINT;
+          baseADDSTATS.innerHTML = tADDSTATS;
+          baseEXPREQ.innerHTML = 100;
+          }
+        }
+        function otheliaData() {
+        var theSelect = otheliaForm.level;
+        var baseHP = document.getElementById('otheliaHP');
+        var baseATK = document.getElementById('otheliaATK');
+        var baseDEF = document.getElementById('otheliaDEF');
+        var baseMAGATK = document.getElementById('otheliaMAGATK');
+        var baseMAGDEF = document.getElementById('otheliaMAGDEF');
+        var baseSTR = document.getElementById('otheliaSTR');
+        var baseCON = document.getElementById('otheliaCON');
+        var baseINT = document.getElementById('otheliaINT');
+        var baseADDSTATS = document.getElementById('otheliaADDSTATS');
+        var baseEXPREQ = document.getElementById('otheliaEXPREQ');
+        var tLVL = (theSelect[theSelect.selectedIndex].value);
+        var tEXPREQ = otheliaEXPREQ.innerHTML = 100 + (100 * (1.15 ** tLVL - 1));
+        if (tLVL >= 1) {
+          baseHP.innerHTML = 150 + 1.25 * (((tCON + tLVL * 1) - 1) * 20) + 100;
+          baseATK.innerHTML = 25 + (((tSTR + tLVL * 0.5) - 1) * 1.5);
+          baseDEF.innerHTML = 25 + (((tCON + tLVL * 1) - 1) * 1.25);
+          baseMAGATK.innerHTML = 25 + (((tINT + tLVL * 2) - 1) * 2);
+          baseMAGDEF.innerHTML = 25 + (((tINT + tLVL * 2) - 1) * 1.25);
+          baseCON.innerHTML = ((tCON + tLVL * 1) - 1);
+          baseSTR.innerHTML = ((tSTR + tLVL * 0.5) - 1);
+          baseINT.innerHTML = ((tINT + tLVL * 2) - 1);
+          baseADDSTATS.innerHTML = (tADDSTATS + parseInt(tLVL));
+          baseEXPREQ.innerHTML = parseInt((100 + (100 * (1.15 ** tLVL - 1))) - 14);
+        } else {
+          baseHP.innerHTML = tHP;
+          baseATK.innerHTML = tATK;
+          baseDEF.innerHTML = tDEF;
+          baseMAGATK.innerHTML = tMAGATK;
+          baseMAGDEF.innerHTML = tMAGDEF;
+          baseCON.innerHTML = tCON;
+          baseSTR.innerHTML = tSTR;
+          baseINT.innerHTML = tINT;
+          baseADDSTATS.innerHTML = tADDSTATS;
+          baseEXPREQ.innerHTML = 100;
+          }
+        }
+      btnTab1.onclick = function() {
+        table0.style.display = "none";
+        table1.style.display = "table";
+        table2.style.display = "none";
+        table3.style.display = "none";
+        table4.style.display = "none";
+        table5.style.display = "none";
+        table6.style.display = "none";
+        baleData();
+      }
+      btnTab2.onclick = function() {
+        table0.style.display = "none";
+        table1.style.display = "none";
+        table2.style.display = "table";
+        table3.style.display = "none";
+        table4.style.display = "none";
+        table5.style.display = "none";
+        table6.style.display = "none";
+        nessaData();
+      }
+      btnTab3.onclick = function() {
+        table0.style.display = "none";
+        table1.style.display = "none";
+        table2.style.display = "none";
+        table3.style.display = "table";
+        table4.style.display = "none";
+        table5.style.display = "none";
+        table6.style.display = "none";
+        otheliaData();
+      }
+      btnTab4.onclick = function() {
+        table0.style.display = "none";
+        table1.style.display = "none";
+        table2.style.display = "none";
+        table3.style.display = "none";
+        table4.style.display = "table";
+        table5.style.display = "none";
+        table6.style.display = "none";
+        showData();
+      }
+      btnTab5.onclick = function() {
+        table0.style.display = "none";
+        table1.style.display = "none";
+        table2.style.display = "none";
+        table3.style.display = "none";
+        table4.style.display = "none";
+        table5.style.display = "table";
+        table6.style.display = "none";
+        showData();
+      }
+      btnTab6.onclick = function() {
+        table0.style.display = "none";
+        table1.style.display = "none";
+        table2.style.display = "none";
+        table3.style.display = "none";
+        table4.style.display = "none";
+        table5.style.display = "none";
+        table6.style.display = "table";
+        showData();
+      }
+    </script>
+  </html>

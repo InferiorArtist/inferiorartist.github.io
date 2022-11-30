@@ -1,0 +1,12 @@
+{
+"name": "A Fantasy Story - Fire",
+"description": "Conquer chaotic embraces of fire to liberate injustices in the world.",
+"image": "https://gateway.pinata.cloud/ipfs/QmRT7bEUygp8gfCjxH2VPnDk9PzRQ25BWhnFiv54EjUQo1/ELEMENTS_FIRE.png",
+"animation_url": "https://gateway.pinata.cloud/ipfs/QmRT7bEUygp8gfCjxH2VPnDk9PzRQ25BWhnFiv54EjUQo1/Fire.html",
+"royalty_percentage": 10,
+"properties":{
+  "Artist": "A Fantasy Story",
+  "Element": "Fire",
+  "Type":"For personal, non-commercial use only"
+  }
+}

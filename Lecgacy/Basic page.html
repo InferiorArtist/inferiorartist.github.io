@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/Images/icon 7.png" type="images/x-icon">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>A Fantasy Story</title>
+</head>
+<body>
+
+  <nav>
+    <!-- top nav -->
+    <!-- top nav (closed)-->
+    <div class="topnav">
+      <div id="mytopnavwrapper" class="mytopnavwrapper" style="text-align:center;">
+            <a id="topnavwrapperA" href="javascript:void(0)" style="position: absolute !important;top: 0 !important;right: 25px !important;font-size: 28px !important;padding:0px 8px 8px 8px !important;" class="closebtn" onclick="closeTopNav()">&times;</a>
+            <a class="item4"></a>
+            <a class="item1">Home</a>
+            <a class="item1">News</a>
+            <a class="item1">Game</a>
+            
+            <a class="item1" onclick ="openLinks1()">Universe →</a>
+        <div id="blockOne" style="display:none;opacity: 0;pointer-events: none;" href="javascript:void(0)">
+            <a class="item2" href="javascript:void(0)" onclick="closeLinks1()">&times;</a>
+            <a class="item2">Story</a>
+            <a class="item2">Characters</a>
+            <a class="item2">Elements</a>
+            <a class="item2">Art of AFS</a>
+        </div>
+    
+            <a class="item1">Calculators</a>
+            <a class="item1">Contact</a>
+            <a class="item1">About</a>
+    
+            <a class="item1" onclick ="openLinks2()">Socials →</a>
+        <div id="blockTwo" style="display:none;opacity: 0;pointer-events: none;" href="javascript:void(0)">
+            <a class="item2" href="javascript:void(0)" onclick="closeLinks2()">&times;</a>
+            <a class="item2">Discord</a>
+            <a class="item2">Reddit</a>
+            <a class="item2">Youtube</a>
+            <a class="item2">Twitter </a>
+        </div>
+            <a class="item5"></a>
+    
+      </div>
+    <!-- top nav (open)-->
+          <ul> 
+            <!-- 
+            <li style="text-align:center;top:0;right:0;z-index:-1 !important;position:block;padding:0 0px;border-left: 1px solid rgb(98, 48, 40);">
+              <div class="borderoffset">
+                <div class="coolbutton">
+                  <a> Hello</a>
+                </div>
+              </div>
+            </li>
+            --> 
+            <li>
+              <div class="borderoffset">
+                <div class="coolbutton">
+                  <a href="https://inferiorartist.github.io/home">&nbsp;Home</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="borderoffset">
+                <div class="coolbutton">
+                  <a href="#News">News</a>
+                </div>
+              </div>
+            </li> 
+            <li>
+              <div class="borderoffset">
+                <div class="coolbutton">
+                  <a href="https://inferiorartist.github.io/AFS/Art%20Of">Art of AFS</a>   
+                </div>
+              </div>    
+            </li>
+            <li class="displayoff2">
+              <div class="borderoffset">
+                <div class="coolbutton">
+                  <a>A Fantasy Story</a>   
+                </div>
+              </div>    
+            </li>
+            <li class="displayoff2">
+              <div class="borderoffset">
+                <div class="coolbutton">
+                  <a href="https://inferiorartist.github.io/">Links</a>   
+                </div>
+              </div>    
+            </li>
+            <li>
+              <div class="coolbutton" style="padding:0; font-size:14px;margin:0 !important;">
+                <span id="toggleNav" onclick="openTopNav()">
+                  <a>
+                    <svg  xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" stroke-width="1.5" height="32 " stroke="currentColor" class="w-6 h-6" style="border:none !important;">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
+                    </svg>
+                  </a>
+                </span>
+              </div>
+              </li>
+            </ul>
+        
+    </div>
+    <script>
+      function openTopNav() {
+        document.getElementById("mytopnavwrapper").style.height = "50vh";
+      }
+      function closeTopNav() {
+        document.getElementById("mytopnavwrapper").style.height = "0";
+      }
+      // turn off icon replace with other and be able to close
+      // open blocks of links
+      // on
+      function openLinks1() {
+        document.getElementById("blockOne").style.opacity = "100%";
+        document.getElementById("blockOne").style.pointerEvents = "all";
+        document.getElementById("blockOne").style.display = "block";
+      }
+      // off
+      function closeLinks1() {
+        document.getElementById("blockOne").style.opacity = "0";
+        document.getElementById("blockOne").style.pointerEvents = "none";
+        document.getElementById("blockOne").style.display = "none";
+      }
+      // on
+      function openLinks2() {
+        document.getElementById("blockTwo").style.opacity = "100%";
+        document.getElementById("blockTwo").style.pointerEvents = "all";
+        document.getElementById("blockTwo").style.display = "block";
+      }
+        // off
+      function closeLinks2() {
+        document.getElementById("blockTwo").style.opacity = "0";
+        document.getElementById("blockTwo").style.pointerEvents = "none";
+        document.getElementById("blockTwo").style.display = "none";
+      }
+    </script>
+    </nav> 
+    
+    
+    </body>
+    </html>

@@ -1,0 +1,341 @@
+<html>
+    <head>
+      <meta charset="utf-8">
+      <title>Exp Required Calculator</title>
+      <style>
+        * {
+          box-sizing: border-box;
+          padding: 0px 0px 0px 0px;
+          text-decoration: none;
+          text-align: center;
+          margin: 0;
+        }
+
+        #tablesize {
+          max-width: 100%;
+          height: auto;
+        }
+
+        td {
+          max-height: 40px;
+          width: 300px;
+        }
+
+        tr {
+          color: white;
+          background-color: rgb(55, 55, 55);
+          text-align: center;
+          padding: 5px;
+        }
+
+        input {
+          font-weight: bold;
+          background-color: rgb(55, 55, 55);
+          color: white;
+          margin: auto;
+          border: none;
+          text-align: center;
+          padding: 10px 10px;
+          border-radius: 5px 5px 0px 0px;
+        }
+
+        input:hover {
+          background-color: rgb(200, 200, 200);
+          color: black;
+        }
+
+        #skillsText {
+          font-size: 12px;
+          font-weight: bold;
+        }
+
+        img {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      </style>
+    </head>
+    <div id="tablesize">
+      <table id="table1" style="height:40px;width:100%;border:1px solid black;border-collapse:collapse;text-align:center;padding:5px;" rules="all">
+        <tr>
+          <td style="height:40px;">EXP REQUIRED CACLULATOR</td>
+        </tr>
+        <table id="table2" style="height:40px;width:100%;border:1px solid black;border-collapse:collapse;text-align:center;padding:5px;" rules="all">
+          <tr>
+            <td> CURRENT LEVEL </td>
+            <td> LEVEL WANTED </td>
+            <td onchange="bagExp()">
+              <img style="float:left;padding: 0px 0px 0px 10px;" src="https://cdn.discordapp.com/attachments/975920514436571236/987163606850367488/exp_food_1.png">
+              <a id="bagExp1">300xp/ea</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <form name="demoForm">
+                <select name="level" onclick="levelData()">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                  <option value="16">16</option>
+                  <option value="17">17</option>
+                  <option value="18">18</option>
+                  <option value="19">19</option>
+                  <option value="20">20</option>
+                  <option value="21">21</option>
+                  <option value="22">22</option>
+                  <option value="23">23</option>
+                  <option value="24">24</option>
+                  <option value="25">25</option>
+                  <option value="26">26</option>
+                  <option value="27">27</option>
+                  <option value="28">28</option>
+                  <option value="29">29</option>
+                  <option value="30">30</option>
+                  <option value="31">31</option>
+                  <option value="32">32</option>
+                  <option value="33">33</option>
+                  <option value="34">34</option>
+                  <option value="35">35</option>
+                  <option value="36">36</option>
+                  <option value="37">37</option>
+                  <option value="38">38</option>
+                  <option value="39">39</option>
+                  <option value="40">40</option>
+                  <option value="41">41</option>
+                  <option value="42">42</option>
+                  <option value="43">43</option>
+                  <option value="44">44</option>
+                  <option value="45">45</option>
+                  <option value="46">46</option>
+                  <option value="47">47</option>
+                  <option value="48">48</option>
+                  <option value="49">49</option>
+                  <option value="50">50</option>
+                  <option value="51">51</option>
+                  <option value="52">52</option>
+                  <option value="53">53</option>
+                  <option value="54">54</option>
+                  <option value="55">55</option>
+                  <option value="56">56</option>
+                  <option value="57">57</option>
+                  <option value="58">58</option>
+                  <option value="59">59</option>
+                  <option value="60">60</option>
+                </select>
+              </form>
+            </td>
+            <td>
+              <form name="demoForm2">
+                <select name="level2" onclick="levelData2()">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                  <option value="16">16</option>
+                  <option value="17">17</option>
+                  <option value="18">18</option>
+                  <option value="19">19</option>
+                  <option value="20">20</option>
+                  <option value="21">21</option>
+                  <option value="22">22</option>
+                  <option value="23">23</option>
+                  <option value="24">24</option>
+                  <option value="25">25</option>
+                  <option value="26">26</option>
+                  <option value="27">27</option>
+                  <option value="28">28</option>
+                  <option value="29">29</option>
+                  <option value="30">30</option>
+                  <option value="31">31</option>
+                  <option value="32">32</option>
+                  <option value="33">33</option>
+                  <option value="34">34</option>
+                  <option value="35">35</option>
+                  <option value="36">36</option>
+                  <option value="37">37</option>
+                  <option value="38">38</option>
+                  <option value="39">39</option>
+                  <option value="40">40</option>
+                  <option value="41">41</option>
+                  <option value="42">42</option>
+                  <option value="43">43</option>
+                  <option value="44">44</option>
+                  <option value="45">45</option>
+                  <option value="46">46</option>
+                  <option value="47">47</option>
+                  <option value="48">48</option>
+                  <option value="49">49</option>
+                  <option value="50">50</option>
+                  <option value="51">51</option>
+                  <option value="52">52</option>
+                  <option value="53">53</option>
+                  <option value="54">54</option>
+                  <option value="55">55</option>
+                  <option value="56">56</option>
+                  <option value="57">57</option>
+                  <option value="58">58</option>
+                  <option value="59">59</option>
+                  <option value="60">60</option>
+                </select>
+              </form>
+            </td>
+            <td onchange="bagExp()">
+              <img style="float:left; padding: 0px 0px 0px 10px" src="https://cdn.discordapp.com/attachments/975920514436571236/987163607093633084/exp_food_2.png">
+              <a id="bagExp2"> 1500xp/ea </a>
+            </td>
+          </tr>
+          <!-- <tr><td>
+                    REBIRTH
+                </td><td>
+                    SELECTION
+                </td></tr>
+            -->
+          <tr>
+            <td> TOTAL EXP REQ </td>
+            <td id="tExpReq"> N/A </td>
+            <td onchange="bagExp()">
+              <img style="float:left; padding: 0px 0px 0px 10px" src="https://cdn.discordapp.com/attachments/975920514436571236/987460696797245471/exp_food_3.png">
+              <a id="bagExp3">25000xp/ea</a>
+            </td>
+          </tr>
+    </div>
+    </table>
+    <script>
+      var array1 = [
+        86.95652173913044,
+        100,
+        114.99999999999999,
+        132.24999999999997,
+        152.08749999999995,
+        174.90062499999993,
+        201.13571874999994,
+        231.3060765624999,
+        266.0019880468748,
+        305.902286253906,
+        351.7876291919919,
+        404.5557735707907,
+        465.23913960640925,
+        535.0250105473706,
+        615.2787621294761,
+        707.5705764488976,
+        813.706162916232,
+        935.7620873536666,
+        1076.1264004567165,
+        1237.5453605252237,
+        1423.1771646040074,
+        1636.6537392946082,
+        1882.1518001887994,
+        2164.4745702171194,
+        2489.145755749687,
+        2862.5176191121395,
+        3291.89526197896,
+        3785.679551275804,
+        4353.531483967174,
+        5006.56120656225,
+        5757.545387546586,
+        6621.177195678575,
+        7614.353775030359,
+        8756.506841284912,
+        10069.982867477647,
+        11580.480297599293,
+        13317.552342239185,
+        15315.185193575064,
+        17612.462972611323,
+        20254.33241850302,
+        23292.482281278466,
+        26786.354623470237,
+        30804.307816990768,
+        35424.95398953938,
+        40738.697087970286,
+        46849.50165116582,
+        53876.92689884069,
+        61958.4659336668,
+        71252.2358237168,
+        81940.0711972743,
+        94231.08187686544,
+        108365.74415839525,
+        124620.60578215453,
+        143313.6966494777,
+        164810.75114689933,
+        189532.36381893425,
+        217962.21839177434,
+        250656.55115054047,
+        288255.0338231215,
+        331493.2888965897
+      ];
+
+      function bagExp() {
+        var bagExp1 = document.getElementById('bagExp1');
+        var bagExp2 = document.getElementById('bagExp2');
+        var bagExp3 = document.getElementById('bagExp3');
+        var wowEe = document.getElementById('tExpReq');
+        bagExp1.innerHTML = Math.ceil(parseInt(wowEe.innerHTML) / 300) + " (300xp/ea)";
+        bagExp2.innerHTML = Math.ceil(parseInt(wowEe.innerHTML) / 1500) + " (1500xp/ea)";
+        bagExp3.innerHTML = Math.ceil(parseInt(wowEe.innerHTML) / 25000) + " (25000xp/ea)";
+      }
+
+      function levelData2() {
+        var theSelect = demoForm.level;
+        var theSelect2 = demoForm2.level2;
+        var tLVL = parseInt(theSelect[theSelect.selectedIndex].value);
+        var tLVL2 = parseInt(theSelect2[theSelect2.selectedIndex].value);
+        var expReq = 0;
+        var wowEe = document.getElementById('tExpReq');
+        
+        if (tLVL2 - tLVL >= 1) {
+          var newArray1 = array1.slice(tLVL, tLVL2);
+
+          expReq = wowEe.innerHTML = Math.floor(newArray1.reduce((a, b, i) => i < 60 ? a + b : a, 0));
+          bagExp()
+        } else if (tLVL > tLVL2) {
+          expReq = wowEe.innerHTML = "N/A";
+        } else {
+          expReq = wowEe.innerHTML = "N/A";
+        }
+      }
+
+      function levelData() {
+        var theSelect = demoForm.level;
+        var theSelect2 = demoForm2.level2;
+        var tLVL = parseInt(theSelect[theSelect.selectedIndex].value);
+        var tLVL2 = parseInt(theSelect2[theSelect2.selectedIndex].value);
+        var expReq = 0;
+        var wowEe = document.getElementById('tExpReq');
+
+        if (tLVL2 - tLVL >= 1) {
+          var newArray1 = array1.slice(tLVL, tLVL2);
+
+          expReq = wowEe.innerHTML = Math.floor(newArray1.reduce((a, b, i) => i < 60 ? a + b : a, 0));
+          bagExp()
+        } else if (tLVL > tLVL2) {
+          expReq = wowEe.innerHTML = "N/A";
+        } else {
+          expReq = wowEe.innerHTML = "N/A";
+        }
+      }
+    </script>
+  </html>

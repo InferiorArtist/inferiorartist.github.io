@@ -1,0 +1,711 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none !important;
+    color:white;
+
+  }
+  *:link, *:visited {
+    text-decoration: none !important;
+    color:white;
+
+  }
+/* scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #222; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #555; 
+  border-radius: 2px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #888; 
+}
+/* main stuff*/
+  body {
+    background-color:#111111;
+    font-family: "Lato", sans-serif;
+    overflow-x: auto;
+    overflow-y: hidden;
+    user-select: none;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  /* navbars */
+  .__closedsidebarwrapper {
+    color:#dc655e;
+    position: center;
+    transition: .3s;
+    font-size: 0px;
+    padding: 0 0 10px 0;
+    border-bottom: 1px solid #623028;
+  }
+  .__closedsidebarwrapper:hover {
+    background-color:rgb(52,31,22);
+    color:#dc655e;
+    padding:10px 2px 10px 1px;
+    border-radius:20%;
+    border:1px solid #dc655e;
+    font-size: 10px;
+    text-decoration: none;
+    visibility:visible !important;
+    margin:0;
+  }
+  h4{
+    color:#dc655e;
+    font-weight: normal;
+  }
+  H4:visited{
+    color:#dc655e !important;
+  }
+  .h4:link{
+    color:#dc655e !important;
+  }
+  .sidelist svg {
+    color:#dc655e;
+    position: center;
+    width:75%;
+    padding:10px 0 0 4px;
+    transition: .3s;
+  }  
+  ul .sidelist {
+    list-style-type: none;
+    width: 30px;
+    background-color: #0a0e04;
+    position: fixed;
+    height: 100%;
+    overflow: hidden;
+    z-index: 100;
+  }
+  .topnav ul{
+    list-style-type: none;
+    display:flex;
+    width:100vw;
+    height: 34px;
+    background-color: #111111;
+    position: fixed;
+    z-index: 101;
+    overflow: hidden;
+    margin-right:0;
+    border-top: 1px solid rgb(41, 41, 41);
+    border-bottom: 1px solid rgb(41, 41, 41);
+  }
+  .topnav a{
+    padding: 5px 8px 8px 5px !important;
+    text-decoration: none;
+    font-size: 14px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    text-align: center;
+    }
+  .topnav svg{
+    text-decoration: none;
+    font-size: 20px;
+    color:white;
+    display: block;
+    transition: 0.3s;
+    padding: 0 0 0 3px;
+    margin:0;
+    height:20px;
+    }
+  .topnav a:hover{
+    color:white;
+    }
+  .topnav svg:hover{
+    color:white;
+  }
+  ul .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background-color: #111111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    text-align:center;
+   } 
+   /* pop out top nav   */
+   .mytopnavwrapper {
+    height: 0;
+    width: 100%;
+    position: block;
+    z-index: 100 !important;
+    top: 0;
+    background-color: #111111;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    text-align:center;
+    transition: .3s;
+    display: grid;
+    grid-template-columns: auto auto auto auto;    
+    grid-gap: 5px;  
+   }
+   .mytopnavwrapper .item1 {
+    grid-column: 3 / span 1;
+    z-index: 100 !important;
+   }
+   #blockOne .mytopnavwrapper .item2 {
+    grid-column: 4 / span 1;;
+    background-repeat:no-repeat;
+    background-size: 15px;
+    background-position:auto;
+    opacity:0%;
+    z-index: 100 !important;
+   }
+   .mytopnavwrapper .item4 {
+    grid-column: 1 / span 1;
+    pointer-events: none;
+    z-index: 100 !important;
+   }
+   .mytopnavwrapper .item5 {
+    grid-column: 6 / span 1;
+    pointer-events: none;
+    z-index: 100 !important;
+   }
+
+   .mytopnavwrapper a{
+    padding: 8px 8px 8px 8px !important;
+    text-decoration: none;
+    font-size: 14px;
+    color: white;
+    transition: 0.3s;
+    text-align: center;
+    grid-column: 2;
+    max-height: 25px;
+    z-index: 100 !important;
+   }
+
+  .sidenav a{
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: rgb(253, 253, 253);
+    display: block;
+    transition: 0.3s;
+    text-align: center;
+    }
+  .sidenav a:hover{
+    color: white;
+    }
+  .mytopnavwrapper a:hover{
+    color: white;
+    background-color: #333333;
+  }
+  nav .closebtn{
+    position: absolute !important;
+    top: 0 !important;
+    right: 25px !important;
+    font-size: 36px !important;
+  }
+  .sidenav .closebtn{
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+  }
+  .__threelinesicon{
+  font-size:30px;
+  cursor:pointer;
+  color:#dc655e;
+  padding:0 5px 0 6px;
+  transition:0.3s;
+  border-bottom: 1px solid rgb(98, 48, 40);
+  }
+  .__threelinesicon:hover{
+    background-color:rgb(52,31,22);
+    border-radius:20%;
+    border:1px solid #dc655e;
+  }
+  /* sections */
+  section {
+    display:block;
+    height:47vmax;
+    min-height:-webkit-fill-available;
+    z-index: 0;
+    margin:0 ;
+    overflow: hidden;
+    background-color: #111111;
+  }
+  .AFStoplogo {
+    display: block;
+    position: relative;
+    justify-content: center;
+    z-index: 5;
+    pointer-events: none;
+    overflow-x: hidden;
+
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-name: appearFade;
+  }
+
+  .bgimagestop {
+    pointer-events: none;
+    z-index:-1 !important;
+  }
+  footer {
+    color:white;
+  }
+  /* use vmin and vmax for NEEDED things */
+  /* News section */
+  .grid-container {
+    border:1px solid rgb(83, 83, 83);
+    outline: auto;
+    outline-offset: -7px;
+    outline-style:ridge;
+    outline-color: rgb(88, 88, 88);;
+    display: grid;
+    gap:10px 10px;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    background-color: rgb(58, 58, 58);
+    padding: 10px;
+    margin:10vmin 5vmin;
+    z-index: 100;
+    pointer-events: all;
+  }
+  .grid-container .news {
+    background-color: #333;
+    color:white;
+    width: 25%;
+    font-size: 1rem;
+    overflow: hidden;
+    z-index: 100;
+  }
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgb(77, 77, 77);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    z-index: 100;
+  }
+  .card {
+    width: auto;
+    height: 212px;
+    border-radius: 4px;
+    background: rgb(30, 30, 30);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 5px;
+    padding: .4em;
+    z-index: 100;
+  }
+  .card img{
+    width: 100%;
+  }
+  
+  .card p {
+    height: 100%;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 2px;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+    background: #212121;
+    border: 1px solid white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+      background-color: white;
+  }
+  
+  .card p:hover {
+    -webkit-box-flex: 4;
+        -ms-flex: 4;
+            flex: 4;
+            color: #0a0e04;
+  }
+  
+  .card p span {
+    min-width: 14em;
+    padding: .5em;
+    text-align: center;
+    /*
+    -webkit-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+    */
+    transform: scale(1);
+    -webkit-transition: all .5s;
+    transition: all .5s;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: .1em;
+  }
+  .spanscale{
+    transform: scale(1.5);
+  }
+  .card p span:hover {
+
+    transform: scale(1);
+  }
+  .newsimghover2 {
+    transition: 0.3s;
+  }
+  .newsimghover2:hover{
+    content: url(/Images/ALL.png);
+    transition: 0.3s;
+  }
+  .work{
+    pointer-events: all;
+    height:90%;
+    width:90%;
+    margin:2.5% 5%;
+    text-align: center;
+    background-color: #333333;
+    outline:solid 1px white;
+    outline-offset: 0px;
+    transition: .3s;
+  }
+  .work:hover {
+    pointer-events: all;
+    outline:solid 1px white;
+    outline-offset: -10px;
+  }
+  /* image slider */
+  .container {
+        overflow: hidden;
+        background-color: antiquewhite;
+        height: 90vh;
+        width: 90vw;
+        border:1px solid cornflowerblue;
+        margin:auto;
+    }
+    .workarea {
+        margin:3vh auto;
+        width: 80vw;
+        height: 80vh;
+        padding:10px;
+        text-align:center;
+        overflow: hidden;
+        border:1px solid cornflowerblue;
+    }
+    .center {
+        text-align: center;
+        border: 1px solid green;
+        margin-left: auto;
+        margin-right: auto;
+        width:39vw;
+        background-color: white;
+    }
+    input {
+        height:100%;
+        width: 50%;
+        text-align: center;
+        margin:auto;
+        top:0;
+        left:35px;
+        opacity: 0.1;
+        color: black;
+        height: 90vh;
+        width: 50.25vw;
+        top:900px;
+        overflow: hidden;
+    }
+    input:active {
+        background-color: rgb(200, 200, 200);
+        color: white;
+        background-color:aqua;
+    }
+    .buttonimg {
+        position:absolute;
+        margin:auto;
+    }
+    .images{
+        width: 95%;
+        max-height: 95%;
+        align-content: center;
+        padding:0;
+        object-fit: scale-down;
+        display:none;
+    }
+    .center a {
+        background-color: white;
+        text-align: center !important;
+    }
+    .coolbutton {
+        text-align: center !important;
+    }
+    .coolbutton:hover {
+      clip-path: none;
+      cursor: pointer;
+    }
+
+    .borderoffset {
+        height: 26px;
+        width: auto;
+        position:static;
+        padding:3px 0 0 0;
+        margin:0px;
+        transition:.05s;
+        border-radius: 2px;
+        text-align: center;
+
+    }
+    .borderoffset:hover {
+        margin:0px 0px 0px 0px;
+        border-radius: 5px;
+    }
+    .center a{
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .center:link, .center:visited {
+        color: white;
+    }
+    .coolbutton {
+        height: 28px;
+        width: auto;
+        display:flex;
+        font-size: 16px;
+        transition: 0.15s;
+        opacity: 1;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 2%;
+    }
+    .coolbutton:hover {
+        margin:0;
+        opacity:1;
+        border-radius: 5%;
+        border:1px solid #ffffff;
+        background-color: rgb(39, 39, 39);
+        text-align: center; 
+    }
+    .coolbutton:active {
+        margin:1px 0 1px 0;
+        background-color: rgb(113, 113, 113);
+        opacity:1;
+        border-radius: 5%;
+    }
+    .scrollercontainer {
+      user-select: auto;
+      background: #77a1d3; /* fallback for old browsers */
+      background: -webkit-linear-gradient(to left, #77a1d3, #79cbca, #e684ae); /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to left, #77a1d3, #79cbca, #e684ae); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      height:90vh;
+      width:90vw;
+      margin: 1% auto auto auto;
+      white-space: nowrap;   
+      border-radius: 15px; 
+      box-shadow:hsla(0, 0%, 0%, 0.5) 0px 0px 20px 5px; 
+      scroll-snap-type: x proximity;
+      z-index: 51;
+      pointer-events:all;
+    }
+    .containerimg {
+        margin:1% 2%;
+        height:75vh;
+        width:auto;
+        min-height: 10vh;
+        max-height:100%;
+        list-style: none;
+        display: inline-table;
+        overflow-x: hidden;
+        overflow-y: none;
+        border-radius: 15px; 
+        border: 1px solid red; 
+        top:0;
+        scroll-snap-align:center;
+        pointer-events: none;
+    }
+    .AFStoplogo .img1 {
+      top:0 !important; 
+      left:0 !important; 
+      margin:0 !important;
+      position:absolute !important;
+      height:1000px !important;
+      width:auto !important;
+      z-index: -2 !important;
+    }
+    .AFStoplogo .img2 {
+      height:500px !important;
+      width:auto !important;
+      right:0 !important;
+      top:15% !important;
+      position:absolute !important;
+      z-index: -1 !important;
+    }
+    .AFStoplogo .img3 {
+      height:auto !important;
+      width:600px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      right:auto !important;
+      top:31% !important;
+      position:absolute !important;
+      z-index: -1 !important;
+    }
+/* animations */
+@keyframes appearFade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+/* other screens */
+@media screen and (max-height: 450px) {
+.sidenav {
+padding-top: 15px;
+}
+.sidenav a {
+font-size: 18px;
+}
+}
+@media only screen and (max-height:1440px) {
+  .topnav ul {
+    right: 0;
+}
+  }
+@media only screen and (max-height:1080px) {
+  .topnav ul {
+    right: 0;
+}
+}
+@media only screen and (max-height:720px) {
+  .topnav ul {
+    right: 0;
+}
+input {
+height:100%;
+width: 50%;
+text-align: center;
+margin:auto;
+top:0;
+left:35px;
+opacity: 0.1;
+color: black;
+height: 90vh;
+width: 40vw;
+top:900px;
+overflow: hidden;
+}
+.container {
+overflow: hidden;
+background-color: antiquewhite;
+height: 90vh;
+width: 90vw;
+border:1px solid cornflowerblue;
+margin:auto;
+}
+
+}
+/* portrait more than 1/1 ratio */
+@media screen and (orientation: portrait) and (min-aspect-ratio:1/1)  {
+  .AFStoplogo {
+    padding: 15% 0 0 0 !important;
+  }
+  section {
+    height:60vmax;
+  }
+  .card {
+    width: auto;
+    height: 200px;
+  }
+  .displayoff {
+    display:none;
+  }
+  .displayoff2 {
+    display:none;
+  }
+  .img1 { 
+    padding:0;
+  }
+  .img2 { 
+    height:200px;
+  }
+}
+/* portrait less than 1/1 ratio */
+@media only screen and (orientation: portrait) and (max-aspect-ratio:1/1) {
+.topnav ul{
+right:0;
+}
+.AFStoplogo {
+  padding: 45% 0 0 0 !important;
+}
+section {
+  height:75vmax;
+}
+.card {
+  width: auto;
+  height: 150px;
+}
+.displayoff {
+  display:none;
+}
+.displayoff2 {
+  display:none;
+}
+.mytopnavwrapper {
+  margin:0;
+  padding:0;
+  border:none;
+}
+.img1 { 
+  padding:0;
+}
+.img2 { 
+  height:200px;
+}
+}  
+/* portrait short */
+@media screen and (max-height:427) and (orientation:portrait) {
+  .displayoff {
+    display:none;
+  }
+  .displayoff2 {
+    display:none;
+  }
+  .img1 { 
+    padding:0;
+  }
+  .img2 { 
+    height:200px;
+  }
+}
+/* Widescreen short */
+@media screen and (orientation:landscape) and (max-height:426px) {
+  .displayoff {
+    display:none;
+  }
+  .mytopnavwrapper {
+    margin:0;
+    padding:0;
+    border:none;
+  }
+  .img1 { 
+    padding:0;
+  }
+  .img2 { 
+    height:200px;
+  }
+}

@@ -1,0 +1,451 @@
+<!-- Orig Polyfill -->
+<!-- <script src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js"></script> -->
+
+<!-- Forked Polyfill which caches the ProxyAnimation Instances -->
+<head>
+    <title>A Fantasy Story / Art Gallery
+	</title>
+    <meta name="viewport" content=" width=device-width, initial-scale=1">
+    <style>
+		footer{
+  padding: 0px 0px 0px 0px;
+  background: black;
+  color: white;
+  max-height:25vh;
+  width: 100%;
+  bottom:0;
+  background-color: rgb(41, 41, 41);
+  }
+#footer-content{
+  text-align:center;
+  background-color: rgb(41, 41, 41);
+/* SOCIALS BUTTONS */
+}
+.wrapper_socials {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  list-style: none;
+  height: 120px;
+  width: 100%;
+  padding-top: 10px;
+  font-family: "Poppins", sans-serif;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+          
+}
+
+.wrapper_socials .icon {
+  position: relative;
+
+  border-radius: 50%;
+  margin: 0px;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  -webkit-transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper_socials .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #fff;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper_socials .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #fff;
+  bottom: -3px;
+  left: 50%;
+  -webkit-transform: translate(-50%) rotate(45deg);
+      -ms-transform: translate(-50%) rotate(45deg);
+          transform: translate(-50%) rotate(45deg);
+  -webkit-transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper_socials .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper_socials .icon:hover span,
+.wrapper_socials .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper_socials .facebook:hover,
+.wrapper_socials .facebook:hover .tooltip,
+.wrapper_socials .facebook:hover .tooltip::before {
+  background: #1877F2;
+  color: #fff;
+}
+
+.wrapper_socials .twitter:hover,
+.wrapper_socials .twitter:hover .tooltip,
+.wrapper_socials .twitter:hover .tooltip::before {
+  background: #1DA1F2;
+  color: #fff;
+}
+
+.wrapper_socials .instagram:hover,
+.wrapper_socials .instagram:hover .tooltip,
+.wrapper_socials .instagram:hover .tooltip::before {
+  background: #E4405F;
+  color: #fff;
+}
+.invisible_text {
+  opacity: 0;
+}
+        @layer base, components;
+
+/* Hide warning when native view-timeline support detected */
+@supports (view-timeline: works) {
+	.warning {
+		display: none;
+	}
+}
+
+/* Animation bumps up the z-index, to make sure it’s on top */
+@keyframes adjust-z-index {
+	0% {
+		z-index: 1;
+	}
+	50% {
+		z-index: 100; /* When at the center, be on top */
+	}
+	100% {
+		z-index: 1;
+	}
+}
+
+/* Animation that rotates the cover */
+@keyframes rotate-cover {
+	0% {
+		transform: translateX(-100%) rotateY(-45deg);
+	}
+	35% {
+		transform: translateX(0) rotateY(-45deg);
+	}
+	50% {
+		transform: rotateY(0deg) translateZ(1em) scale(1.5);
+	}
+	65% {
+		transform: translateX(0) rotateY(45deg);
+	}
+	100% {
+		transform: translateX(100%) rotateY(45deg);
+	}
+}
+
+.cards li {	
+	/* Track this element as it intersects the scrollport */
+	view-timeline-name: li-in-and-out-of-view;
+	view-timeline-axis: inline;
+
+	/* Link an animation to the established view-timeline and have it run during the contain phase */
+	animation: 1s linear adjust-z-index both;
+	animation-timeline: li-in-and-out-of-view;
+	animation-time-range: contain 0% 100%;
+
+	/* Make the 3D stuff work… */
+	perspective: 40em;
+		
+	position: relative;
+	z-index: 1;
+	will-change: z-index;
+}
+
+.cards li > #imageslideshow {
+	/* Link an animation to the established view-timeline (of the parent li) and have it run during the contain phase */
+	animation: 1s linear rotate-cover both;
+	animation-timeline: li-in-and-out-of-view;
+	animation-time-range: contain 0% 100%;
+	
+	/* Prevent FOUC */
+	transform: translateX(-100%) rotateY(-45deg);
+
+	will-change: transform;
+}
+
+@layer base {
+	* {
+		box-sizing: border-box;
+		padding: 0;
+		margin: 0;
+	}
+
+	:root {
+		--cover-size: 15rem;
+	}
+
+	@media (max-width: 800px) {
+		:root {
+			--cover-size: 9rem;
+		}
+	}
+	
+	html, body {
+		height: 100%;
+		width: 100%;
+	}
+
+	body {
+		background: #111;
+		font-family: sans-serif;
+
+		display: grid;
+		gap: 1em;
+		padding: 1em;
+		place-content: center;
+	}
+
+	.cards {
+		list-style: none;
+		overflow: scroll;
+		width: 100%;
+		white-space: nowrap;
+
+		scroll-snap-type: x mandatory;
+		outline: 1px solid #333;
+		background: rgba(0 0 0 / 0.5);
+	}
+
+	.cards li {
+		display: inline-block;
+		width: var(--cover-size);
+		height: var(--cover-size);
+		scroll-snap-align: center;
+	}
+
+	.cards li #imageslideshow {
+		dislay: block;
+		width: var(--cover-size);
+		height: var(--cover-size);
+
+		-webkit-box-reflect: below 0.5em
+			linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25));
+	}
+
+	.cards {
+		max-width: calc(var(--cover-size) * 6);
+		margin: 0 auto;
+  		padding: calc(var(--cover-size) / 3 * 2) 0;
+	}
+	
+	.cards li:first-of-type {
+		margin-left: calc(50% - var(--cover-size) / 2);
+	}
+	.cards li:last-of-type {
+		margin-right: calc(50% - var(--cover-size) / 2);
+	}
+}
+
+@layer components {
+	@layer warning {
+		/* Show warning for browsers without support */
+		.warning {
+			padding: 1em;
+			border: 1px solid black;
+			z-index: 9999;
+			color: black;
+			background: rgba(255 255 225 / 0.9);
+			z-index: 10001;
+			width: 100%
+			opacity: 0.75;
+		}
+		
+		:is(
+			.warning:hover,
+			.warning:has(:focus-within)
+		) {
+			opacity: 1;
+		}
+
+		.warning > :first-child {
+			margin-top: 0;
+		}
+
+		.warning > :last-child {
+			margin-bottom: 0;
+		}
+
+		.warning a {
+			color: blue;
+		}
+
+		.warning--info {
+			border: 1px solid #123456;
+			background: rgba(205 230 255 / 0.8);
+		}
+	}
+	
+	@layer debug {
+		#debug {
+			position: absolute;
+			top: 1em;
+			left: 1em;
+		}
+		#debug::after {
+			content: " Show Debug";
+			margin-left: 1.5em;
+			color: white;
+			white-space: nowrap;
+		}
+
+		#debug:checked + .cards {
+			border: 1px solid lime;
+		}
+
+		#debug:checked + .cards li {
+			text-align: center;
+			color: white;
+			border: 1px solid blue;
+		}
+
+		#debug:checked + .cards li::before {
+			content: attr(id);
+			display: block;
+			position: absolute;
+			inset: 0;
+			line-height: var(--cover-size);
+			opacity: 0.5;
+		}
+
+		#debug:checked + .cards li img {
+			opacity: 0.5;
+		}
+	}
+}
+    </style>
+</head>
+
+<script src="https://rawcdn.githack.com/bramus/scroll-timeline/2955b8ec6e89fcfdf86ab1f57d58a101ae1b5e82/dist/scroll-timeline.js"></script>
+<!--
+<input type="checkbox" id="debug" />
+-->
+<ul class="cards">
+    <li>
+        <img id="imageslideshow" draggable="false" src="https://cdn.discordapp.com/attachments/975920514436571236/975920631906455622/ELEMENTS_NATURE_CLEAR.png" width="1200" height="1200" />
+    </li>
+    <li>
+        <img id="imageslideshow" draggable="false" src="https://cdn.discordapp.com/attachments/975920514436571236/975920631046627358/ELEMENTS_DARK_CLEAR.png" width="1200" height="1200" />
+    </li>
+    <li>
+        <img id="imageslideshow" draggable="false" src="https://cdn.discordapp.com/attachments/975920514436571236/975920631365382184/ELEMENTS_FIRE_CLEAR2.png" width="1200" height="1200" />
+    </li>
+    <li>
+        <img id="imageslideshow" draggable="false" src="https://cdn.discordapp.com/attachments/975920514436571236/975920631612833865/ELEMENTS_LIGHT_CLEAR_2.png" width="1200" height="1200" />
+    </li>
+    <li>
+        <img id="imageslideshow" draggable="false" src="https://cdn.discordapp.com/attachments/975920514436571236/975920632128737300/ELEMENTS_WATER_CLEAR.png" width="1200" height="1200" />
+    </li>
+    <li>
+        <img id="imageslideshow" draggable="false" src="https://assets.codepen.io/89905/coverflow--ALONE-TOGETHER-remix-V71-550x550.jpg" width="1200" height="1200" />
+    </li>
+    <li>
+        <img id="imageslideshow" draggable="false" src="https://assets.codepen.io/89905/coverflow--Nature-Therapy-Pre-LR-550x550.png" width="1200" height="1200" />
+    </li>
+    <li>
+        <img id="imageslideshow" draggable="false" src="https://assets.codepen.io/89905/coverflow--Deep-Dive-Ambient-Edits-V8-550x550.jpg" width="1200" height="1200" />
+    </li>
+    <li>
+        <img id="imageslideshow" draggable="false" src="https://assets.codepen.io/89905/coverflow--Alpine-Koresma-x-Aroth-Artwork-550x550.jpg" width="1200" height="1200" />
+    </li>
+    <li>
+        <img id="imageslideshow" draggable="false" src="https://assets.codepen.io/89905/coverflow--Out-Of-the-Dark-Cover-550x550.jpg" width="1200" height="1200" />
+    </li>
+    <li>
+        <img id="imageslideshow" draggable="false" src="https://assets.codepen.io/89905/coverflow--2020-06-07-Marley-Carroll-Single-Blue-550x550.jpg" width="1200" height="1200" />
+    </li>
+    <li>
+        <img id="imageslideshow" draggable="false" src="https://assets.codepen.io/89905/coverflow--Deep-Dive-EP-Cover-550x550.jpg" width="1200" height="1200" />
+    </li>
+    <li>
+        <img id="imageslideshow" draggable="false" src="https://assets.codepen.io/89905/coverflow--Blackrose-Cover-550x550.jpg" width="1200" height="1200" />
+    </li>
+    <li>
+        <img id="imageslideshow" draggable="false" src="https://assets.codepen.io/89905/coverflow--FW-Imagine-Gold-Remixes2-550x550.jpg" width="1200" height="1200" />
+    </li>
+    <li>
+        <img id="imageslideshow" draggable="false" src="https://assets.codepen.io/89905/coverflow--We-Are-COVER-MAIN-550x550.jpg" width="1200" height="1200" />
+    </li>
+    <li>
+        <img id="imageslideshow" draggable="false" src="https://assets.codepen.io/89905/coverflow--Bath-House-Flat-550x550.jpg" width="1200" height="1200" />
+    </li>
+    <li>
+        <img id="imageslideshow" draggable="false" src="https://assets.codepen.io/89905/coverflow--Pronoia-JPG-550x550.jpg" width="1200" height="1200" />
+    </li>
+    <li>
+        <img id="imageslideshow" draggable="false" src="https://assets.codepen.io/89905/coverflow--Lapa9Theory-Cracking-Stores-no-Loci-logo-550x550.jpg" width="1200" height="1200" />
+    </li>
+    <li>
+        <img id="imageslideshow" draggable="false" src="https://assets.codepen.io/89905/coverflow--EMANCIPATOR_MOM_AlbumCover-2000px-550x550.jpg" width="1200" height="1200" />
+    </li>
+    <li>
+        <img id="imageslideshow" draggable="false" src="https://assets.codepen.io/89905/coverflow--MURGE-ep-cvr-3000x3000-550x550.jpg" width="1200" height="1200" />
+    </li>
+    <li>
+        <img id="imageslideshow" draggable="false" src="https://assets.codepen.io/89905/coverflow--Emancipator_Laybrinth-ART-01-4000x4000-at-300dpi-550x550.jpg" width="1200" height="1200" />
+    </li>
+    <li>
+        <img id="imageslideshow" draggable="false" src="https://assets.codepen.io/89905/coverflow--cover-550x550.jpg" width="1200" height="1200" />
+    </li>
+</ul>
+
+<!-- footer -->
+<footer>
+	<p id="footer-content">A Fantasy Story © A Fantasy Story. All rights reserved.</p>
+	<p id="footer-content">
+	  <ul class="wrapper_socials" >
+	  <li class="icon facebook" style="background-image: url('https://cdn.discordapp.com/attachments/975920514436571236/975920631365382184/ELEMENTS_FIRE_CLEAR2.png'); background-repeat: no-repeat;background-size:contain;" href="https://discord.gg/5jHkKp3fut">
+		<a class ="invisible_text" href="https://discord.gg/5jHkKp3fut">IIIIIIIIII<br>IIIIIIIIII</a>
+		<span class="tooltip">Discord</span>
+		  <span><i class="fab fa-facebook-f"></i></span>
+	  </li>
+	  <li class="icon twitter" style="background-image: url('https://cdn.discordapp.com/attachments/975920514436571236/975920631046627358/ELEMENTS_DARK_CLEAR.png'); background-repeat: no-repeat;background-size:contain;" href="https://twitter.com/HeyFantasyStory">
+		<a class ="invisible_text" href="https://twitter.com/HeyFantasyStory">IIIIIIIIII<br>IIIIIIIIII</a>
+		  <span class="tooltip">Twitter</span>
+		  <span><i class="fab fa-twitter"></i></span>
+	  </li>
+	</ul>
+	</p>
+	<p id="footer-content">	
+		<button type="button" st
+		onclick="window.open('', '_self', ''); window.close();">Exit this page.
+	</button>
+	</p>
+  </footer>

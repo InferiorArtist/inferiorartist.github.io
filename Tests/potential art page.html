@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>potential art page</title>
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+.portfolio {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 320px;
+}
+
+.portfolio h2 {
+  flex-basis: 100%;
+  text-align: center;
+  margin: 50px auto 30px;
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: #111;
+}
+.card {
+  width: 25%;
+  overflow: hidden;
+  position: relative;
+}
+.card .content {
+  z-index: 2;
+  width: 100%;
+  position: absolute;
+  bottom: -100px;
+  transition: all 0.7s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  min-height: 100px;
+  background: #111;
+}
+.card .image {
+  z-index: 1;
+  height: 100%;
+}
+.card img {
+  height: 100%;
+  width: 100%;
+  transition: all 0.5s ease;
+  transform: scale(1.2);
+}
+
+.card:hover .content {
+  bottom: 0px;
+  color: #fff;
+}
+
+.card:hover .image img {
+  transform: scale(1);
+}
+
+.card .content span:first-child {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+}
+
+.card .content span:last-child {
+  font-size: 14px;
+  color: #18cfab;
+  text-align: center;
+  font-weight: 700;
+}
+
+
+@media screen and (max-width: 768px) {
+  .card {
+  width: 50%;
+  }
+  .card .content {
+    bottom: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .card {
+  width: 100%;
+  }
+}
+    </style>
+</head>
+<body>
+    <div class="portfolio">
+        <h2 class="title">Latest Projects</h2>
+        <a href="#" class="card">
+          <div class="content">
+            <span class="title">Web Design</span>
+            <span class="category">Mobile / Design / Rebranding</span>
+          </div>
+          <div class="image">
+            <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80" alt="" />
+          </div>
+        </a>
+      
+        <a href="#" class="card">
+          <div class="content">
+            <span class="title">UX Design</span>
+            <span class="category">UX / UI / Research </span>
+          </div>
+          <div class="image">
+            <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80" alt="" />
+          </div>
+        </a>
+      
+        <a href="#" class="card">
+          <div class="content">
+            <span class="title">Concepts</span>
+            <span class="category">Design / Creative</span>
+          </div>
+          <div class="image">
+            <img src="https://images.unsplash.com/photo-1553531888-a5892402adce?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80" alt="" />
+          </div>
+        </a>
+      
+        <a href="#" class="card">
+          <div class="content">
+            <span class="title">Creative & Cool</span>
+            <span class="category">Design / Food</span>
+          </div>
+          <div class="image">
+            <img src="https://images.unsplash.com/photo-1484980859177-5ac1249fda6f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1684&q=80" alt="" />
+          </div>
+        </a>
+      
+        <a href="#" class="card">
+          <div class="content">
+            <span class="title">AR-VR</span>
+            <span class="category">VR / AR / Creative</span>
+          </div>
+          <div class="image">
+            <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1398&q=80" alt="" />
+          </div>
+        </a>
+      
+        <a href="#" class="card">
+          <div class="content">
+            <span class="title">Logo</span>
+            <span class="category">Design / Logo / Clothing</span>
+          </div>
+          <div class="image">
+            <img src="https://images.unsplash.com/photo-1600609842388-3e2ed2a1454a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80" alt="" />
+          </div>
+        </a>
+      
+        <a href="#" class="card">
+          <div class="content">
+            <span class="title">Art</span>
+            <span class="category">Drawing / Painting / Abstract</span>
+          </div>
+          <div class="image">
+            <img src="https://images.unsplash.com/photo-1544273677-c433136021d4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80" alt="" />
+          </div>
+        </a>
+      
+        <a href="#" class="card">
+          <div class="content">
+            <span class="title">Native Apps</span>
+            <span class="category">Coding / Mobile </span>
+          </div>
+          <div class="image">
+            <img src="https://images.unsplash.com/photo-1551650992-ee4fd47df41f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80" alt="" />
+          </div>
+        </a>
+      
+      </div>
+</body>
+</html>

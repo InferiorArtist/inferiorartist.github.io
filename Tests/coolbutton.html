@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    * {
+        margin:0;
+        padding:0;
+    }
+    *:link, *:visited {
+        text-decoration: none!important;
+    }
+    .center {
+        padding:0;
+        margin:auto;
+    }
+    .center:link, .center:visited {
+        color: white;
+    }
+    .coolbutton {
+        height: 30px;
+        width: auto;
+        display:flex;
+        aspect-ratio: 16/4;
+        color: white;
+        font-size: 16px;
+        background-color: rgb(0, 0, 0);
+        transition: 0.15s;
+        opacity: 1;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 2%;
+
+    }
+    .coolbutton:hover {
+        margin:1px 0 0 0;
+        background-color: black;
+        animation-timing-function: ease-in;
+        animation-fill-mode: forwards;
+        animation-name: coolButton;
+        animation-duration: .15s;
+        opacity:1;
+        border-radius: 5%;
+    }
+    .coolbutton:active {
+        margin:3px 0 0 0;
+        background-color: rgb(72, 72, 72);
+        animation-timing-function: ease-in;
+        animation-fill-mode: forwards;
+        animation-name: coolButton;
+        animation-duration: .15s;
+        opacity:1;
+        border-radius: 5%;
+    }
+    .borderoffset {
+        background-color: black;
+        height: 28px;
+        width: 120px;
+        position:absolute;
+        aspect-ratio: 16/4;
+        border: 2px solid black;
+        padding:0 0 0 0;
+        margin:5px;
+        transition:.05s;
+        border-radius: 2px;
+    }
+    .borderoffset:hover {
+        background-color:rgba(0, 0, 0, 0) ;
+        border-color: rgba(0, 0, 0, 0);
+        margin:5px 2px 2px 5px;
+        border-radius: 5px;
+    }
+    
+    @keyframes coolButton {
+        from {
+            clip-path: polygon(0 0, 100% 0, 100% 20%, 100% 80%, 100% 100%, 0 100%, 0% 80%, 0% 20%);
+;
+        }
+        50% {
+            clip-path: polygon(0 0, 90% 0, 100% 20%, 100% 80%, 100% 100%, 0 100%, 0% 80%, 0% 20%);
+
+        }
+            
+        
+        to {
+            clip-path: polygon(0 0, 80% 0%, 100% 20%, 100% 80%, 100% 100%, 0 100%, 0% 80%, 0% 20%);
+;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="borderoffset">
+        <div class="coolbutton">
+            <a href="/html/bale.html" class="center">
+                A Fantasy Story
+            </a>
+        </div>
+    </div>
+</body>
+</html>

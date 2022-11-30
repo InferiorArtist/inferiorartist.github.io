@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card hover</title>
+    <style>
+* {
+  margin:0;
+  padding:0;
+}
+a{
+  text-align: center;
+  font-size:24px;
+}
+img {
+  width: 99%;
+  object-fit: cover;
+  height: 99%;
+  scale: .9;
+  margin:auto;
+  opacity: 90%;
+}
+
+.card:not(:hover) img {
+  transition: translate 0.2s;
+}
+
+.card:hover img {
+  translate:
+    calc((var(--ratio-x) - 0.5) * 20%)
+    calc((var(--ratio-y) - 0.5) * 20%);
+  opacity: 85%;
+}
+
+.card {
+  overflow: hidden;
+  aspect-ratio: 4 / 4;
+  width: 90vmin;
+  margin:0;
+  padding:0;
+  min-width: 15vmin;
+  border-radius: 8px;
+  transform-style: preserve-3d;
+  touch-action: none;
+  background-repeat: no-repeat;
+  background: url(icon\ 00000000.png), rgb(27, 87, 17);
+  background-size: contain;
+  background-blend-mode: saturation;
+
+}
+
+.card:hover {
+  transform:
+    rotateX(calc((var(--ratio-y) - 0.5) * 50deg))
+    rotateY(calc((var(--ratio-x) - 0.5) * -40deg));
+}
+
+.card:not(:hover) {
+  transform: rotateX(0deg) rotateY(0deg);
+  transition: transform 0.2s;
+}
+
+.card:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at calc(var(--ratio-x) * 100%) calc(var(--ratio-y) * 100%), rgba(255, 244, 255, 0.5), transparent 25%);
+  background-repeat: no-repeat;
+  background-blend-mode: soft-light;
+  z-index: 2;
+
+}
+
+.card:before {
+  content: "";
+  background:rgb(5, 74, 24);
+  filter: brightness(1.3) contrast(3);
+  background-blend-mode: overlay;
+  mix-blend-mode: color-dodge;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  opacity: 0.2;
+  transition: opacity 0.2s;
+  background: url(icon\ 00000000.png);
+  background-size: contain;
+  background-blend-mode:saturation;
+  
+  
+}
+
+.card:hover:before {
+  background-position:
+    calc(var(--ratio-x) * 10%) calc(var(--ratio-y) * 10%),
+    calc(80% + (var(--ratio-x) * -50%)) calc(80% + (var(--ratio-y) * -50%));
+  opacity: 1;
+  background: url(icon\ 00000000.png), rgb(42, 75, 43);
+  background-size: contain;
+  
+}
+    </style>
+</head>
+<body>
+<section>
+    <div style="border: 8px solid rgb(0, 59, 16);" class="card">
+        <img src="ELEMENTS_NATURE.png"/>
+        <a> Dark </a>
+    </div>
+</section>
+</body>
+<script src="hover.js"></script>
+</html>
