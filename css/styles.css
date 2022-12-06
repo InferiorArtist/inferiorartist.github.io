@@ -399,6 +399,7 @@
     font-size: 16px;
     height:100%;
     max-height:calc(47vmax - 40px - 300px) ;
+    min-height: 200px;
     max-width: calc(100% - 27vmin - 40px);
     min-width: 320px;
     float:right; 
@@ -700,6 +701,7 @@ right:0;
 }
 section {
   max-height:700px;
+
 }
 .card {
   width: 90vw;
