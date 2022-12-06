@@ -260,6 +260,7 @@
     pointer-events: none;
     z-index:-1 !important;
   }
+
   footer {
     color:white;
   }
@@ -397,7 +398,7 @@
     color: white;
     font-size: 16px;
     height:100%;
-    max-height:calc(47vmax - 40px) ;
+    max-height:calc(47vmax - 40px - 300px) ;
     max-width: calc(100% - 27vmin - 40px);
     min-width: 320px;
     float:right; 
@@ -407,7 +408,13 @@
     overflow-y: auto;
     white-space: no-wrap;
     text-overflow: ellipsis; 
-      }
+  }
+  .absolute-center {
+    position: relative;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
   #work .work img{
     height:100%;
     width: auto;
@@ -695,7 +702,7 @@ section {
   max-height:700px;
 }
 .card {
-  width: auto;
+  width: 90vw;
   height: 75px;
 }
 .displayoff {
@@ -717,6 +724,10 @@ section {
 }
 #work .work a {
   font-size: 16px;
+  max-height: 40vh;
+  overflow-y: scroll;
+  max-width: 90vw;
+  min-width: 200px;
 }
 }  
 /* portrait short */
