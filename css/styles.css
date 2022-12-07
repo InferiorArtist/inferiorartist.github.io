@@ -36,7 +36,7 @@
     background-color:#111111;
     font-family: "Lato", sans-serif;
     overflow-x: auto;
-    overflow-y: hidden;
+    overflow-y: hidden !important;
     user-select: none;
   }
   html {
@@ -95,7 +95,7 @@
     height: 34px;
     background-color: #111111;
     position: fixed;
-    z-index: 101;
+    z-index: 101 !important;
     overflow: hidden;
     margin-right:0;
     border-top: 1px solid rgb(41, 41, 41);
@@ -116,7 +116,7 @@
     color:white;
     display: block;
     transition: 0.3s;
-    padding: 0 0 0 3px;
+    padding: 0 0 0 3px !important;
     margin:0;
     height:20px;
     }
@@ -142,7 +142,7 @@
    .mytopnavwrapper {
     height: 0;
     width: 100%;
-    position: block;
+    position: block !important;
     z-index: 100 !important;
     top: 0;
     background-color: #111111;
@@ -520,7 +520,7 @@
         height: 26px;
         width: auto;
         position:static;
-        padding:3px 0 0 0;
+        padding:3px 0 0 0 !important;
         margin:0px;
         transition:.05s;
         border-radius: 2px;
