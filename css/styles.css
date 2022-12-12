@@ -595,7 +595,10 @@
         scroll-snap-align:center;
         pointer-events: none;
     }
-
+    .clickable {
+      pointer-events: all !important;
+      z-index: 50 !important;
+    }
 /* animations */
 @keyframes appearFade {
   0% {
