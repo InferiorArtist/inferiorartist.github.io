@@ -132,6 +132,14 @@
         .demo:hover {
           opacity: 1;
         }
+        .header {
+          padding: 36px 30px 30px 30px;
+          font-size: 40px;
+          text-align: center;
+          overflow-y: hidden !important;
+          box-sizing: border-box !important;
+          pointer-events:all !important;
+        }
         @media screen and (max-width:700px){
           .portrait{
           max-height: 100%;
@@ -147,6 +155,7 @@
           margin-right: auto;
         }
         }
+
         </style>
 </head>
 <nav>
@@ -275,7 +284,9 @@
     <main style="padding:34px 0 0 0;">
       <section style="overflow-y:scroll;height:100vh;">
         <div class="scroll" onclick="closeTopNav()">
-          <h2 style="text-align:center; font-size: 40px;">Slideshow Gallery</h2>
+          <div class="header">
+            <h3>Art Of AFS</h3>
+            </div>
           <!-- overall box-->
           <div class="containerStuff" style="overflow-y: none !important;">
             <a class="prev" onclick="plusSlides(-1)">❮</a>
