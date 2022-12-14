@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- 
+    info
+  -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/Images/icon 7.png" type="images/x-icon">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>A Fantasy Story - Home</title>
+</head>
+<nav>
+  <!-- top nav -->
+  <!-- top nav (closed)-->
+  <div class="topnav">
+    <div id="mytopnavwrapper" class="mytopnavwrapper" style="text-align:center;">
+          <a id="topnavwrapperA" href="javascript:void(0)" style="position: absolute !important;top: 0 !important;right: 25px !important;font-size: 28px !important;padding:0px 8px 8px 8px !important;" class="closebtn" onclick="closeTopNav()">&times;</a>
+          <a class="item4"></a>
+          <a class="item1">Home</a>
+          <a class="item1">News</a>
+          <a class="item1">Game</a>
+          
+          <a class="item1" onclick ="openLinks1()">Universe →</a>
+      <div id="blockOne" style="display:none;opacity: 0;pointer-events: none;" href="javascript:void(0)">
+          <a class="item2" href="javascript:void(0)" onclick="closeLinks1()">&times;</a>
+          <a class="item2">Story</a>
+          <a class="item2">Characters</a>
+          <a class="item2">Elements</a>
+          <a class="item2">Art of AFS</a>
+      </div>
+  
+          <a class="item1">Calculators</a>
+          <a class="item1">Contact</a>
+          <a class="item1">About</a>
+  
+          <a class="item1" onclick ="openLinks2()">Socials →</a>
+      <div id="blockTwo" style="display:none;opacity: 0;pointer-events: none;" href="javascript:void(0)">
+          <a class="item2" href="javascript:void(0)" onclick="closeLinks2()">&times;</a>
+          <a class="item2">Discord</a>
+          <a class="item2">Reddit</a>
+          <a class="item2">Youtube</a>
+          <a class="item2">Twitter </a>
+      </div>
+          <a class="item5"></a>
+  
+    </div>
+  <!-- top nav (open)-->
+        <ul> 
+          <!-- 
+          <li style="text-align:center;top:0;right:0;z-index:-1 !important;position:block;padding:0 0px;border-left: 1px solid rgb(98, 48, 40);">
+            <div class="borderoffset">
+              <div class="coolbutton">
+                <a> Hello</a>
+              </div>
+            </div>
+          </li>
+          --> 
+          <li>
+            <div class="borderoffset">
+              <div class="coolbutton">
+                <a href="https://inferiorartist.github.io/AFS/home">&nbsp;Home</a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="borderoffset">
+              <div class="coolbutton">
+                <a href="https://inferiorartist.github.io/AFS/news">News</a>
+              </div>
+            </div>
+          </li> 
+          <li>
+            <div class="borderoffset">
+              <div class="coolbutton">
+                <a href="https://inferiorartist.github.io/AFS/art of">Art of AFS</a>   
+              </div>
+            </div>    
+          </li>
+          <li class="displayoff2">
+            <div class="borderoffset">
+              <div class="coolbutton">
+                <a>A Fantasy Story</a>   
+              </div>
+            </div>    
+          </li>
+          <li class="displayoff2">
+            <div class="borderoffset">
+              <div class="coolbutton">
+                <a href="https://inferiorartist.github.io/">Links</a>   
+              </div>
+            </div>    
+          </li>
+          <li>
+            <div class="coolbutton" style="padding:0; font-size:14px;margin:0 !important;">
+              <span id="toggleNav" onclick="openTopNav()">
+                <a>
+                  <svg  xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" stroke-width="1.5" height="32 " stroke="currentColor" class="w-6 h-6" style="border:none !important;">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
+                  </svg>
+                </a>
+              </span>
+            </div>
+            </li>
+          </ul>
+      
+  </div>
+  <script>
+    function openTopNav() {
+      document.getElementById("mytopnavwrapper").style.height = "50vh";
+    }
+    function closeTopNav() {
+      document.getElementById("mytopnavwrapper").style.height = "0";
+    }
+    // turn off icon replace with other and be able to close
+    // open blocks of links
+    // on
+    function openLinks1() {
+      document.getElementById("blockOne").style.opacity = "100%";
+      document.getElementById("blockOne").style.pointerEvents = "all";
+      document.getElementById("blockOne").style.display = "block";
+    }
+    // off
+    function closeLinks1() {
+      document.getElementById("blockOne").style.opacity = "0";
+      document.getElementById("blockOne").style.pointerEvents = "none";
+      document.getElementById("blockOne").style.display = "none";
+    }
+    // on
+    function openLinks2() {
+      document.getElementById("blockTwo").style.opacity = "100%";
+      document.getElementById("blockTwo").style.pointerEvents = "all";
+      document.getElementById("blockTwo").style.display = "block";
+    }
+      // off
+    function closeLinks2() {
+      document.getElementById("blockTwo").style.opacity = "0";
+      document.getElementById("blockTwo").style.pointerEvents = "none";
+      document.getElementById("blockTwo").style.display = "none";
+    }
+  </script>
+</nav>
+<body style="overflow-y: hidden;">    
+<!-- main content -->
+<div class="scroll" style="overflow-y: auto;" onclick="closeTopNav()">
+<!-- bg images -->
+  <div style="height: 100vh;">
+  <main style="padding:34px 0 0 0;">
+      <section id="home">
+        <div class="AFStoplogo">
+            <img loading="lazy" draggable="false" src="/Images/afs words logo.png" alt="" style="width:75%;margin:auto;display:block;filter: invert(1);">
+        </div>
+      </section>
+      <section id="News" style="border-top:1px solid #555">
+<!-- news section -->
+    <div class="grid-container" style="border-radius: 10px;translate:0 0; z-index: 100 !important;">
+        <!-- 
+          use 16:9 ratio images with a focus on a center box/rectangle         
+          Text moves the image to the left be aware
+          draggable = false
+        -->
+        <div class="card">
+          <a class="news">News for A Fantasy Story goes here!
+            <br><br>
+            More news to come soon to this section be on the look out for information!
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            More news to come soon to this section be on the look out for information!
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </a>
+          <p href="/html/bale.html">
+            <span class="spanscale" href="/html/bale.html">
+              <a href="/html/bale.html">
+                <img draggable="false" href="/html/bale.html" src="/Images/B CONCEPT PAGE.png">
+              </span>Bale
+            </a>
+          </p>
+          <p>
+            <span class="spanscale">
+              <img draggable="false" src="/Images/afs words logo2.png">
+            </span>
+          </p>
+          <p>
+            <span>
+              <img draggable="false" src="/Images/afs words logo2.png">
+            </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+<!--
+          <p>
+            <span class="spanscale">
+              <img src="/Images/icon 00000000.png" alt=""></rect>
+              </svg>
+            </span>Adeph</p>
+
+          <p>
+            <span class="spanscale">
+                <img href="/html/bale.html" src="/Images/ALL.png">
+              </span>
+          </p>
+
+          <p>
+            <span class="spanscale">
+              <img href="/html/bale.html" src="/Images/ALL.png">
+            </span>
+          </p>
+        -->
+        </div>
+</div>
+                  <!-- keep
+                  <div class="grid-item">1</div>
+                  <div class="grid-item">2</div>
+                  <div class="grid-item">3</div>
+                  <div class="grid-item">4</div>
+                  -->
+      </section>
+      <section id="work" style="border-top:1px solid #555">   
+        <div class="work">
+          <div class="absolute-center">
+            <a>What the fuck did you just fucking say about me, you little bitch? I'll have you know I graduated top of my class in the Navy Seals, and I've been involved in numerous secret raids on Al-Quaeda, and I have over 300 confirmed kills. I am trained in gorilla warfare and I'm the top sniper in the entire US armed forces. You are nothing to me but just another target. I will wipe you the fuck out with precision the likes of which has never been seen before on this Earth, mark my fucking words. You think you can get away with saying that shit to me over the Internet? Think again, fucker. As we speak I am contacting my secret network of spies across the USA and your IP is being traced right now so you better prepare for the storm, maggot. The storm that wipes out the pathetic little thing you call your life. You're fucking dead, kid. I can be anywhere, anytime, and I can kill you in over seven hundred ways, and that's just with my bare hands. Not only am I extensively trained in unarmed combat, but I have access to the entire arsenal of the United States Marine Corps and I will use it to its full extent to wipe your miserable ass off the face of the continent, you little shit. If only you could have known what unholy retribution your little "clever" comment was about to bring down upon you, maybe you would have held your fucking tongue. But you couldn't, you didn't, and now you're paying the price, you goddamn idiot. I will shit fury all over you and you will drown in it. You're fucking dead, kiddo.</a>
+          </div>
+          <img class="slideLeft displayoff" src="/Images/side char 1.png"> 
+          <br>          
+        </div>  
+      </section>
+
+      <section id="contact" style="border-top:1px solid #555">
+        <img class="slideRight" src="/Images/side char 2.png">
+        asdfasdf<i style="color:white">asdfasdfa</i>
+      </section>
+
+      <section id="contact" style="border-top:1px solid #555">
+        <p>asdf</p>
+      </section>
+      
+      </div>
+    </main>
+  </div>
+
+</div>
+    <!-- <script src="/JS/scroll drag updown.js"></script> -->
+</body>
+</html>
