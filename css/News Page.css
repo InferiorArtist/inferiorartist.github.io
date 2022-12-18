@@ -50,6 +50,9 @@ img {
   margin-right: auto;
   width: 75vmin;
 }
+.textcenter {
+    text-align: center;
+}
 @media only screen and (max-width:450px) {
     * {
         overflow-x: hidden;
