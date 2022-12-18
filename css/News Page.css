@@ -2,10 +2,12 @@
     margin:0;
     padding:0;
     text-decoration: none !important;
+    font-family: "Lato", sans-serif;
 }
 *:link, *:visited {
     text-decoration: none !important;
     color:white;
+    font-family: "Lato", sans-serif;
 }
 body {
     background-color: black;
@@ -53,6 +55,51 @@ img {
 .textcenter {
     text-align: center;
 }
+.lore {
+    color:black;
+    font-size: 12px;
+    background-color:dodgerblue;
+    text-align: center;
+    width:60px;
+    border-radius: 5px;
+    display: inline-block;
+  }
+  .character {
+    color: black;
+    font-size: 12px;
+    background-color:yellowgreen;
+    text-align: center;
+    width:100px;
+    border-radius: 5px;
+    display: inline-block;
+  }
+  .gamenews {
+    color: black;
+    font-size: 12px;
+    background-color:red;
+    text-align: center;
+    width:100px;
+    border-radius: 5px;
+    display: inline-block;
+  }
+  .music {
+    color: black;
+    font-size: 12px;
+    background-color:salmon;
+    text-align: center;
+    width:72px;
+    border-radius: 5px;
+    display: inline-block;
+  }
+  .news {
+    color:black;
+    font-size: 12px;
+    background-color:blueviolet;
+    text-align: center;
+    width:60px;
+    border-radius: 5px;
+    display: inline-block;
+  }
 @media only screen and (max-width:450px) {
     * {
         overflow-x: hidden;
