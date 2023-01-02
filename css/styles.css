@@ -100,6 +100,8 @@
     margin-right:0;
     border-top: 1px solid rgb(41, 41, 41);
     border-bottom: 1px solid rgb(41, 41, 41);
+    justify-content: space-evenly;
+    align-items: flex-start;
   }
   .topnav a{
     padding: 5px 8px 8px 5px !important;
