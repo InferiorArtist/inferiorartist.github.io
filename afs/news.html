@@ -67,12 +67,13 @@
       width: 25%;
       padding-left: 20px;
       box-sizing: border-box !important;
-      pointer-events: all !important;
+      pointer-events: none !important;
       position: absolute;
       right: 0;
       top: 100px;
       z-index: 10;
       overflow-y: hidden;
+
     }
 
     /* Fake image */
@@ -202,17 +203,22 @@
         float: left;
         padding-left: 20px;
         box-sizing: border-box !important;
-        pointer-events: all !important;
-        overflow: hidden;
+        pointer-events: none !important;
+        overflow-y: hidden;
       }
     }
 
     @media screen and (max-height: 700px) {
       .rightcolumn {
-        height: 70%;
+        height:85%;
         overflow-y: scroll;
+        pointer-events: visible !important;
+        top:50px;
       }
-
+      .rightcolumn::-webkit-scrollbar {
+        display:none;
+        
+      }
     }
   </style>
 </head>
@@ -361,8 +367,7 @@
   <div class="notthenav" style="box-sizing: border-box !important;">
     <div style="height:100vh;box-sizing: border-box !important;">
       <main style="margin-top:34px;box-sizing: border-box !important;">
-        <section id="#newsPage"
-          style="overflow-y:scroll;height:100vh;  pointer-events:all !important; box-sizing: border-box !important;">
+        <section id="#newsPage" style="overflow-y:scroll;height:100vh;  pointer-events:all !important; box-sizing: border-box !important;">
           <div class="scroll" onclick="closeTopNav(); openRightColumn()">
 
 
@@ -507,8 +512,9 @@
   </div>
 </div> -->
                 <!-- right column -->
+              <div style="overflow-y: scroll !important;">
+
                 <div id="rightColumn" class="rightcolumn">
-                  <div class="rightcolumnscroll">
                     <div class="cardSB">
                       <h2>About Me</h2>
                       <!-- <div class="fakeimg" style="height:100px;">Image</div> -->
@@ -534,7 +540,6 @@
         <h3>Follow Me</h3>
         <p>Some text..</p> -->
                     <!-- <a class="twitter-timeline" max-width="auto" data-height="400" data-dnt="true" data-theme="dark" href="https://twitter.com/HeyFantasyStory?ref_src=twsrc%5Etfw">Follow Us!</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
-
                   </div>
                 </div>
               </div>
