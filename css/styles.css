@@ -42,6 +42,7 @@ body {
   overflow-x: auto;
   overflow-y: hidden !important;
   user-select: none;
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 html {
