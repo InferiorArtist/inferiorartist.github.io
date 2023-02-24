@@ -50,6 +50,7 @@ html {
 .views {
   height: 100vh; 
   padding-bottom: env(safe-area-inset-bottom);
+  min-height: -webkit-fill-available;
 }
 /* navbars */
 .__closedsidebarwrapper {
