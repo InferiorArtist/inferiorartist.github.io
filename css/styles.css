@@ -42,13 +42,15 @@ body {
   overflow-x: auto;
   overflow-y: hidden !important;
   user-select: none;
-  padding-bottom: env(safe-area-inset-bottom);
 }
 
 html {
   scroll-behavior: smooth;
 }
-
+.views {
+  height: 100vh; 
+  padding-bottom: env(safe-area-inset-bottom);
+}
 /* navbars */
 .__closedsidebarwrapper {
   color: #dc655e;
