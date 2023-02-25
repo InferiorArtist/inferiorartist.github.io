@@ -323,7 +323,7 @@ nav .closebtn {
   animation-iteration-count: 0;
   animation-name: appearFade2;
 }
-.section1 .circle:hover {
+/* .section1 .circle:hover {
   animation-duration: .3s;
   animation-timing-function: ease-in-out;
   animation-delay: 0s;
@@ -331,7 +331,7 @@ nav .closebtn {
   animation-name: appearFade;
   
   content: url(/Images/icon\ 7.png);
-}
+} */
   
 .section1 .circle:hover::after {
   animation-duration: .3s;
