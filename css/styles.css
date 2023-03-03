@@ -47,11 +47,13 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
 .views {
-  height: 100vh; 
+  height: 100vh;
   padding-bottom: env(safe-area-inset-bottom);
   min-height: -webkit-fill-available;
 }
+
 /* navbars */
 .__closedsidebarwrapper {
   color: #dc655e;
@@ -288,12 +290,13 @@ nav .closebtn {
 
 .section1 img {
   width: 75%;
-  margin: auto;
+  margin: auto calc(12.5% - 10px);
   display: block;
   filter: invert(1);
   padding: 7vmax 0 7vmax 0;
   transition: .3s;
 }
+
 
 .section1 .circle {
   border: 1px solid white;
@@ -308,6 +311,7 @@ nav .closebtn {
   margin-top: 75px;
   margin-bottom: 100px;
   transition: .3s;
+  visibility: hidden;
 }
 
 .section1 .lookDown {
@@ -323,6 +327,7 @@ nav .closebtn {
   animation-iteration-count: 0;
   animation-name: appearFade2;
 }
+
 /* .section1 .circle:hover {
   animation-duration: .3s;
   animation-timing-function: ease-in-out;
@@ -332,8 +337,27 @@ nav .closebtn {
   
   content: url(/Images/icon\ 7.png);
 } */
-  
-.section1 .circle:hover::after {
+.section1 svg {
+  margin: auto;
+  display: block;
+  filter: invert(1);
+  width: 64px !important;
+  height: auto !important;
+  background-color: none !important;
+  z-index: 100 !important;
+  padding: 7vmax 0 0vmax 0 !important;
+  /* opacity: 0% !important; */
+  /* transition: .3s !important; */
+  position: absolute;
+  margin-left: calc(50% - (1vmin + 32px));
+  margin-top: calc(50vmin - (1vmin + 32px));
+}
+
+/* .section1 svg:hover {
+  opacity: 100% !important;
+} */
+
+/* .section1 .circle:hover::after {
   animation-duration: .3s;
   animation-timing-function: ease-in-out;
   animation-delay: 0s;
@@ -341,18 +365,43 @@ nav .closebtn {
   animation-name: appearFade;
   
   content: url(/Images/icon\ 7.png);
-}
+} */
 .section2 {
-  background-color: #000000 !important;
+  /* background-color: #000000 !important; */
   overflow: hidden;
   height: auto;
   padding-bottom: 50px;
+  max-height: 750px;
   /* cursor: url('/Images/ELEMENTS_WATER_32.png') 0 0, auto; */
+}
 
+.section2 svg {
+  margin: auto;
+  display: block;
+  filter: invert(1);
+  width: 64px !important;
+  height: auto !important;
+  background-color: none !important;
+  z-index: 100 !important;
+  padding: 7vmax 0 0vmax 0 !important;
+  /* opacity: 0% !important; */
+  /* transition: .3s !important; */
+  position: relative;
+  margin-left: calc(50% - (1vmin + 32px));
+  margin-top: calc(50vmin - (1vmin + 32px));
 }
-.section2 {
-  /* border-bottom: 1px solid white; */
+
+.section2 #SideL {
+  width: 64px;
+  position: absolute;
+  left: 0 !important;
+  margin: 0;
+  top: 50%;
 }
+
+/* .section2 {
+  border-bottom: 1px solid white;
+} */
 
 .section2 iframe {
   background-color: #000000 !important;
@@ -360,8 +409,8 @@ nav .closebtn {
   pointer-events: all;
   /* height:30%;  */
   width: 45%;
-  margin-left: 2.5%; 
-  margin-right: 2.5%; 
+  margin-left: 2.5%;
+  margin-right: 2.5%;
   padding-top: 10vh;
   /* padding-bottom: 20vmin; */
   /* margin: 50px 0; */
@@ -370,31 +419,36 @@ nav .closebtn {
   /* filter: grayscale(100); */
   /* cursor: url('/Images/ELEMENTS_WATER_32.png') 0 0, auto; */
 }
+
 .section2 a {
   /* border-left: 1px solid white; */
   padding-left: 5vmax;
   padding-right: 5vmax;
   display: flow-root;
   max-height: 50vh;
-  overflow: auto; 
+  overflow: auto;
 }
 
 /* .section2 iframe:hover {
     cursor: url('/Images/ELEMENTS_WATER_32.png') 0 0, auto;
   } */
 .section3 {
-  background-color: black;
+  width: 96%;
+  /* background-color: black; */
   /* background: linear-gradient(180deg, rgba(0, 0, 0, 1) 15%, rgba(17, 17, 17, 1) 100%); */
   height: auto;
   padding-bottom: 50px;
+
   /* cursor: url('/Images/ELEMENTS_WATER_32.png') 0 0, auto; */
 }
 
 .section3 a {
   /* float:right; */
   display: block;
-  width: 95%;
-  padding: 50px 2.5% 25px 2.5%;
+  width: 84%;
+  margin: 0 calc(10% - 10px);
+  text-align: justify, center;
+  /* padding: 50px 2.5% 25px 2.5%; */
   font-size: calc(10px + 1vw);
 }
 
@@ -955,7 +1009,33 @@ input:active {
 .boxlinks button:hover {
   background: #666666;
 }
+/* play with */
+.section1 .svgSide2 {
+  cursor: pointer;
+}
 
+.section1 .svgSide2:hover {
+  cursor: pointer;
+}
+.section1 .svgSide2:hover:active {
+  cursor: default;
+}
+.section1 .svgSide2:active {
+  pointer-events: all;
+  transform: rotate(90deg);
+  opacity:0;
+  transition: .3s;
+}
+
+
+
+.section1 .svgSide2:hover::before {
+  background-image:url('/Images/_CONCEPT_twitter.gif');
+  pointer-events: all;
+  height: 1000px;
+  width: 1000px;
+  transform: rotate(90deg);
+}
 /* animations */
 @keyframes appearFade {
   0% {
@@ -966,6 +1046,7 @@ input:active {
     opacity: 100%;
   }
 }
+
 @keyframes appearFade2 {
   0% {
     opacity: 100;
@@ -996,6 +1077,25 @@ input:active {
   }
 }
 
+.SVGAnimate {
+  stroke-dasharray: 2500;
+  stroke-dashoffset: 50;
+  animation: dash 7s linear normal;
+  animation-iteration-count: 1;
+}
+
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 2500;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
 
 /* other screens */
 @media screen and (max-height: 450px) {
@@ -1021,6 +1121,8 @@ input:active {
   }
 
 }
+
+
 
 @media only screen and (max-height:720px) {
   .topnav ul {
@@ -1131,7 +1233,7 @@ input:active {
 
   .section2 a {
     padding: 50px 2.5% 25px 2.5%;
-        font-size: calc(10px + 1vw);
+    font-size: calc(10px + 1vw);
     display: block;
     /* float: none;
     width: 25%;
@@ -1147,8 +1249,14 @@ input:active {
     right: 0;
   }
 
+  .section2 .slideshow-container {
+
+    margin: 0 calc(10%) !important;
+  }
+
   .section1 {
     max-height: 700px;
+
   }
 
   .card {
@@ -1226,7 +1334,7 @@ input:active {
 
   .sectionend li {
     display: inline-block;
-    margin-left: calc(15vmin - 10%);
+    margin-left: calc(15vmin - 5%);
 
     margin-top: 15px;
     margin-bottom: 15px;
@@ -1253,13 +1361,35 @@ input:active {
     max-width: auto;
     margin-left: 5px !important;
     margin-top: 8px !important;
+    margin: auto calc(12.5%);
+
   }
+
+  .section1 svg {
+    margin: auto;
+    display: block;
+    filter: invert(1);
+    width: 64px !important;
+    height: auto !important;
+    background-color: none !important;
+    z-index: 100 !important;
+    padding: 7vmax 0 0vmax 0 !important;
+    /* opacity: 0% !important; */
+    position: absolute;
+    margin-left: calc(50% - (1vmin + 32px));
+    margin-top: calc(40vmin - (1vmin + 32px));
+  }
+
 }
 
 /* portrait short */
 @media screen and (max-height:427) and (orientation:portrait) {
   .displayoff {
     display: none;
+  }
+
+  .section1 img {
+    margin: auto calc(12.5%);
   }
 
   .displayoff2 {
@@ -1307,6 +1437,10 @@ input:active {
 @media screen and (orientation:landscape) and (max-height:426px) {
   .displayoff {
     display: none;
+  }
+
+  .section1 img {
+    margin: auto calc(12.5%);
   }
 
   .mytopnavwrapper {
