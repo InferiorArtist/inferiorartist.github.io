@@ -352,7 +352,10 @@ nav .closebtn {
   margin-left: calc(50% - (1vmin + 32px));
   margin-top: calc(50vmin - (1vmin + 32px));
 }
-
+.iconBox {
+  width:240; 
+  height:2400;
+}
 /* .section1 svg:hover {
   opacity: 100% !important;
 } */
