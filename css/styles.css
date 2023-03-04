@@ -338,9 +338,9 @@ nav .closebtn {
   content: url(/Images/icon\ 7.png);
 } */
 .section1 svg {
-  margin: auto;
+  /* margin: auto; */
   display: block;
-  filter: invert(1);
+  /* filter: invert(1); */
   width: 64px !important;
   height: auto !important;
   background-color: none !important;
