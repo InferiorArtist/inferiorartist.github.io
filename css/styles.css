@@ -340,7 +340,7 @@ nav .closebtn {
 .section1 svg {
   /* margin: auto; */
   display: block;
-  /* filter: invert(1); */
+  filter: invert(1);
   width: 64px !important;
   height: auto !important;
   background-color: none !important;
@@ -1366,8 +1366,8 @@ input:active {
   }
 
   .section1 svg {
-    margin: auto;
-    display: block;
+    /* margin: auto; */
+    /* display: block; */
     filter: invert(1);
     width: 64px !important;
     height: auto !important;
