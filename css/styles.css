@@ -529,11 +529,15 @@ nav .closebtn {
 
 .showanim {
   opacity: 0;
+  -webkit-opacity:0;
+
   transition: .6s;
+  -webkit-transition: .6s;
 }
 
 .showanim.show {
   opacity: 1;
+  -webkit-opacity:1;
 }
 
 .bgimagestop {
@@ -1376,7 +1380,7 @@ input:active {
     width: 64px !important;
     height: auto !important;
     background-color: none !important;
-    z-index: 100 !important;
+    /* z-index: 100 !important; */
     padding: 7vmax 0 0vmax 0 !important;
     /* opacity: 0% !important; */
     position: absolute;
