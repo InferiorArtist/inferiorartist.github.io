@@ -42,7 +42,7 @@ body {
   overflow-x: auto;
   overflow-y: hidden !important;
   user-select: none;
-}
+}a
 
 html {
   scroll-behavior: smooth;
@@ -296,7 +296,26 @@ nav .closebtn {
   padding: 7vmax 0 7vmax 0;
   transition: .3s;
 }
-
+.section1 .enterbutton {
+  height:24px;
+  width:72px;
+  outline: 1px solid white;
+  background-color: #222;
+  background: #222;
+  position: absolute;
+  left: calc(50% - 36px);
+  top: calc(85% - -6px);
+  text-align: center;
+  padding:4px 0 0 0;
+  z-index: 101 !important;
+  opacity: 100%;
+  border-radius: 2px;
+  transition: .3s;
+}
+.section1 .enterbutton:hover {
+  outline-offset: 2px;
+  outline-width: 3px;
+}
 
 .section1 .circle {
   border: 1px solid white;
@@ -349,13 +368,15 @@ nav .closebtn {
   /* opacity: 0% !important; */
   /* transition: .3s !important; */
   position: absolute;
-  margin-left: calc(50% - (1vmin + 32px));
+  margin-left: calc(50% - 32px);
   margin-top: calc(50vmin - (1vmin + 32px));
 }
+
 .iconBox {
-  width:240; 
-  height:2400;
+  width: 240;
+  height: 2400;
 }
+
 /* .section1 svg:hover {
   opacity: 100% !important;
 } */
@@ -472,16 +493,18 @@ nav .closebtn {
 } */
 
 .sectionend li {
-  display: inline-block;
-  margin-left: 8%;
+  display: inline-flex;
+  margin: 12px auto;
+  /* margin-left: 8%;
   margin-top: 15px;
   margin-bottom: 15px;
-  width: 20%;
+  width: 20%; */
 }
 
 .sectionend ul {
-  margin-left: 33vw;
-  width: 33vw;
+  /* margin-left: 33vw;
+  width: 33vw; */
+  display:flex;
 }
 
 .sectionend span {
@@ -527,9 +550,62 @@ nav .closebtn {
   animation-name: appearFade;
 }
 
+details {
+  /* border: 1px solid white; */
+  border-radius: 5px;
+  /* padding: 0.5em 0.5em 0; */
+  cursor: pointer;
+  margin-left: calc(10vw - 10px);
+  margin-bottom: 12px;
+  width: 80vw;
+  /* margin: 12px 6.6%; */
+  overflow-x: hidden;
+  overflow-y: hidden;
+  object-fit: cover;
+  text-align: center;
+}
+details img {
+  margin:0;
+  padding:0;
+  height:auto !important;
+  width: calc(100% + 10px);
+  object-fit: cover;
+  /* margin:0 calc(10% - 10px); */
+  overflow-x:hidden;
+}
+::marker {
+  display: none;
+  
+}
+
+summary {
+  
+  list-style: none;
+}
+
+summary {
+  
+  /* font-weight: bold; */
+  /* margin: -0.5em 1% 0; */
+  /* padding: 0.5em; */
+}
+
+details[open] {
+  /* padding: 0.5em; */
+  /* bottom box height here */
+  /* height: 250px; */
+  /* margin: 12px 6.6%; */
+}
+
+details[open] summary {
+  /* border-bottom: 1px solid #aaa; */
+  margin-bottom: 0.5em;
+
+}
+
 .showanim {
   opacity: 0;
-  -webkit-opacity:0;
+  -webkit-opacity: 0;
 
   transition: .6s;
   -webkit-transition: .6s;
@@ -537,7 +613,7 @@ nav .closebtn {
 
 .showanim.show {
   opacity: 1;
-  -webkit-opacity:1;
+  -webkit-opacity: 1;
 }
 
 .bgimagestop {
@@ -1016,6 +1092,7 @@ input:active {
 .boxlinks button:hover {
   background: #666666;
 }
+
 /* play with */
 .section1 .svgSide2 {
   cursor: pointer;
@@ -1024,25 +1101,31 @@ input:active {
 .section1 .svgSide2:hover {
   cursor: pointer;
 }
+
 .section1 .svgSide2:hover:active {
   cursor: default;
 }
+
 .section1 .svgSide2:active {
   pointer-events: all;
   transform: rotate(90deg);
-  opacity:0;
+  opacity: 0;
   transition: .3s;
 }
 
 
 
 .section1 .svgSide2:hover::before {
-  background-image:url('/Images/_CONCEPT_twitter.gif');
+  background-image: url('/Images/_CONCEPT_twitter.gif');
   pointer-events: all;
   height: 1000px;
   width: 1000px;
   transform: rotate(90deg);
 }
+
+
+
+
 /* animations */
 @keyframes appearFade {
   0% {
@@ -1087,7 +1170,7 @@ input:active {
 .SVGAnimate {
   stroke-dasharray: 2500;
   stroke-dashoffset: 50;
-  -webkit-animation: dash 7s linear normal ;
+  -webkit-animation: dash 7s linear normal;
   animation: dash 7s linear normal;
   animation-iteration-count: 1;
 }
@@ -1341,19 +1424,19 @@ input:active {
   }
 
   .sectionend li {
-    display: inline-block;
-    margin-left: calc(15vmin - 5%);
+    display: inline-flex;
+    /* margin-left: calc(15vmin - 5%); */
 
     margin-top: 15px;
     margin-bottom: 15px;
-    margin-right: 0vmin;
-    width: 10%;
+    /* margin-right: 0vmin;
+    width: 10%; */
     padding: 5%
   }
 
   .sectionend ul {
-    margin-left: calc(20vmin - 10%);
-    width: 70vw;
+    /* margin-left: calc(20vmin - 10%);
+    width: 70vw; */
   }
 
   .sectionend span {
@@ -1384,8 +1467,8 @@ input:active {
     padding: 7vmax 0 0vmax 0 !important;
     /* opacity: 0% !important; */
     position: absolute;
-    margin-left: calc(50% - (1vmin + 32px));
-    margin-top: calc(40vmin - (1vmin + 32px));
+    margin-left: calc(50% - 32px);
+    margin-top: calc(40vmin - 32px);
   }
 
 }
