@@ -532,27 +532,15 @@ nav a:hover {
   display: inline-block;
   width: 100%;
   align-items: center;
-  /* margin-bottom: 35px; */
-  transition: .3s;
 }
-
-/* .sectionend .centerlist {
-  margin-left: calc(. * 100vw);
-} */
 
 .sectionend li {
   display: inline-flex;
   margin: 12px auto;
-  /* margin-left: 8%;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  width: 20%; */
 }
 
 .sectionend ul {
-  /* margin-left: 33vw;
-  width: 33vw; */
-  display:flex;
+  display: flex;
 }
 
 .sectionend span {
@@ -578,11 +566,6 @@ nav a:hover {
   transform: scale(1.1);
   border-radius: 25%;
 }
-
-/* .sectionend:hover { */
-/* outline: 1px solid transparent; */
-/* outline-offset: -3px; */
-/* } */
 .AFStoplogo {
   /* display: block; */
   /* position: relative; */
@@ -1468,39 +1451,6 @@ input:active {
     display: inline-block;
     padding: 2.5% 5%;
     font-size: calc(10px + 1vw); */
-
-  }
-
-  .sectionend li {
-    display: inline-flex;
-    /* margin-left: calc(15vmin - 5%); */
-
-    margin-top: 15px;
-    margin-bottom: 15px;
-    /* margin-right: 0vmin;
-    width: 10%; */
-    padding: 5%
-  }
-
-  .sectionend ul {
-    /* margin-left: calc(20vmin - 10%);
-    width: 70vw; */
-  }
-
-  .sectionend span {
-    border: 1px solid white;
-    display: inline-block;
-    height: 32px;
-    width: 32px;
-    border-radius: 50%;
-  }
-
-  .sectionend img {
-    max-height: 16px;
-    max-width: auto;
-    margin-left: 5px !important;
-    margin-top: 8px !important;
-    margin: auto calc(12.5%);
 
   }
 
