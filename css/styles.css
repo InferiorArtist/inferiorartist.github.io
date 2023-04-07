@@ -40,7 +40,7 @@ body {
   background-color: #000;
   font-family: "Lato", sans-serif;
   overflow-x: auto;
-  overflow-y: hidden !important;
+  /* overflow-y: hidden !important; */
   user-select: none;
 }a
 
@@ -55,7 +55,7 @@ html {
 }
 
 /* navbars */
-.__closedsidebarwrapper {
+/* .__closedsidebarwrapper {
   color: #dc655e;
   position: center;
   transition: .3s;
@@ -74,7 +74,7 @@ html {
   text-decoration: none;
   visibility: visible !important;
   margin: 0;
-}
+} */
 
 /* h4{
     color:#dc655e;
@@ -86,7 +86,7 @@ html {
   .h4:link{
     color:#dc655e !important;
   } */
-.sidelist svg {
+/* .sidelist svg {
   color: #dc655e;
   position: center;
   width: 75%;
@@ -102,9 +102,9 @@ ul .sidelist {
   height: 100%;
   overflow: hidden;
   z-index: 100;
-}
+} */
 
-.topnav ul {
+/* .topnav ul {
   list-style-type: none;
   display: flex;
   width: 100vw;
@@ -118,9 +118,9 @@ ul .sidelist {
   border-bottom: 1px solid #292929;
   justify-content: space-evenly;
   align-items: flex-start;
-}
+} */
 
-.topnav a {
+/* .topnav a {
   padding: 5px 8px 8px 5px !important;
   text-decoration: none;
   font-size: 14px;
@@ -128,9 +128,9 @@ ul .sidelist {
   display: block;
   transition: 0.3s;
   text-align: center;
-}
+} */
 
-.topnav svg {
+/* .topnav svg {
   text-decoration: none;
   font-size: 20px;
   color: white;
@@ -160,10 +160,10 @@ ul .sidenav {
   overflow-x: hidden;
   transition: 0.5s;
   text-align: center;
-}
+} */
 
 /* pop out top nav   */
-.mytopnavwrapper {
+/* .mytopnavwrapper {
   height: 0;
   width: 100%;
   position: block !important;
@@ -249,6 +249,53 @@ nav .closebtn {
   top: 0;
   right: 25px;
   font-size: 36px;
+} */
+
+nav {
+  background-color: #111;
+  padding: 10px 0px 0px;
+  text-align: center;
+  border-bottom: 1px solid #333;
+}
+
+nav img {
+  height: 50px;
+  transition: .3s;
+}
+
+nav img:hover {
+  opacity: 100%;
+  filter: contrast(125%) brightness(125%);
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+  align-items: center
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  margin-bottom: 10px;
+}
+
+
+
+nav ul li a {
+  display: block;
+  padding: 5px;
+  text-decoration: none;
+  color: white;
+}
+
+nav a:hover {
+  background-color: #333;
 }
 
 .__threelinesicon {
@@ -326,7 +373,7 @@ nav .closebtn {
   transform: translateY(-40px);
   margin-left: calc(50% - (1vmin + 32px));
   bottom: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
   margin-top: 75px;
   margin-bottom: 100px;
   transition: .3s;
@@ -337,7 +384,7 @@ nav .closebtn {
   text-align: center;
   transform: translateY(15px);
   font-size: calc(0.5vmin + 8px);
-  overflow: none;
+  /* overflow: none; */
   transition: .3s;
 
   animation-duration: .6s;
@@ -392,7 +439,7 @@ nav .closebtn {
 } */
 .section2 {
   /* background-color: #000000 !important; */
-  overflow: hidden;
+  /* overflow: hidden; */
   height: auto;
   padding-bottom: 50px;
   max-height: 750px;
@@ -484,8 +531,8 @@ nav .closebtn {
   display: inline-block;
   width: 100%;
   align-items: center;
-  margin-bottom: 35px;
-  /* transition: .3s; */
+  /* margin-bottom: 35px; */
+  transition: .3s;
 }
 
 /* .sectionend .centerlist {
@@ -1190,35 +1237,35 @@ input:active {
 
 /* other screens */
 @media screen and (max-height: 450px) {
-  .sidenav {
+  /* .sidenav {
     padding-top: 15px;
   }
 
   .sidenav a {
     font-size: 18px;
-  }
+  } */
 }
 
 @media only screen and (max-height:1440px) {
-  .topnav ul {
+  /* .topnav ul {
     right: 0;
-  }
+  } */
 
 }
 
 @media only screen and (max-height:1080px) {
-  .topnav ul {
+  /* .topnav ul {
     right: 0;
-  }
+  } */
 
 }
 
 
 
 @media only screen and (max-height:720px) {
-  .topnav ul {
+  /* .topnav ul {
     right: 0;
-  }
+  } */
 
   input {
     height: 100%;
@@ -1336,9 +1383,9 @@ input:active {
 
 /* portrait less than 1/1 ratio */
 @media only screen and (orientation: portrait) and (max-aspect-ratio:1/1) {
-  .topnav ul {
+  /* .topnav ul {
     right: 0;
-  }
+  } */
 
   .section2 .slideshow-container {
 
@@ -1363,13 +1410,13 @@ input:active {
     display: none;
   }
 
-  .mytopnavwrapper {
+  /* .mytopnavwrapper {
     margin: 0;
     padding: 0;
     border: none;
     overflow-x: hidden;
     overflow-y: scroll;
-  }
+  } */
 
   .img1 {
     padding: 0;
@@ -1534,11 +1581,11 @@ input:active {
     margin: auto calc(12.5%);
   }
 
-  .mytopnavwrapper {
+  /* .mytopnavwrapper {
     margin: 0;
     padding: 0;
     border: none;
-  }
+  } */
 
   .img1 {
     padding: 0;

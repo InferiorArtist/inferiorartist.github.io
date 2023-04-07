@@ -1,390 +1,420 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="/Images/icon 7.png" type="images/x-icon">
-  <link rel="stylesheet" href="/css/styles.css">
-  <title>A Fantasy Story News</title>
-  <meta name="description" content="A Fantasy Story News. All news about A Fantasy Story will be found here, so feel free to look around!">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/Images/icon 7.png" type="images/x-icon">
+    <link rel="stylesheet" href="/css/SCROLL WHEEL.css">
+    <title>A Fantasy Story News</title>
+    <meta name="description" content="A Fantasy Story News. All news about A Fantasy Story will be found here, so feel free to look around!">
+  
+    <meta property="og:image" content="/Images/afs words logo2.png" />
+    <meta property="og:description" content="All news about A Fantasy Story will be found here!" />
+    <meta property="og:url" content="https://afantasystory.com/afs/news" />
+    <meta property="og:title" content="A Fantasy Story - News" />
+  
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:site" content="@HeyFantasyStory" />
+    <meta property="twitter:title" content="A Fantasy Story - News" />
+    <meta property="twitter:image" content="https://afantasystory.com/Images/afs words logo3 square.png" />
+  
 
-  <meta property="og:image" content="/Images/afs words logo2.png" />
-  <meta property="og:description" content="All news about A Fantasy Story will be found here!" />
-  <meta property="og:url" content="https://afantasystory.com/afs/news" />
-  <meta property="og:title" content="A Fantasy Story - News" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
 
-  <meta property="twitter:card" content="summary" />
-  <meta property="twitter:site" content="@HeyFantasyStory" />
-  <meta property="twitter:title" content="A Fantasy Story - News" />
-  <meta property="twitter:image" content="https://afantasystory.com/Images/afs words logo3 square.png" />
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
+        body {
 
-      box-sizing: content-box;
-    }
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #111;
+        }
 
-    .notthenav {
-      box-sizing: border-box !important;
-      pointer-events: all !important;
-    }
+        nav {
+            background-color: #111;
+            padding: 10px 0px 0px;
+            text-align: center;
+            border-bottom: 1px solid #333;
+        }
 
-    /* Add a gray background color with some padding */
-    body {
-      font-family: Arial;
-      background: #222;
-      pointer-events: all !important;
-    }
+        nav img {
+            height: 50px;
+            transition: .3s;
+        }
 
-    .topnav ul {
-      overflow: none !important;
-    }
+        nav img:hover {
+            opacity: 100%;
+            filter: contrast(125%) brightness(125%);
+        }
 
-    /* Header/Blog Title */
-    .header {
-      padding: 36px 30px 30px 30px;
-      font-size: 40px;
-      text-align: center;
-      overflow-y: hidden !important;
-      box-sizing: border-box !important;
-      pointer-events: all !important;
-    }
+        nav ul {
+            display: flex;
+            justify-content: space-around;
+            margin: auto;
+            align-items: center
+        }
 
-    /* Create two unequal columns that floats next to each other */
-    /* Left column */
-    .leftcolumn {
-      float: left;
-      width: 75%;
-      box-sizing: border-box !important;
-      pointer-events: all !important;
-    }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
 
-    /* Right column */
-    .rightcolumn {
-      float: left;
-      width: 25%;
-      padding-left: 20px;
-      box-sizing: border-box !important;
-      pointer-events: none !important;
-      position: absolute;
-      right: 0;
-      top: 40px;
-      z-index: 10;
-      overflow-y: hidden;
+        nav ul li {
+            margin-bottom: 10px;
+        }
 
-    }
-
-    /* Fake image */
-    .fakeimg {
-      background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='30' height='30' patternTransform='scale(1) rotate(45)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(0, 0%, 0%, 0)'/><path d='M3.25 10h13.5M10 3.25v13.5' transform='translate(5,0)' stroke-linejoin='round' stroke-linecap='round' stroke-width='1' stroke='hsla(0, 0%, 40%, 1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
-      border: 1px solid #555;
-      background-color: #111;
-      width: 100%;
-      max-height: 300px !important;
-      padding: 20px;
-      box-sizing: border-box !important;
-      pointer-events: all !important;
-      object-fit: contain;
-    }
-
-    /* Add a card effect for articles */
-    .cardSA {
-      pointer-events: all !important;
-      background-color: #222;
-      padding: 20px;
-      box-sizing: border-box !important;
-      margin: 20px 20px 0 40px;
-    }
-
-    .cardSB {
-      pointer-events: all !important;
-      box-sizing: border-box !important;
-      background-color: #222;
-      padding: 20px;
-      margin: 20px 40px 0 0px;
-    }
-
-    /* Clear floats after the columns */
-    .row:after {
-      content: "";
-      display: table;
-      clear: both;
-      box-sizing: border-box !important;
-      pointer-events: all !important;
-    }
-
-    /* Footer */
-    .footer {
-      box-sizing: border-box !important;
-      text-align: center;
-      background: #222;
-      margin-bottom: 20px;
-      margin-top: 20px;
-      height: 100px;
-      pointer-events: all !important;
-    }
-
-    .clickable {
-      pointer-events: all !important;
-      z-index: 100 !important;
-    }
-
-    .big {
-      font-size: 40px;
-    }
-
-    .small {
-      font-size: 16px;
-    }
-
-    .lore {
-      color: black;
-      font-size: 12px;
-      background-color: dodgerblue;
-      text-align: center;
-      width: 60px;
-      border-radius: 5px;
-      display: inline-block;
-    }
-
-    .character {
-      color: black;
-      font-size: 12px;
-      background-color: yellowgreen;
-      text-align: center;
-      width: 100px;
-      border-radius: 5px;
-      display: inline-block;
-    }
-
-    .gamenews {
-      color: black;
-      font-size: 12px;
-      background-color: red;
-      text-align: center;
-      width: 100px;
-      border-radius: 5px;
-      display: inline-block;
-    }
-
-    .music {
-      color: black;
-      font-size: 12px;
-      background-color: salmon;
-      text-align: center;
-      width: 72px;
-      border-radius: 5px;
-      display: inline-block;
-    }
-
-    .news {
-      color: black;
-      font-size: 12px;
-      background-color: blueviolet;
-      text-align: center;
-      width: 60px;
-      border-radius: 5px;
-      display: inline-block;
-    }
-      section {
-        background-color: #111;
-        padding-bottom: env(safe-area-inset-bottom);
-      }
-
-    /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
-    @media screen and (max-width: 800px) {
-
-      .leftcolumn,
-      .rightcolumn {
-        width: 100%;
-        padding: 0;
-      }
-
-      .rightcolumn {
-        position: static !important;
-        float: left;
-        padding-left: 20px;
-        box-sizing: border-box !important;
-        pointer-events: none !important;
-        overflow-y: hidden;
-      }
-    }
-
-    @media screen and (max-height: 700px) {
-      .rightcolumn {
-        height:85%;
-        overflow-y: scroll;
-        pointer-events: visible !important;
-        top:50px;
-      }
-      .rightcolumn::-webkit-scrollbar {
-        display:none;
         
-      }
-    }
-  </style>
+
+        nav ul li a {
+            display: block;
+            padding: 5px;
+            text-decoration: none;
+            color: white;
+        }
+
+        nav a:hover {
+            background-color: #333;
+        }
+
+        #main a {
+            text-decoration: none;
+        }
+        #main {
+            background-color: #111;
+            border-right: 1px solid #333;
+            width: 80%;
+            float: left;
+            height: auto;
+            padding: 2.5%;
+            box-sizing: border-box;
+        }
+
+        #main h2 {
+            display: flex;
+            justify-content: center;
+            /* padding: 10px 0 0 0; */
+        }
+
+        #main .text {
+            margin: 0;
+            padding: 0;
+        }
+
+        #main img {
+            transition: .3s;
+
+            display: flex;
+            margin: auto;
+            object-fit: contain;
+            width: 100%;
+            max-height: 250px;
+        }
+
+
+        #sidebar {
+            background-color: #111;
+            width: 20%;
+            float: left;
+            height: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        #sidebar h2 {
+            font-size: 18px;
+            margin-top: 0;
+
+        }
+
+        .text::after {
+            content: "\a";
+            white-space: pre;
+
+        }
+
+        #sidebar .text {
+            font-size: 14px;
+            margin-top: 0;
+        }
+
+        #sidebar img {
+            width: 85%;
+            height: auto;
+            display: flex;
+            margin: auto;
+        }
+
+        #sidebar .text::after {
+            margin: 25px;
+            height: 1px;
+            display: block;
+            width: 80%;
+            background: transparent;
+            border-bottom: 1px dashed #333;
+            content: '';
+        }
+
+        #newspost {
+            padding: 10px;
+            border-radius: 1%;
+            margin: 0 auto 15px;
+            outline: 1px solid #222;
+            transition: .3s;
+            background: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='30' height='30' patternTransform='scale(1) rotate(45)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(0, 0%, 0%, 1)'/><path d='M3.25 10h13.5M10 3.25v13.5' transform='translate(5,0)' stroke-linejoin='round' stroke-linecap='round' stroke-width='1' stroke='hsla(0, 0%, 50%, 1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
+            width: 90%;
+        }
+
+        #newspost h2 {
+            background: #222;
+        }
+
+        #newspost .text {
+            padding: 10px 10px 15px;
+            display: block;
+        }
+
+        #newspost .seperator {
+            margin: auto;
+            height: 15px;
+            display: block;
+            width: 97%;
+            background: transparent;
+            border-bottom: 1px dashed #555;
+            content: '';
+            font-size: 14px;
+        }
+
+        #newspost h2 {
+            outline: 1px solid #333;
+        }
+
+        #newspost:hover {
+            background: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='30' height='30' patternTransform='scale(1) rotate(45)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(0, 0%, 100%, .02)'/><path d='M3.25 10h13.5M10 3.25v13.5' transform='translate(5,0)' stroke-linejoin='round' stroke-linecap='round' stroke-width='1' stroke='hsla(0, 0%, 52%, 1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
+            outline: 1px solid black;
+            cursor: pointer;
+        }
+
+        header img {
+            display: none;
+        }
+
+        .lore {
+            color: black;
+            font-size: 12px;
+            background-color: dodgerblue;
+            text-align: center;
+            width: 60px;
+            border-radius: 5px;
+            display: inline-block;
+            font-weight: 700;
+            background-image: #111;
+        }
+
+        .character {
+            color: black;
+            font-size: 12px;
+            background-color: yellowgreen;
+            text-align: center;
+            width: 100px;
+            border-radius: 5px;
+            display: inline-block;
+            font-weight: 700;
+            background-image: #111;
+        }
+
+        .gamenews {
+            color: black;
+            font-size: 12px;
+            background-color: red;
+            text-align: center;
+            width: 100px;
+            border-radius: 5px;
+            display: inline-block;
+            font-weight: 700;
+        }
+
+        .music {
+            color: black;
+            font-size: 12px;
+            background-color: salmon;
+            text-align: center;
+            width: 72px;
+            border-radius: 5px;
+            display: inline-block;
+            font-weight: 700;
+
+        }
+
+        .news {
+            color: black;
+            font-size: 12px;
+            background-color: blueviolet;
+            text-align: center;
+            width: 60px;
+            border-radius: 5px;
+            display: inline-block;
+            font-weight: 700;
+            background-image: #111;
+            margin: 0px;
+        }
+
+        .description {
+            background-color: #222;
+            outline: 1px solid #333;
+
+        }
+        .pinned::before {
+            content: url("/images/ICON\ SVG/pinned.svg");
+            left:calc(20% - 10%);
+            position: absolute;
+            background-color: indigo;
+            width:24px;
+            padding: 36px 5px;
+            height: 24px;
+            font-size: 0px;
+            color:#00000000 ;
+            transition: .3s;
+            border: 1px solid #222;
+
+        }
+        .pinned:hover::before {
+            content: url("/images/ICON\ SVG/pinned.svg")'\00a0Pinned\00a0Post';
+            white-space: pre-wrap;
+            left:calc(20% - 10%);
+            position: absolute;
+            height:auto;
+            width:145px;
+            font-size: 18px;
+            height: 24px;
+            padding: 1px 5px;
+            transition: 0.1;
+            color:white ;
+        }
+        .sectionend {
+            height: auto;
+            background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='30' height='30' patternTransform='scale(1) rotate(45)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(0, 0%, 0%, 0)'/><path d='M3.25 10h13.5M10 3.25v13.5' transform='translate(5,0)' stroke-linejoin='round' stroke-linecap='round' stroke-width='1' stroke='hsla(0, 0%, 40%, 1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
+            outline: 1px solid #333;
+            outline-offset: -1px;
+            display: inline-block;
+            width: 100%;
+            align-items: center;
+        }
+
+        .sectionend li {
+            display: inline-flex;
+            margin: 12px auto;
+        }
+
+        .sectionend ul {
+            display: flex;
+        }
+
+        .sectionend span {
+            border: 1px solid white;
+            display: inline-block;
+            height: 64px;
+            width: 64px;
+            border-radius: 50%;
+            transition: .1s;
+            filter: blur(100);
+        }
+
+        .sectionend img {
+            max-height: 32px;
+            max-width: auto;
+            margin-left: 10px;
+            margin-top: 16px;
+            filter: invert(100);
+            transition: .3s;
+        }
+
+        .sectionend span:hover {
+            transform: scale(1.1);
+            border-radius: 25%;
+        }
+
+        @media screen and (max-width: 800px) {
+
+            #sidebar {
+                display: block;
+                width: 100%;
+                height: auto;
+                padding: 5%;
+            }
+
+            #sidebar .text::after {
+                width: 95%;
+                margin: 25px 0 0 0;
+                height: 1px;
+                display: block;
+                background: tjransparent;
+                border-bottom: 1px dashed #444;
+                content: '';
+            }
+
+            #main {
+                width: 100%;
+                border-bottom: 1px solid #333;
+            }
+
+            nav img {
+                display: none;
+            }
+
+            header img {
+                position: fixed !important;
+                bottom: 5px !important;
+                right: 0 !important;
+                height: 50px;
+                display: initial;
+            }
+
+            #off {
+                display: none;
+            }
+        }
+    </style>
 </head>
 
-<nav style="box-sizing: content-box !important;">
-  <!-- top nav -->
-  <!-- top nav (closed)-->
-  <div class="topnav">
-    <div id="mytopnavwrapper" class="mytopnavwrapper" style="text-align:center;">
-      <a id="topnavwrapperA" href="javascript:void(0)"
-        style="position: absolute !important;top: 0 !important;right: 25px !important;font-size: 28px !important;padding:0px 8px 8px 8px !important;"
-        class="closebtn" onclick="closeTopNav()">&times;</a>
-      <a class="item4"></a>
-      <a class="item1" href="https://afantasystory.com/afs/home">Home</a>
-      <a class="item1" href="https://afantasystory.com/afs/news">News</a>
-      <a class="item1">Game</a>
-
-      <a class="item1" onclick="openLinks1()">Universe →</a>
-      <div id="blockOne" style="display:none;opacity: 0;pointer-events: none;" href="javascript:void(0)">
-        <a class="item2" href="javascript:void(0)" onclick="closeLinks1()">&times;</a>
-        <a class="item2">Story</a>
-        <a class="item2">Characters</a>
-        <a class="item2">Elements</a>
-        <a class="item2" href="https://afantasystory.com/afs/art of">Art of AFS</a>
-      </div>
-
-      <a class="item1">Calculators</a>
-      <a class="item1">Contact</a>
-      <a class="item1">About</a>
-
-      <a class="item1" onclick="openLinks2()">Socials →</a>
-      <div id="blockTwo" style="display:none;opacity: 0;pointer-events: none;" href="javascript:void(0)">
-        <a class="item2" href="javascript:void(0)" onclick="closeLinks2()">&times;</a>
-        <a class="item2" href="https://www.discord.gg/5jHkKp3fut">Discord</a>
-        <a class="item2">Reddit</a>
-        <a class="item2" href="https://www.youtube.com/@heyfantasystory?sub_confirmation=1">Youtube</a>
-        <a class="item2" href="https://twitter.com/heyfantasystory">Twitter </a>
-      </div>
-      <a class="item5"></a>
-
-    </div>
-    <!-- top nav (open)-->
-    <ul style="overflow:none !important;">
-      <!-- 
-            <li style="text-align:center;top:0;right:0;z-index:-1 !important;position:block;padding:0 0px;border-left: 1px solid rgb(98, 48, 40);">
-              <div class="borderoffset">
-                <div class="coolbutton">
-                  <a> Hello</a>
-                </div>
-              </div>
-            </li>
-            -->
-      <li>
-        <div class="borderoffset">
-          <div class="coolbutton">
-            <a href="https://afantasystory.com/afs/home">&nbsp;Home</a>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="borderoffset">
-          <div class="coolbutton">
-            <a href="https://afantasystory.com/afs/news">News</a>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="borderoffset">
-          <div class="coolbutton">
-            <a href="https://afantasystory.com/afs/art of">Art of AFS</a>
-          </div>
-        </div>
-      </li>
-      <!-- <li class="displayoff2">
-              <div class="borderoffset">
-                <div class="coolbutton">
-                  <a>A Fantasy Story</a>   
-                </div>
-              </div>    
-            </li> -->
-      <li>
-        <div class="borderoffset">
-          <div class="coolbutton">
-            <a href="https://afantasystory.com/">Links</a>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="coolbutton" style="padding:0; font-size:14px;margin:0 !important;">
-          <span id="toggleNav" onclick="openTopNav()">
-            <a>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" height="32 "
-                stroke="currentColor" class="w-6 h-6" style="border:none !important;">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
-              </svg>
-            </a>
-          </span>
-        </div>
-      </li>
-    </ul>
-
-  </div>
-  <script>
-    function openTopNav() {
-      document.getElementById("mytopnavwrapper").style.height = "100vh";
-      document.getElementById("rightColumn").style.display = "none"
-    }
-    function closeTopNav() {
-      document.getElementById("mytopnavwrapper").style.height = "0";
-      document.getElementById("rightColumn").style.display = "block"
-    }
-    function openRightColumn() {
-      document.getElementById("rightColumn").style.display = "block"
-    }
-    // turn off icon replace with other and be able to close
-    // open blocks of links
-    // on
-    function openLinks1() {
-      document.getElementById("blockOne").style.opacity = "100%";
-      document.getElementById("blockOne").style.pointerEvents = "all";
-      document.getElementById("blockOne").style.display = "block";
-    }
-    // off
-    function closeLinks1() {
-      document.getElementById("blockOne").style.opacity = "0";
-      document.getElementById("blockOne").style.pointerEvents = "none";
-      document.getElementById("blockOne").style.display = "none";
-    }
-    // on
-    function openLinks2() {
-      document.getElementById("blockTwo").style.opacity = "100%";
-      document.getElementById("blockTwo").style.pointerEvents = "all";
-      document.getElementById("blockTwo").style.display = "block";
-    }
-    // off
-    function closeLinks2() {
-      document.getElementById("blockTwo").style.opacity = "0";
-      document.getElementById("blockTwo").style.pointerEvents = "none";
-      document.getElementById("blockTwo").style.display = "none";
-    }
-  </script>
-</nav>
-
-<body style="pointer-events: all !important;">
-  <div class="notthenav" style="box-sizing: border-box !important;">
-    <div class="views" style="box-sizing: border-box !important;">
-      <main style="margin-top:34px;box-sizing: border-box !important;">
-        <section id="#newsPage" style="overflow-y:scroll;height:100vh;  pointer-events:all !important; box-sizing: border-box !important;">
-          <div class="scroll" onclick="closeTopNav(); openRightColumn()">
-
-
-            <div class="header">
-              <h3>News</h3>
+<body>
+    <header>
+        <img src="/Images/afs words logo2.png" alt="">
+    </header>
+    <nav>
+        <ul>
+            <div id="off">
+                <li><a href="https://afantasystory.com/afs/home">
+                        <img src="/Images/afs words logo2.png" alt="">
+                    </a></li>
             </div>
+            <li><a href="https://afantasystory.com/afs/home">Home</a></li>
+            <li><a href="https://afantasystory.com/afs/news">News</a></li>
+            <li><a href="https://afantasystory.com/afs/art of">Art Of AFS</a></li>
+            <li><a href="https://afantasystory.com/">Links</a></li>
+        </ul>
+    </nav>
 
-            <div class="row clickable" style="box-sizing: border-box !important;">
-
-              <!-- left column -->
-              <div class="leftcolumn clickable" style="box-sizing: border-box !important;">
-                <!-- 
+    <!-- POST FORMAT
+        <a href="LINK FOR NEWS POST">
+            <div id="newspost">
+                <h2>TITLE</h2>
+                <img src="IMG SOURCE" alt="DESCRIPTION OF IMAGE">
+                <div class="description">
+                    <a class="text">
+                    &nbsp; <div class="TAG">TAG</div>MM DD, YYYY
+                    </a>
+                    <a href="LINK FOR NEWS POST AGAIN" class="text">SMALL DESCRIPTION
+                    </a>
+        </a>
+     -->
+    <!-- 
     TAGS:
     NEWS
     LORE
@@ -392,203 +422,145 @@
     GAME NEWS
     MUSIC
    -->
-
-                <div class="cardSA">
-                  <a class="big" target="_blank" href="https://afantasystory.com/afs/news/0000004">1. A Fantasy Story - AFS OST</a>
-                  <div class="small">
-                    <h5 target="_blank" href="https://afantasystory.com/afs/news/0000004">
-                      <DIV class="music">MUSIC</DIV> Feb 10, 2023
-                    </h5>
-                    <a target="_blank" href="https://afantasystory.com/afs/news/0000004"><img
-                        src="/Images/afs words logo2.png"  alt="A Fantasy Story word logo with background" class="fakeimg clickable"></img></a>
-                    <a target="_blank" href="https://afantasystory.com/afs/news/0000004">First song of A Fantasy Story </a><br>
-                    <a target="_blank" href="https://afantasystory.com/afs/news/0000004">Collaboration with MightyMooMoo to bring you the first of many songs in the AFS original soundtrack.</a>
-                  </div>
+    <div id="main">
+        <a href="https://afantasystory.com/afs/news/archive">
+            <div id="newspost">
+                <h2 class="pinned">Archive</h2>
+                <img src="/Images/afs words logo archive.png">
+                <div class="description">
+                    <a class="text seperator">
+                        &nbsp;
+                        <div class="news"> NEWS</div>
+                        <div class="lore">LORE</div>
+                        <div class="music">MUSIC</div>
+                        <div class="character">CHARACTER</div>
+                        <!-- <div class="gamenews">GAME NEWS</div> -->
+                    </a>
+                    <a href="https://afantasystory.com/afs/news/archive" class="text">Have fun looking around! Most
+                        recent news will be found here and older posts will be found in our archive here.
+                    </a>
                 </div>
-
-                <div class="cardSA">
-                  <a class="big" target="_blank" href="https://afantasystory.com/afs/news/0000003">Butron</a>
-                  <div class="small">
-                    <h5 target="_blank" href="https://afantasystory.com/afs/news/0000003">
-                      <DIV class="lore">LORE</DIV> Jan 18, 2023
-                    </h5>
-                    <a target="_blank" href="https://afantasystory.com/afs/news/0000003"><img
-                        src="/Images/butron logo7.png" alt="Butron company logo" class="fakeimg clickable"></img></a>
-                    <a target="_blank" href="https://afantasystory.com/afs/news/0000003">Butron</a><br>
-                    <a target="_blank" href="https://afantasystory.com/afs/news/0000003">A first look at the infamous
-                      medical company.</a>
-                  </div>
-                </div>
-
-                <div class="cardSA">
-                  <a class="big" target="_blank" href="https://afantasystory.com/afs/news/0000002">First
-                    Contact</a>
-                  <div class="small">
-                    <h5 target="_blank" href="https://afantasystory.com/afs/news/0000002">
-                      <DIV class="character">CHARACTER</DIV> Jan 4, 2023
-                    </h5>
-                    <a target="_blank" href="https://afantasystory.com/afs/news/0000002"><img
-                        src="/Images/1 test banner.png" alt="Secret character close up of upper half of body" class="fakeimg clickable"></img></a>
-                    <a target="_blank" href="https://afantasystory.com/afs/news/0000002">First Contact</a><br>
-                    <a target="_blank" href="https://afantasystory.com/afs/news/0000002">For he has been
-                      summoned, so it shall be.</a>
-                  </div>
-                </div>
-
-                <div class="cardSA">
-                  <a class="big" target="_blank" href="https://afantasystory.com/afs/news/0000001">Say No to AI
-                    "Art"</a>
-                  <div class="small">
-                    <h5 target="_blank" href="https://afantasystory.com/afs/news/0000001">
-                      <DIV class="news">NEWS</DIV> Dec 16, 2022
-                    </h5>
-                    <a target="_blank" href="https://afantasystory.com/afs/news/0000001"><img
-                        src="/Images/New Images/Fj9lzDWWQAQH_dI.jpg" alt="Say NO to AI art!" class="fakeimg clickable"></img></a>
-                    <a target="_blank" href="https://afantasystory.com/afs/news/0000001">Say No to AI
-                      "Art"</a><br>
-                    <a target="_blank" href="https://afantasystory.com/afs/news/0000001">Read the title.</a>
-                  </div>
-                </div>
-
-                <div class="cardSA">
-                  <a class="big" target="_blank" href="https://afantasystory.com/afs/news/0000000">0: In the
-                    Beginning</a>
-                  <div class="small">
-                    <h5 target="_blank" href="https://afantasystory.com/afs/news/0000000">
-                      <DIV class="lore">LORE</DIV> Dec 12, 2022
-                    </h5>
-                    <a target="_blank" href="https://afantasystory.com/afs/news/0000000"><img
-                        src="/Images/afs words logo2.png" alt="A Fantasy Story word logo with background" class="fakeimg clickable"></img></a>
-                    <a target="_blank" href="https://afantasystory.com/afs/news/0000000">Chapter 0</a><br>
-                    <a target="_blank" href="https://afantasystory.com/afs/news/0000000">What was causing wars?
-                      Why was there a fracture in time? Who are The Four Great Lords?</a>
-                  </div>
-                </div>
-                <!-- 
-  <div  class="cardSA">
-    <a class="big" target="_blank" href="https://afantasystory.com/afs/News/0000000">In the Beginning</a>
-    <div class="small">
-      <h5 target="_blank" href="https://afantasystory.com/afs/News/0000000"><DIV class="character">CHARACTER</DIV>  Dec 12, 2022</h5>
-      <a target="_blank" href="https://afantasystory.com/afs/News/0000000"><img src="/Images/asdfasdf2222222222.png"  class="fakeimg clickable" ></img></a>
-      <a target="_blank" href="https://afantasystory.com/afs/News/0000000">Some text..</a><br>
-      <a target="_blank" href="https://afantasystory.com/afs/News/0000000">Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</a>
-    </div>
-  </div>
--->
-                <div target="_blank" href="https://afantasystory.com/afs/news/archive" class="cardSA">
-                  <a target="_blank" href="https://afantasystory.com/afs/news/archive" class="big">Archived Posts</a>
-                  <div class="small">
-                    <h5></h5>
-                    <a target="_blank" href="https://afantasystory.com/afs/news/archive"><img
-                        src="/Images/New Images/nothing.png" alt="Empty image" class="fakeimg clickable"></img></a>
-                    <a></a>
-                    <a></a>
-                  </div>
-                </div>
-                <!-- 
-  <div  class="cardSA">
-    <a class="big" target="_blank" href="https://afantasystory.com/afs/News/0000000">In the Beginning</a>
-    <div class="small">
-      <h5 target="_blank" href="https://afantasystory.com/afs/News/0000000"><DIV class="gamenews">GAME NEWS</DIV>  Dec 12, 2022</h5>
-      <a target="_blank" href="https://afantasystory.com/afs/News/0000000"><img src="/Images/afs words logo2.png"  class="fakeimg clickable" ></img></a>
-      <a target="_blank" href="https://afantasystory.com/afs/News/0000000">Some text..</a><br>
-      <a target="_blank" href="https://afantasystory.com/afs/News/0000000">Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</a>
-    </div>
-  </div>
-
-  <div  class="cardSA">
-    <a class="big" target="_blank" href="https://afantasystory.com/afs/News/0000000">In the Beginning</a>
-    <div class="small">
-      <h5 target="_blank" href="https://afantasystory.com/afs/News/0000000"><DIV class="music">MUSIC</DIV>  Dec 12, 2022</h5>
-      <a target="_blank" href="https://afantasystory.com/afs/News/0000000"><img src="/Images/afs words logo2.png"  class="fakeimg clickable" ></img></a>
-      <a target="_blank" href="https://afantasystory.com/afs/News/0000000">Some text..</a><br>
-      <a target="_blank" href="https://afantasystory.com/afs/News/0000000">Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</a>
-    </div>
-  </div>
-
-  <div  class="cardSA">
-    <a class="big" target="_blank" href="https://afantasystory.com/afs/News/0000000">In the Beginning</a>
-    <div class="small">
-      <h5 target="_blank" href="https://afantasystory.com/afs/News/0000000"><DIV class="lore">LORE</DIV>  Dec 12, 2022</h5>
-      <a target="_blank" href="https://afantasystory.com/afs/News/0000000"><img src="/Images/afs words logo2.png"  class="fakeimg clickable" ></img></a>
-      <a target="_blank" href="https://afantasystory.com/afs/News/0000000">Some text..</a><br>
-      <a target="_blank" href="https://afantasystory.com/afs/News/0000000">Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</a>
-    </div>
-  </div>
-</div> -->
-                <!-- right column -->
-              <div style="overflow-y: scroll !important;">
-
-                <div id="rightColumn" class="rightcolumn">
-                    <div class="cardSB">
-                      <h2>About Me</h2>
-                      <!-- <div class="fakeimg" style="height:100px;">Image</div> -->
-                      <p>Hello! We will follow the creative process for A Fantasy Story. A world building endeavor that
-                        follows a fantastic story, characters, and more!</p>
-                    </div>
-                    <div class="cardSB">
-                      <h3>Picked Posts:</h3>
-                      <h4><a href="https://afantasystory.com/afs/news/0000000">In the Beginning</a></h4>
-                      <!-- <div class="fakeimg">Image</div> -->
-                      <a target="_blank" href="https://afantasystory.com/afs/news/0000000"><img
-                          src="/Images/afs words logo2.png" alt="A Fantasy Story word logo with background" class="fakeimg clickable"></img></a>
-                      <br>
-                      <!-- <div class="fakeimg">Image</div> -->
-                      <h4><a href="https://afantasystory.com/afs/news/0000004">1. A Fantasy Story - AFS OST</a></h4>
-                      <a target="_blank" href="https://afantasystory.com/afs/news/0000004"><img 
-                          src="/Images/afs words logo2.png" alt="A Fantasy Story word logo with background" class="fakeimg clickable"></img></a>
-                      <a href="https://afantasystory.com/afs/news/archive" target="_blank">Archived Posts</a>
-                      <br>
-                      <!-- <div class="fakeimg">Image</div> -->
-                    </div>
-                    <!-- <div class="cardSB">
-        <h3>Follow Me</h3>
-        <p>Some text..</p> -->
-                    <!-- <a class="twitter-timeline" max-width="auto" data-height="400" data-dnt="true" data-theme="dark" href="https://twitter.com/HeyFantasyStory?ref_src=twsrc%5Etfw">Follow Us!</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
-                  </div>
-                </div>
-              </div>
             </div>
-
-            <!-- <div class="footer" style="box-sizing: border-box !important;">
-  <h2></h2>
-</div> -->
-
-          </div>
-          <section class="sectionend" > 
-            <div class="centerlist">
-            <ul>
-              <li>
-                <a target="_blank" href="https://www.discord.gg/5jHkKp3fut">
-                  <span>
-                    <img style="margin-left: 10px;margin-top: 16px;" src="/Images/Socials/discord-mark-black.svg" alt="Discord">
-                    <!-- discord -->
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a target="_blank" href="https://www.youtube.com/@heyfantasystory">
-                  <span>
-                    <img style="margin-left: 9px;margin-top: 16px;" src="/Images/Socials/youtube black.svg" alt="Youtube">
-                    <!-- <br>youtube -->
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a target="_blank" href="https://twitter.com/heyfantasystory">
-                  <span>
-                    <img style="margin-left: 12px;margin-top: 16px;" src="/Images/Socials/Twitter Logo black.svg" alt="Twitter">
-                    <!-- twitter -->
-                  </span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </section>
-        </section>
-      </main>
+        </a>
+        <a href="https://afantasystory.com/afs/news/0000004">
+            <div id="newspost">
+                <h2>1. A Fantasy Story - AFS OST</h2>
+                <img src="/Images/afs words logo music.png" alt="A Fantasy Story word logo with background">
+                <div class="description">
+                    <a class="text seperator">
+                        &nbsp;
+                        <div class="news">NEWS</div> Posted on Feb 10, 2023
+                    </a>
+                    <a href="https://afantasystory.com/afs/news/0000004" class="text">
+                        First song of A Fantasy Story is brought to you in collaboration with MightyMooMoo. This is the
+                        first of many songs in the AFS original soundtrack.
+                    </a>
+                </div>
+            </div>
+        </a>
+        <a href="https://afantasystory.com/afs/news/0000003">
+            <div id="newspost">
+                <h2>Butron</h2>
+                <img src="/Images/butron logo7.png" alt="Butron company logo">
+                <div class="description">
+                    <a class="text seperator">
+                        &nbsp;
+                        <div class="lore">LORE</div> Posted on Jan 18, 2023
+                    </a>
+                    <a href="https://afantasystory.com/afs/news/0000003" class="text">A first look at the infamous
+                        medical company.
+                    </a>
+                </div>
+            </div>
+        </a>
+        <a href="https://afantasystory.com/afs/news/0000002">
+            <div id="newspost">
+                <h2>First Contact</h2>
+                <img src="/Images/1 test banner.png" alt="Secret character close up of upper half of body">
+                <div class="description">
+                    <a class="text seperator">
+                        &nbsp;<div class="character">CHARACTER</div> Posted on Jan 4, 2023
+                    </a>
+                    <a href="https://afantasystory.com/afs/news/0000002" class="text">For he has been summoned, so it
+                        shall be.
+                    </a>
+                </div>
+            </div>
+        </a>
+        <a href="https://afantasystory.com/afs/news/0000001">
+            <div id="newspost">
+                <h2>Say No to AI "Art</h2>
+                <img src="/Images/New Images/Fj9lzDWWQAQH_dI.jpg" alt="Say NO to AI art!">
+                <div class="description">
+                    <a class="text seperator">
+                        &nbsp; <div class="news">NEWS</div> Posted on Dec 16, 2022
+                    </a>
+                    <a href="https://afantasystory.com/afs/news/0000001" class="text">Say No to AI "Art"
+                    </a>
+                </div>
+            </div>
+        </a>
+        <a href="https://afantasystory.com/afs/news/0000000">
+            <div id="newspost">
+                <h2>0: In the Beginning</h2>
+                <img src="/Images/afs words logo lore.png" alt="A Fantasy Story word logo with background">
+                <div class="description">
+                    <a class="text seperator">
+                        &nbsp; <div class="lore">LORE</div> Posted on Dec 12, 2022
+                    </a>
+                    <a href="https://afantasystory.com/afs/news/0000000" class="text">Chapter 0: What was causing wars?
+                        Why was there a fracture in time? Who are The Four
+                        Great Lords?
+                    </a>
+        </a>
     </div>
-  </div>
+    </div>
+    </a>
+    </div>
+
+    <div id="sidebar">
+        <h2>General News</h2>
+        <img src="/Images/afs words logo2.png">
+        <a class="text">Hello! We will follow the creative process for A Fantasy Story. A world building endeavor that
+            follows a fantastic story, characters, and more!</a>
+    </div>
+
+
+
+
+    <section class="sectionend">
+        <div class="centerlist">
+            <ul>
+                <li>
+                    <a target="_blank" href="https://www.discord.gg/5jHkKp3fut">
+                        <span>
+                            <img style="margin-left: 10px;margin-top: 16px;"
+                                src="/Images/Socials/discord-mark-black.svg" alt="Discord">
+                            <!-- discord -->
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://www.youtube.com/@heyfantasystory">
+                        <span>
+                            <img style="margin-left: 9px;margin-top: 16px;" src="/Images/Socials/youtube black.svg"
+                                alt="Youtube">
+                            <!-- <br>youtube -->
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://twitter.com/heyfantasystory">
+                        <span>
+                            <img style="margin-left: 12px;margin-top: 16px;"
+                                src="/Images/Socials/Twitter Logo black.svg" alt="Twitter">
+                            <!-- twitter -->
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
 </body>
 
 </html>
