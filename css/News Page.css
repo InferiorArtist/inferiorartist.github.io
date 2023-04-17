@@ -67,55 +67,90 @@ img {
     text-align: center;
 }
 
-.lore {
-    color: black;
-    font-size: 12px;
-    background-color: dodgerblue;
-    text-align: center;
-    width: 60px;
-    border-radius: 5px;
-    display: inline-block;
+
+input[type="radio"]:checked+label {
+    filter: drop-shadow(0Px 0px 5px rgba(255, 255, 255, 1));
+
 }
 
-.character {
-    color: black;
-    font-size: 12px;
-    background-color: yellowgreen;
-    text-align: center;
-    width: 100px;
-    border-radius: 5px;
-    display: inline-block;
+input[type="radio"]:not(:checked),
+input[type="radio"]:checked {
+    display: none;
 }
 
-.gamenews {
-    color: black;
-    font-size: 12px;
-    background-color: red;
-    text-align: center;
-    width: 100px;
-    border-radius: 5px;
-    display: inline-block;
+label {
+    cursor: pointer;
+    user-select: none;
+
 }
 
-.music {
-    color: black;
-    font-size: 12px;
-    background-color: salmon;
-    text-align: center;
-    width: 72px;
-    border-radius: 5px;
-    display: inline-block;
+.filtercontainer {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
 }
 
-.news {
-    color: black;
-    font-size: 12px;
-    background-color: blueviolet;
-    text-align: center;
-    width: 60px;
-    border-radius: 5px;
-    display: inline-block;
+body {
+    margin: auto;
 }
+
+.blue {
+    /* background: blue; */
+}
+
+.red {
+    /* background: red; */
+}
+
+.green {
+    /* background: green; */
+}
+
+/* filter */
+.filter-item {
+    float: left;
+    width: auto;
+    height: auto;
+    background-color: #111;
+    border-radius: 10px;
+    margin: 2px;
+}
+
+.filter-item:hover {
+    background-color: #666;
+    border-radius: 10px;
+}
+
+.filter-wrap-demo1,
+.filter-wrap-demo2 {
+    overflow: hidden;
+    margin: auto;
+    width: auto;
+    padding: 10px;
+    display: grid;
+}
+
+/* filter */
+#fcharacter:checked~.filter-wrap-demo2 :not(.fcharacter, .dfilter) {
+    display: none;
+}
+
+#fmusic:checked~.filter-wrap-demo2 :not(.fmusic, .dfilter) {
+    display: none;
+}
+
+#fnews:checked~.filter-wrap-demo2 :not(.fnews, .dfilter) {
+    display: none;
+}
+
+#flore:checked~.filter-wrap-demo2 :not(.flore, .dfilter) {
+    display: none;
+}
+
+#fgamenews:checked~.filter-wrap-demo2 :not(.fgamenews, .dfilter) {
+    display: none;
+}
+
 
 @media only screen and (max-width:450px) {
     * {
