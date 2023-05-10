@@ -94,17 +94,6 @@ body {
     margin: auto;
 }
 
-.blue {
-    /* background: blue; */
-}
-
-.red {
-    /* background: red; */
-}
-
-.green {
-    /* background: green; */
-}
 
 /* filter */
 .filter-item {
@@ -148,6 +137,10 @@ body {
 }
 
 #fgamenews:checked~.filter-wrap-demo2 :not(.fgamenews, .dfilter) {
+    display: none;
+}
+
+#fstream:checked~.filter-wrap-demo2 :not(.fstream, .dfilter) {
     display: none;
 }
 

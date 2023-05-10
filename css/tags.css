@@ -47,6 +47,15 @@
     border-radius: 5px;
     display: inline-block;
 }
+.stream {
+    color: black;
+    font-size: 12px;
+    background-color: rgb(0, 194, 184);
+    text-align: center;
+    width: 72px;
+    border-radius: 5px;
+    display: inline-block;
+}
 .all {
     color: black;
     font-size: 12px;

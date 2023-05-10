@@ -9,18 +9,19 @@
     <link rel="stylesheet" href="/css/SCROLL WHEEL.css">
     <link rel="stylesheet" href="/css/tags.css">
     <title>A Fantasy Story News</title>
-    <meta name="description" content="A Fantasy Story News. All news about A Fantasy Story will be found here, so feel free to look around!">
-  
+    <meta name="description"
+        content="A Fantasy Story News. All news about A Fantasy Story will be found here, so feel free to look around!">
+
     <meta property="og:image" content="/Images/afs words logo2.png" />
     <meta property="og:description" content="All news about A Fantasy Story will be found here!" />
     <meta property="og:url" content="https://afantasystory.com/afs/news" />
     <meta property="og:title" content="A Fantasy Story - News" />
-  
+
     <meta property="twitter:card" content="summary" />
     <meta property="twitter:site" content="@HeyFantasyStory" />
     <meta property="twitter:title" content="A Fantasy Story - News" />
     <meta property="twitter:image" content="https://afantasystory.com/Images/afs words logo3 square.png" />
-  
+
 
     <style>
         * {
@@ -71,7 +72,7 @@
             margin-bottom: 10px;
         }
 
-        
+
 
         nav ul li a {
             display: block;
@@ -87,6 +88,7 @@
         #main a {
             text-decoration: none;
         }
+
         #main {
             background-color: #111;
             border-right: 1px solid #333;
@@ -211,33 +213,36 @@
             outline: 1px solid #333;
 
         }
+
         .pinned::before {
             content: url("https://raw.githubusercontent.com/InferiorArtist/inferiorartist.github.io/1446c0ca2344c180195a90db01e59949203ffd9b/Images/ICON%20SVG/pinned.svg");
-            left:calc(20% - 10%);
+            left: calc(20% - 10%);
             position: absolute;
             background-color: indigo;
-            width:24px;
+            width: 24px;
             padding: 36px 5px;
             height: 24px;
             font-size: 0px;
-            color:#00000000 ;
+            color: #00000000;
             transition: .3s;
             border: 1px solid #222;
 
         }
+
         .pinned:hover::before {
             content: url("https://raw.githubusercontent.com/InferiorArtist/inferiorartist.github.io/1446c0ca2344c180195a90db01e59949203ffd9b/Images/ICON%20SVG/pinned.svg")'\00a0Pinned\00a0Post';
             white-space: pre-wrap;
-            left:calc(20% - 10%);
+            left: calc(20% - 10%);
             position: absolute;
-            height:auto;
-            width:145px;
+            height: auto;
+            width: 145px;
             font-size: 18px;
             height: 24px;
             padding: 1px 5px;
             transition: 0.1;
-            color:white ;
+            color: white;
         }
+
         .sectionend {
             height: auto;
             background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='30' height='30' patternTransform='scale(1) rotate(45)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(0, 0%, 0%, 100%)'/><path d='M3.25 10h13.5M10 3.25v13.5' transform='translate(5,0)' stroke-linejoin='round' stroke-linecap='round' stroke-width='1' stroke='hsla(0, 0%, 40%, 1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
@@ -280,6 +285,7 @@
             transform: scale(1.1);
             border-radius: 25%;
         }
+
         input[type="radio"]:not(:checked),
         input[type="radio"]:checked {
             display: none;
@@ -304,64 +310,70 @@
             margin: auto;
             padding: 10px;
         }
+
         /* filter */
-.filter-item {
-    float: left;
-    width: auto;
-    height: auto;
-    background-color: #111;
-    border-radius: 10px;
-    margin: 2px;
-}
+        .filter-item {
+            float: left;
+            width: auto;
+            height: auto;
+            background-color: #111;
+            border-radius: 10px;
+            margin: 2px;
+        }
 
-.filter-item:hover {
-    /* background-color: #666;
+        .filter-item:hover {
+            /* background-color: #666;
     border-radius: 10px; */
-}
+        }
 
-.filter-wrap-demo1,
-.filter-wrap-demo2 {
-    overflow: hidden;
-    margin: auto;
-    width: auto;
-    padding: 10px;
-    display: grid;
-}
-.padding {
-    display: block;
-    /* height: 50px; */
-    padding: 10px;
-}
+        .filter-wrap-demo1,
+        .filter-wrap-demo2 {
+            overflow: hidden;
+            margin: auto;
+            width: auto;
+            padding: 10px;
+            display: grid;
+        }
 
-/* filter */
-#fcharacter:checked~.filter-wrap-demo2 :not(.fcharacter, .dfilter) {
-    display: none;
-}
+        .padding {
+            display: block;
+            /* height: 50px; */
+            padding: 10px;
+        }
 
-#fmusic:checked~.filter-wrap-demo2 :not(.fmusic, .dfilter) {
-    display: none;
-}
+        /* filter */
+        #fcharacter:checked~.filter-wrap-demo2 :not(.fcharacter, .dfilter) {
+            display: none;
+        }
 
-#fnews:checked~.filter-wrap-demo2 :not(.fnews, .dfilter) {
-    display: none;
-}
+        #fmusic:checked~.filter-wrap-demo2 :not(.fmusic, .dfilter) {
+            display: none;
+        }
 
-#flore:checked~.filter-wrap-demo2 :not(.flore, .dfilter) {
-    display: none;
-}
+        #fnews:checked~.filter-wrap-demo2 :not(.fnews, .dfilter) {
+            display: none;
+        }
 
-#fgamenews:checked~.filter-wrap-demo2 :not(.fgamenews, .dfilter) {
-    display: none;
-}
-iframe {
-    width: 95%;
+        #flore:checked~.filter-wrap-demo2 :not(.flore, .dfilter) {
+            display: none;
+        }
+
+        #fgamenews:checked~.filter-wrap-demo2 :not(.fgamenews, .dfilter) {
+            display: none;
+        }
+        
+        #fstream:checked~.filter-wrap-demo2 :not(.fstream, .dfilter) {
+            display: none;
+        }
+        iframe {
+            width: 95%;
             height: auto;
             display: flex;
             margin: auto;
             min-width: auto;
-}
+        }
 
-/*  stupid learn more on twitch iframe
+        /*  stupid learn more on twitch iframe
 .bTJhJp {
     display: none;
 } */
@@ -444,161 +456,213 @@ iframe {
     GAME NEWS
     MUSIC
    -->
-   
+
     <div id="main">
-        
+
         <div class="filtercontainer" style="display: block;text-align: center;">
             <span class="filter-text">Filter Posts:</span>
-    
+
             <input type="radio" id="filter-all-demo2" class="filter-input" name="filter" checked="">
-            <label for="filter-all-demo2" class="filter-label" onclick=""><div class="all">ALL</div></label>
-    
+            <label for="filter-all-demo2" class="filter-label" onclick="">
+                <div class="all">ALL</div>
+            </label>
+
             <input type="radio" id="fnews" class="filter-input" name="filter">
-            <label for="fnews" class="filter-label" onclick=""><DIV class="news">NEWS</DIV></label>
-    
+            <label for="fnews" class="filter-label" onclick="">
+                <DIV class="news">NEWS</DIV>
+            </label>
+
             <input type="radio" id="fcharacter" class="filter-input" name="filter">
-            <label for="fcharacter" class="filter-label" onclick=""><DIV class="character">CHARACTER</DIV></label>
-    
+            <label for="fcharacter" class="filter-label" onclick="">
+                <DIV class="character">CHARACTER</DIV>
+            </label>
+
             <input type="radio" id="flore" class="filter-input" name="filter">
-            <label for="flore" class="filter-label" onclick=""><DIV class="lore">LORE</DIV></label>
-    
+            <label for="flore" class="filter-label" onclick="">
+                <DIV class="lore">LORE</DIV>
+            </label>
+
             <input type="radio" id="fmusic" class="filter-input" name="filter">
-            <label for="fmusic" class="filter-label" onclick=""><DIV class="music">MUSIC</DIV></label>
-    
+            <label for="fmusic" class="filter-label" onclick="">
+                <DIV class="music">MUSIC</DIV>
+            </label>
+
             <input type="radio" id="fgamenews" class="filter-input" name="filter">
-            <label for="fgamenews" class="filter-label" onclick=""><DIV class="gamenews">GAME NEWS</DIV></label>
+            <label for="fgamenews" class="filter-label" onclick="">
+                <DIV class="gamenews">GAME NEWS</DIV>
+            </label>
 
-    <div class="filter-wrap-demo2">
+            <input type="radio" id="fstream" class="filter-input" name="filter">
+            <label for="fstream" class="filter-label" onclick="">
+                <DIV class="stream">STREAM</DIV>
+            </label>
+    
 
-        <div class="filter-item fnews">
-        <a href="https://afantasystory.com/afs/news/archive">
-            <div id="newspost">
-                <h2 class="pinned">Archive</h2>
-                <img src="/Images/afs words logo archive.png">
-                <div class="description">
-                    <a class="text seperator">
-                        &nbsp;
-                        <div class="news"> NEWS</div>
-                        <div class="lore">LORE</div>
-                        <div class="music">MUSIC</div>
-                        <div class="character">CHARACTER</div>
-                        <!-- <div class="gamenews">GAME NEWS</div> -->
+            <div class="filter-wrap-demo2">
+
+                <div class="filter-item fnews">
+                    <a class="dfilter" href="https://afantasystory.com/afs/news/archive">
+                        <div class="dfilter" id="newspost">
+                            <h2 class="pinned dfilter">Archive</h2>
+                            <img class="dfilter" src="/Images/afs words logo archive.png">
+                            <div class="dfilter description ">
+                                <a class="dfilter text seperator ">
+                                    &nbsp;
+                                    <div class="news dfilter">NEWS</div>
+                                    <div class="lore dfilter">LORE</div>
+                                    <div class="music dfilter">MUSIC</div>
+                                    <div class="character dfilter">CHARACTER</div>
+                                    <div class="gamenews dfilter">GAME NEWS</div>
+                                    <div class="stream dfilter">STREAM</div>
+                                </a>
+                                <a class="padding dfilter" href="https://afantasystory.com/afs/news/archive"
+                                    class="text dfilter">Have fun looking around! Most recent news will be found here and older posts will be found in our archive here.
+                                </a>
+                            </div>
+                        </div>
                     </a>
-                    <a class="padding" href="https://afantasystory.com/afs/news/archive" class="text">Have fun looking around! Most
-                        recent news will be found here and older posts will be found in our archive here.
+                </div>
+
+                <div class="filter-item fstream">
+                    <a class="dfilter" href="https://twitch.tv/MightyMooMoo">
+                        <div class="pinned dfilter" id="newspost">
+                            <h2 class="dfilter">Featured Live Stream</h2>
+                            <iframe style="max-height: 250px !important; max-width: 100% !important; aspect-ratio: 16/9;" class="dfilter"
+                                src="https://player.twitch.tv/?channel=MightyMooMoo&parent=afantasystory.com"
+                                frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
+                            <div class="description dfilter">
+                                <a class="text seperator dfilter">
+                                    &nbsp;
+                                    <div class="stream dfilter">STREAM</div> Posted on May 10, 2023
+                                </a>
+                                <a class="padding dfilter" href="https://afantasystory.com/afs/news/archive"
+                                    class="text dfilter">MightyMooMoo is our featured streamer! He is our musician for the AFS OST!
+                                </a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="filter-item fmusic">
+                    <a class="dfilter" href="https://afantasystory.com/afs/news/0000004">
+                        <div class="dfilter" id="newspost">
+                            <h2 class="dfilter">1. A Fantasy Story - AFS OST</h2>
+                            <img class="dfilter" src="/Images/afs words logo music.png"
+                                alt="A Fantasy Story word logo with background">
+                            <div class="description dfilter">
+                                <a class="text seperator dfilter">
+                                    &nbsp;
+                                    <div class="music dfilter">MUSIC</div> Posted on Feb 10, 2023
+                                </a>
+                                <a class="dfilter padding" href="https://afantasystory.com/afs/news/0000004"
+                                    class="text">
+                                    First song of A Fantasy Story is brought to you in collaboration with MightyMooMoo.
+                                    This is the
+                                    first of many songs in the AFS original soundtrack.
+                                </a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="filter-item flore">
+
+                    <a class="dfilter" href="https://afantasystory.com/afs/news/0000003">
+                        <div class="dfilter" id="newspost">
+                            <h2 class="dfilter">Butron</h2>
+                            <img class="dfilter" src="/Images/butron logo7.png" alt="Butron company logo">
+                            <div class="description dfilter">
+                                <a class="text seperator dfilter">
+                                    &nbsp;
+                                    <div class="lore dfilter">LORE</div> Posted on Jan 18, 2023
+                                </a>
+                                <a class="dfilter padding" href="https://afantasystory.com/afs/news/0000003"
+                                    class="text">A first look at the infamous
+                                    medical company.
+                                </a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="filter-item fcharacter">
+                    <a class="dfilter" href="https://afantasystory.com/afs/news/0000002">
+                        <div class="dfilter" id="newspost">
+                            <h2 class="dfilter">First Contact</h2>
+                            <img class="dfilter" src="/Images/1 test banner.png"
+                                alt="Secret character close up of upper half of body">
+                            <div class="description dfilter">
+                                <a class="text seperator dfilter">
+                                    &nbsp;<div class="character dfilter">CHARACTER</div> Posted on Jan 4, 2023
+                                </a>
+                                <a class="dfilter padding" href="https://afantasystory.com/afs/news/0000002"
+                                    class="text">For he has been summoned, so it
+                                    shall be.
+                                </a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="filter-item fnews">
+                    <a class="dfilter" href="https://afantasystory.com/afs/news/0000001">
+                        <div class="dfilter" id="newspost">
+                            <h2 class="dfilter">Say No to AI "Art</h2>
+                            <img class="dfilter" src="/Images/New Images/Fj9lzDWWQAQH_dI.jpg" alt="Say NO to AI art!">
+                            <div class="description dfilter">
+                                <a class="text seperator dfilter">
+                                    &nbsp; <div class="news dfilter">NEWS</div> Posted on Dec 16, 2022
+                                </a>
+                                <a class="dfilter padding" href="https://afantasystory.com/afs/news/0000001"
+                                    class="text">Say No to AI "Art"
+                                </a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="filter-item flore">
+                    <a class="dfilter" href="https://afantasystory.com/afs/news/0000000">
+                        <div class="dfilter" id="newspost">
+                            <h2 class="dfilter">0: In the Beginning</h2>
+                            <img class="dfilter" src="/Images/afs words logo lore.png"
+                                alt="A Fantasy Story word logo with background">
+                            <div class="description dfilter">
+                                <a class="text seperator dfilter">
+                                    &nbsp; <div class="lore dfilter">LORE</div> Posted on Dec 12, 2022
+                                </a>
+                                <a class="dfilter padding" href="https://afantasystory.com/afs/news/0000000"
+                                    class="text">Chapter 0: What was causing wars?
+                                    Why was there a fracture in time? Who are The Four
+                                    Great Lords?
+                                </a>
                     </a>
                 </div>
             </div>
-        </a>
         </div>
-        <div class="filter-item fmusic">
-        <a class="dfilter" href="https://afantasystory.com/afs/news/0000004">
-            <div class="dfilter" id="newspost">
-                <h2 class="dfilter">1. A Fantasy Story - AFS OST</h2>
-                <img class="dfilter" src="/Images/afs words logo music.png" alt="A Fantasy Story word logo with background">
-                <div class="description dfilter">
-                    <a class="text seperator dfilter">
-                        &nbsp;
-                        <div class="music dfilter">MUSIC</div> Posted on Feb 10, 2023
-                    </a>
-                    <a class="dfilter padding" href="https://afantasystory.com/afs/news/0000004" class="text">
-                        First song of A Fantasy Story is brought to you in collaboration with MightyMooMoo. This is the
-                        first of many songs in the AFS original soundtrack.
-                    </a>
-                </div>
-            </div>
         </a>
     </div>
-    <div class="filter-item flore">
-
-        <a class="dfilter" href="https://afantasystory.com/afs/news/0000003">
-            <div class="dfilter" id="newspost">
-                <h2 class="dfilter">Butron</h2>
-                <img class="dfilter" src="/Images/butron logo7.png" alt="Butron company logo">
-                <div class="description dfilter">
-                    <a class="text seperator dfilter">
-                        &nbsp;
-                        <div class="lore dfilter">LORE</div> Posted on Jan 18, 2023
-                    </a>
-                    <a class="dfilter padding" href="https://afantasystory.com/afs/news/0000003" class="text">A first look at the infamous
-                        medical company.
-                    </a>
-                </div>
-            </div>
-        </a>
-    </div>
-    <div class="filter-item fcharacter">
-        <a class="dfilter" href="https://afantasystory.com/afs/news/0000002">
-            <div class="dfilter" id="newspost">
-                <h2 class="dfilter" >First Contact</h2>
-                <img class="dfilter" src="/Images/1 test banner.png" alt="Secret character close up of upper half of body">
-                <div class="description dfilter">
-                    <a class="text seperator dfilter">
-                        &nbsp;<div class="character dfilter">CHARACTER</div> Posted on Jan 4, 2023
-                    </a>
-                    <a class="dfilter padding" href="https://afantasystory.com/afs/news/0000002" class="text">For he has been summoned, so it
-                        shall be.
-                    </a>
-                </div>
-            </div>
-        </a>
-    </div>
-    <div class="filter-item fnews">
-        <a class="dfilter" href="https://afantasystory.com/afs/news/0000001">
-            <div class="dfilter" id="newspost">
-                <h2 class="dfilter">Say No to AI "Art</h2>
-                <img class="dfilter" src="/Images/New Images/Fj9lzDWWQAQH_dI.jpg" alt="Say NO to AI art!">
-                <div class="description dfilter">
-                    <a class="text seperator dfilter">
-                        &nbsp; <div class="news dfilter">NEWS</div> Posted on Dec 16, 2022
-                    </a>
-                    <a class="dfilter padding" href="https://afantasystory.com/afs/news/0000001" class="text">Say No to AI "Art"
-                    </a>
-                </div>
-            </div>
-        </a>
-    </div>
-    <div class="filter-item flore">
-        <a class="dfilter" href="https://afantasystory.com/afs/news/0000000">
-            <div class="dfilter" id="newspost">
-                <h2 class="dfilter">0: In the Beginning</h2>
-                <img class="dfilter" src="/Images/afs words logo lore.png" alt="A Fantasy Story word logo with background">
-                <div class="description dfilter">
-                    <a class="text seperator dfilter">
-                        &nbsp; <div class="lore dfilter">LORE</div> Posted on Dec 12, 2022
-                    </a>
-                    <a class="dfilter padding" href="https://afantasystory.com/afs/news/0000000" class="text">Chapter 0: What was causing wars?
-                        Why was there a fracture in time? Who are The Four
-                        Great Lords?
-                    </a>
-        </a>
-        </div>
     </div>
     </div>
-    </a>
-    </div>
-    </div>
-</div>
 
     <div id="sidebar">
         <h2>General News</h2>
         <img src="/Images/afs words logo2.png">
         <a class="text">Hello! We will follow the creative process for A Fantasy Story. A world building endeavor that
             follows a fantastic story, characters, and more!</a>
-            
-            <div>
-                <h2>Live Streams</h2>
-                <iframe style="margin:5px auto; max-width: auto; height: 5%;" src="https://player.twitch.tv/?channel=HeyFantasyStory&parent=afantasystory.com" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
 
-                <iframe src="https://player.twitch.tv/?channel=MightyMooMoo&parent=afantasystory.com" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
-                <br>
-                <a class="text">Twitch streams associated with AFS will be featured here!</a>
+        <div>
+            <h2>Live Streams</h2><br>
+            <a href="https://twitch.tv/HeyFantasyStory">&#9862; Twitch.tv/HeyFantasyStory</a>
+            <iframe style="margin:5px auto; max-width: auto; height: 5%;"
+                src="https://player.twitch.tv/?channel=HeyFantasyStory&parent=afantasystory.com" frameborder="0"
+                allowfullscreen="true" scrolling="no"></iframe>
 
-            </div>
-    
+            <!-- <iframe src="https://player.twitch.tv/?channel=MightyMooMoo&parent=afantasystory.com" frameborder="0" allowfullscreen="true" scrolling="no"></iframe> -->
+            <br>
+            <a class="text">Other featured Twitch streams associated with AFS will be found here!</a>
+
         </div>
 
-<!-- 
+    </div>
+
+    <!-- 
 <div class="filter-wrap-demo2">
                     <div class="filter-item flore ">
                         <a class="dfilter" href="https://afantasystory.com/afs/news/0000000" target="_blank"><H5 class="dfilter"><DIV class="lore dfilter">LORE</DIV>&nbsp; 0: In the Beginning</H5></a>
