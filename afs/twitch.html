@@ -1,73 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/Images/icon 7.png" type="images/x-icon">
-    <title>A Fantasy Story Twitch</title>
+  <meta charset="UTF-8">
 
-    <meta property="og:image" content="/Images/afs words logo2.png" />
-    <meta property="og:description" content="A place where all fantasy stories converge." />
-    <meta property="og:url" content="https://afantasystory.com/afs/twitch" />
-    <meta property="og:title" content="A Fantasy Story - Twitch" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/Images/icon 7.png" type="images/x-icon">
+  <title>A Fantasy Story Twitch</title>
 
-    <meta property="twitter:card" content="summary" />
-    <meta property="twitter:site" content="@HeyFantasyStory" />
-    <meta property="twitter:title" content="A Fantasy Story - Twitch" />
-    <meta property="twitter:image" content="https://afantasystory.com/Images/afs words logo3 square.png" />
+  <meta property="og:image" content="/Images/afs words logo2.png" />
+  <meta property="og:description" content="A place where all fantasy stories converge." />
+  <meta property="og:url" content="https://afantasystory.com/afs/twitch" />
+  <meta property="og:title" content="A Fantasy Story - Twitch" />
 
-    <style>
-        * {
-            margin:0;
-            padding:0;
-        }
-        body {
-            display: inline;
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="@HeyFantasyStory" />
+  <meta property="twitter:title" content="A Fantasy Story - Twitch" />
+  <meta property="twitter:image" content="https://afantasystory.com/Images/afs words logo3 square.png" />
 
-        }
-        .twitch iframe {
-            width: 80%;
-            height:100vh;
-            top: 0;
-            left:0;
-            position: absolute;
-        }
-        .chat iframe {
-            width: calc(20%);
-            height:100vh;
-            top:0;
-            right:0;
-            position: absolute;
-            /* border-left:1px solid white; */
-            border-right:none ;
-            border-bottom:none ;
-            border-top: none;
-        }
-        .class {
-            display: inline;
-        }
-    </style>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-color: #f1f1f1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden !important;
+    }
+
+    #twitch-embed-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #twitch-embed {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
 </head>
-<body >
-    <div class="twitchwrapper">
-        <div class="class">
-            <div class="video">
-        <!-- video -->  
-                <div class="twitch">
-                    <iframe src="https://player.twitch.tv/?channel=HeyFantasyStory&parent=afantasystory.com" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
-                </div>
-        <!-- chat -->   
-                <div class="chat">
-                    <iframe
-                    id="chat_embed"
-                    src="https://www.twitch.tv/embed/HeyFantasyStory/chat?darkpopout&parent=afantasystory.com">
-                    </iframe>
-                </div>
+<body>
+  <div id="twitch-embed-container">
+    <div id="twitch-embed"></div>
+  </div>
 
-            </div>
-        </div>
-    </div>
-    
+  <script src="https://embed.twitch.tv/embed/v1.js"></script>
+  <script>
+    new Twitch.Embed("twitch-embed", {
+      width: "100%",
+      height: "100%",
+      channel: "HeyFantasyStory",
+      layout: "video-with-chat",
+      autoplay: true,
+      muted: true,
+      parent: ["afantasystory.com"]
+    });
+  </script>
 </body>
 </html>
