@@ -378,6 +378,7 @@ nav a:hover {
   margin-bottom: 100px;
   transition: .3s;
   visibility: hidden;
+  opacity:0;
 }
 
 .section1 .lookDown {
@@ -1125,7 +1126,7 @@ input:active {
 }
 
 /* play with */
-.section1 .svgSide2 {
+/* .section1 .svgSide2 {
   cursor: pointer;
 }
 
@@ -1152,7 +1153,7 @@ input:active {
   height: 1000px;
   width: 1000px;
   transform: rotate(90deg);
-}
+} */
 
 
 
