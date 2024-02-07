@@ -1,1 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist</title>
+    <style>
+        body {
+            font-family: Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: white;
+            background-color: #111;
+        }
+
+        header {
+            background: url(https://raw.githubusercontent.com/InferiorArtist/inferiorartist.github.io/main/Images/afs%20words%20logo2.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            /* background-color: #333; */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer {
+            padding: 50px;
+
+        }
+
+        #top-buttons {
+            /* background-color: #333; */
+            color: #fff;
+            padding: 20px 0 0 0;
+            text-align: center;
+        }
+
+        #checklist-container,
+        #history-container,
+        #completed-container {
+            margin: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+            background-color: #222;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        #checklist-container h2,
+        #history-container h2,
+        #completed-container h2 {
+            margin-bottom: 10px;
+        }
+
+        #add-item-form input[type="text"] {
+            padding: 10px;
+            width: calc(80% - 32px);
+        }
+
+        #add-item-form button[type="submit"] {
+            width: calc(20% - 16px);
+            padding: 10px 0;
+            margin: 0 0 0 5px;
+        }
+
+        #item-list,
+        #history-list,
+        #completed-list {
+            padding: 0px 20px;
+
+        }
+
+        /* #add-item-form button {
+        } */
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            outline: 1px solid #111;
+            background-color: #333;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            border-radius: 2px;
+        }
+
+        li:hover {
+            background-color: #444;
+        }
+
+        button {
+            border-radius: 5px;
+        }
+
+        li button {
+            color: white;
+            position: sticky;
+            left: 10vw !important;
+            height: 51px;
+            max-height: 100%;
+            width: 200px;
+            max-width: calc(20% + 50px);
+            background-color: rgb(85, 25, 25);
+            border: none;
+            border-left: 1px solid rgb(65, 14, 14);
+            margin: 0 16px;
+        }
+
+        li button:hover {
+            background-color: rgb(134, 37, 37);
+            cursor: pointer;
+
+        }
+
+        header button,
+        #top-buttons button {
+            color: white;
+            position: sticky;
+            left: 10vw !important;
+            height: 51px;
+            max-height: 100%;
+            width: 200px;
+            max-width: calc(20% + 50px);
+            background-color: rgb(85, 25, 25);
+            border: none;
+            border: 1px solid rgb(65, 14, 14);
+            margin: 2px 16px;
+        }
+
+        header {
+            padding: 150px;
+        }
+
+
+        header button:hover,
+        #top-buttons button:hover {
+            background-color: rgb(134, 37, 37);
+            cursor: pointer;
+        }
+
+        header button:active,
+        #top-buttons button:active {
+            background-color: rgb(85, 25, 25);
+        }
+
+        span {
+            text-indent: 8px;
+            margin: 16px 16px;
+        }
+
+        #history-list li {
+            text-indent: 8px;
+            margin: 16px 0px;
+        }
+
+        input[type=checkbox] {
+            position: relative;
+            cursor: pointer;
+        }
+
+        input[type=checkbox]:before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 20px;
+            height: 50px;
+            top: 0;
+            left: 0;
+            background-color: #e9e9e9;
+            margin: -19px 0 0 -4px;
+
+        }
+
+        input[type=checkbox]:checked:before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 20px;
+            height: 50px;
+            top: 0;
+            left: 0;
+            background-color: rgb(49, 179, 49);
+            margin: -19px 0 0 -4px;
+        }
+
+        input[type=checkbox]:checked:before:hover {
+            background-color: rgb(62, 228, 62);
+        }
+
+        input[type=checkbox]:checked:after {
+            content: "";
+            display: block;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+            position: absolute;
+            top: 18px;
+            left: 6px;
+            margin: -19px 0 0 -4px;
+        }
+
+        h1,
+        h2,
+        a,
+        summary {
+            color: rgb(231, 196, 120);
+
+        }
+
+        summary:hover {
+            cursor: pointer;
+        }
+
+        .details-dropdown {
+            background-color: #333;
+            border-radius: 5px;
+        }
+
+        .button-list {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        @media screen and (max-width: 450px) {
+
+            #checklist-container,
+            #history-container,
+            #completed-container {
+                margin: 20px 0;
+                width: 100%;
+            }
+
+            #item-list,
+            #history-list,
+            #completed-list {
+                padding: 0px 0px;
+            }
+
+            #add-item-form input[type="text"] {
+                margin-left: 8px;
+            }
+
+            li button {
+                margin: 0;
+            }
+
+            header {
+                padding: 70px;
+            }
+
+            #top-buttons {
+                padding: 0px;
+            }
+
+            .button-list {
+                display: block;
+                justify-content: initial;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- figure out how to style these bitches -->
+        <!-- <button id="download-btn">Download</button>
+        <br>
+        <button id="upload-btn">Upload</button>
+        <input style="opacity:0;height:0px;width:0px;display:contents;" type="file" id="upload-file" accept=".json">
+
+        <br>
+        <div id="clear-list-container">
+            <button id="clear-list-btn">Clear List</button>
+        </div> -->
+    </header>
+
+    <div id="top-buttons">
+        <details style="width:80%;margin:0 auto;"><br>
+            <summary>How To:</summary>
+            <div class="details-dropdown">
+                <br><a>Download:</a> <br> Download your current checklist. The device will remember your list, but it is
+                unique per device.
+                <br><a> Upload:</a> <br>Upload a .JSON file with the correct format. You can open .JSON files with
+                Notepad to see format.
+                <br><a> Clear List:</a> <br>Everything will be deleted and unrecoverable, so be careful!
+                <br><a> Gray Box/ Green Check Box:</a><br> Clicking on Gray Box will place it into Cempleted List and
+                add a check mark. Pressing green check mark will put it back into To Do list.
+                <br><a> Add new item/ Add:</a><br> Type somthing and press Add to place an item into To Do list.
+                <br><a> Delete:</a><br> Deletes an item from the To Do list and sends it into History List. If it is
+                already in History List then it will be permanently deleted.
+                <br><br>
+            </div>
+        </details>
+
+        <h1 id="checklist-name">Checklist</h1>
+        <div class="button-list">
+            <button id="download-btn">Download</button>
+            <br>
+            <button id="upload-btn">Upload</button>
+
+            <br>
+            <div id="clear-list-container">
+                <button id="clear-list-btn">Clear List</button>
+            </div>
+        </div>
+        <input style="opacity:0;height:0px;width:0px;display:contents;" type="file" id="upload-file" accept=".json">
+
+        <div id="checklist-container">
+            <form id="add-item-form">
+                <input type="text" id="item-input" placeholder="Add new item">
+                <button type="submit">Add</button>
+            </form>
+
+        </div>
+    </div>
+
+    <div id="checklist-container">
+        <h2>To Do:</h2>
+        <ul id="item-list"></ul>
+    </div>
+
+    <div id="completed-container">
+        <h2>Completed:</h2>
+        <ul id="completed-list"></ul>
+    </div>
+
+    <div id="history-container">
+        <h2>History:</h2>
+        <ul id="history-list"></ul>
+    </div>
+    <footer>
+
+    </footer>
+    <script>
+        // Store checklist items and history items in arrays
+        let checklistItems = [];
+        let completedItems = [];
+        let deletedItems = [];
+        let historyItems = [];
+
+        // Get DOM elements
+        const itemForm = document.getElementById('add-item-form');
+        const itemInput = document.getElementById('item-input');
+        const itemList = document.getElementById('item-list');
+        const completedList = document.getElementById('completed-list');
+        const historyList = document.getElementById('history-list');
+        const downloadButton = document.getElementById('download-btn');
+        const uploadButton = document.getElementById('upload-btn');
+        const uploadFile = document.getElementById('upload-file');
+        const checklistName = document.getElementById('checklist-name');
+
+        // Variables for checklist name
+        let currentChecklistName = 'Checklist';
+
+        // Function to add a new item to the checklist
+        function addItem(event) {
+            event.preventDefault();
+            const newItemText = itemInput.value.trim();
+
+            if (newItemText !== '') {
+                const newItem = {
+                    text: newItemText,
+                    completed: false
+                };
+
+                checklistItems.push(newItem);
+                renderItems();
+                itemInput.value = '';
+                storeItems();
+            }
+        }
+
+        // Function to render the checklist items
+        function renderItems() {
+            itemList.innerHTML = '';
+
+            checklistItems.forEach((item, index) => {
+                const listItem = document.createElement('li');
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.checked = item.completed;
+                checkbox.addEventListener('change', () => moveToCompleted(index));
+
+                const itemText = document.createElement('span');
+                itemText.textContent = item.text;
+
+                const deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Delete';
+                deleteButton.addEventListener('click', () => deleteItem(index));
+
+                listItem.appendChild(checkbox);
+                listItem.appendChild(itemText);
+                listItem.appendChild(deleteButton);
+                itemList.appendChild(listItem);
+            });
+        }
+
+        const clearListButton = document.getElementById('clear-list-btn');
+        clearListButton.addEventListener('click', clearList);
+
+        function clearList() {
+            checklistItems = [];
+            completedItems = [];
+            deletedItems = [];
+            historyItems = [];
+            renderItems();
+            renderCompletedItems();
+            renderHistoryItems();
+            storeItems();
+        }
+
+        // Function to toggle item completion
+        function toggleComplete(index) {
+            checklistItems[index].completed = !checklistItems[index].completed;
+            renderItems();
+            storeItems();
+        }
+
+        // Function to move an item to the completed list
+        function moveToCompleted(index) {
+            const completedItem = checklistItems.splice(index, 1)[0];
+            completedItem.completed = true;
+            completedItems.push(completedItem);
+            renderItems();
+            renderCompletedItems();
+            storeItems();
+        }
+
+        // Function to move an item from the completed list back to the checklist
+        function moveFromCompleted(index) {
+            const uncompletedItem = completedItems.splice(index, 1)[0];
+            uncompletedItem.completed = false;
+            checklistItems.push(uncompletedItem);
+            renderItems();
+            renderCompletedItems();
+            storeItems();
+        }
+
+        // Function to render the completed items
+        function renderCompletedItems() {
+            completedList.innerHTML = '';
+
+            completedItems.forEach((item, index) => {
+                const listItem = document.createElement('li');
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.checked = true;
+                checkbox.addEventListener('change', () => moveFromCompleted(index));
+
+                const itemText = document.createElement('span');
+                itemText.textContent = item.text;
+
+                listItem.appendChild(checkbox);
+                listItem.appendChild(itemText);
+                completedList.appendChild(listItem);
+            });
+        }
+
+        // Function to delete an item from the checklist
+        function deleteItem(index) {
+            const deletedItem = checklistItems.splice(index, 1)[0];
+            deletedItems.push(deletedItem);
+            renderItems();
+            renderHistoryItems();
+            storeItems();
+        }
+
+        // Function to render the history items
+        function renderHistoryItems() {
+            historyList.innerHTML = '';
+
+            deletedItems.forEach((item, index) => {
+                const listItem = document.createElement('li');
+                const itemText = document.createElement('span');
+                itemText.textContent = item.text;
+
+                const restoreButton = document.createElement('button');
+                restoreButton.textContent = 'Restore';
+                restoreButton.addEventListener('click', () => restoreItem(index));
+
+                const deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Delete';
+                deleteButton.addEventListener('click', () => deleteFromHistory(index));
+
+                listItem.appendChild(itemText);
+                listItem.appendChild(restoreButton);
+                listItem.appendChild(deleteButton);
+                historyList.appendChild(listItem);
+            });
+        }
+
+        // Function to delete an item from the history list
+        function deleteFromHistory(index) {
+            deletedItems.splice(index, 1);
+            renderHistoryItems();
+            storeItems();
+        }
+
+        // Function to restore an item from the history
+        function restoreItem(index) {
+            const restoredItem = deletedItems.splice(index, 1)[0];
+            restoredItem.completed = false;
+            checklistItems.push(restoredItem);
+            renderItems();
+            renderHistoryItems();
+            storeItems();
+        }
+
+        // Function to store checklist items in local storage
+        function storeItems() {
+            const checklist = {
+                items: checklistItems,
+                completed: completedItems,
+                deleted: deletedItems,
+                history: historyItems,
+                name: currentChecklistName
+            };
+
+            localStorage.setItem('checklist', JSON.stringify(checklist));
+        }
+
+        // Function to retrieve checklist items from local storage
+        function retrieveItems() {
+            const storedChecklist = localStorage.getItem('checklist');
+
+            if (storedChecklist) {
+                const checklist = JSON.parse(storedChecklist);
+                checklistItems = checklist.items;
+                completedItems = checklist.completed;
+                deletedItems = checklist.deleted;
+                historyItems = checklist.history;
+                currentChecklistName = checklist.name;
+                checklistName.textContent = currentChecklistName;
+                renderItems();
+                renderCompletedItems();
+                renderHistoryItems();
+            }
+        }
+
+        // Function to download checklist as JSON
+        function downloadChecklist() {
+            const checklist = {
+                checklistItems: checklistItems,
+                completedItems: completedItems,
+                historyItems: historyItems
+            };
+
+            const checklistData = JSON.stringify(checklist, null, 2);
+            const blob = new Blob([checklistData], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'checklist.json';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // Function to handle file upload
+        function handleFileUpload(event) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+            reader.onload = function (event) {
+                const fileData = event.target.result;
+                const checklist = JSON.parse(fileData);
+                checklistItems = checklist.checklistItems || [];
+                completedItems = checklist.completedItems || [];
+                historyItems = checklist.historyItems || [];
+                renderItems();
+                renderCompletedItems();
+                renderHistoryItems();
+                storeItems();
+            };
+            reader.readAsText(file);
+        }
+
+        // Event listeners
+        itemForm.addEventListener('submit', addItem);
+        downloadButton.addEventListener('click', downloadChecklist);
+        uploadButton.addEventListener('click', function () {
+            uploadFile.click();
+        });
+        uploadFile.addEventListener('change', handleFileUpload);
+        window.addEventListener('DOMContentLoaded', retrieveItems);
+
+    </script>
+</body>
+
+</html>
