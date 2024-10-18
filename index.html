@@ -10,10 +10,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="/Images/icon 7.png" type="images/x-icon">
   <link rel="stylesheet" href="/css/styles.css">
+  
   <title>A Fantasy Story Home</title>
   <meta name="description" content="A Fantasy Story Home. A place where all fantasy stories converge. Past, present, and future.">
 
-  <meta property="og:image" content="/Images/afs words logo2.png" />
+  <meta property="og:image" content="/Images/afs words logo2thumb.png" />
   <meta property="og:description" content="A place where all fantasy stories converge." />
   <meta property="og:url" content="https://afantasystory.com/" />
   <meta property="og:title" content="A Fantasy Story" />
@@ -22,6 +23,9 @@
   <meta property="twitter:site" content="@HeyFantasyStory" />
   <meta property="twitter:title" content="A Fantasy Story" />
   <meta property="twitter:image" content="https://afantasystory.com/Images/afs words logo3 square.png" />
+
+  <link rel="dns-prefetch" href="https://afantasystory.com/Images/">
+  <link rel="preload" href="https://afantasystory.com/Images/afs words logo2.png" as="image" type="image/svg+xml">
 
   <script src="/JS/scroll anim.js" defer></script>
   <style>
@@ -61,8 +65,8 @@
     }
 
     .slide {
-      width: 256px;
-      height: 256px;
+      width: 128px;
+      height: 128px;
       display: inline-block;
       /* Display the slides inline */
       background-size: cover;
@@ -106,7 +110,7 @@
   <ul>
     <div>
       <li><a href="https://afantasystory.com/">
-          <img src="/Images/afs words logo2.png" alt="">
+          <img src="/Images/afs words logo2thumb.png" alt="">
         </a></li>
     </div>
     <li><a href="https://afantasystory.com/">Home</a></li>
@@ -318,6 +322,8 @@
           images.forEach(imageURL => {
             const slide = document.createElement('div');
             slide.classList.add('slide');
+            slide.style.maxHeight = `128px`;
+            slide.style.maxWidth = `128px`;
             slide.style.backgroundImage = `url('${imageURL}')`;
             slideshow.appendChild(slide);
           });
